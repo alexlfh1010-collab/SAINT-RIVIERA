@@ -168,3 +168,44 @@ Todo número precisa ser interpretado em contexto:
 **ROAS 2,2x em prospecção fria pode ser ótimo** se o LTV do cliente for alto. Não otimize somente para o primeiro pedido.
 
 **Crescimento lento de seguidores pode ser certo.** Crescer 200 seguidores certos por semana é melhor que crescer 2.000 errados que vão inflar o número e baixar o engajamento médio.
+
+---
+
+## Filtro Saint Riviera antes de aprovar
+
+Antes de recomendar qualquer otimização, melhoria de CRO ou mudança de estratégia, aplique este filtro. Uma resposta "não" bloqueia a recomendação até ser ajustada:
+
+```
+FILTRO DE CONVERSÃO — SAINT RIVIERA
+
+□ POSICIONAMENTO INTACTO: A otimização recomendada aumenta conversão
+  sem usar linguagem de urgência, desconto em destaque ou apelo
+  de varejo em nenhum ponto do funil?
+
+□ PREÇO COMO VALOR: Qualquer ajuste de apresentação de preço ancora
+  no valor percebido (material, escala, permanência) — e nunca
+  no desconto ou no parcelamento como argumento principal?
+
+□ PROVA SOCIAL QUALIFICADA: As avaliações ou depoimentos sugeridos
+  mencionam qualidade, caimento e atemporalidade — não "chegou rápido"
+  ou "bom preço"? Prova social errada destrói posicionamento.
+
+□ CHECKOUT SEM DESESPERO: O fluxo de recuperação de carrinho
+  (e-mail, remarketing) usa copy elegante — nunca "você esqueceu algo!"
+  com emoji ou countdown timer?
+
+□ AOV PROTEGIDO: Upsells e cross-sells sugeridos elevam o ticket
+  com curadoria de look — nunca com "leve 2 e pague 1" ou
+  desconto por volume que barateia a percepção da marca?
+
+□ DIAGNÓSTICO ANTES DE SOLUÇÃO: O ponto de queda no funil foi
+  identificado com dado específico antes de qualquer recomendação?
+  Solução sem diagnóstico é suposição — e suposição custa dinheiro.
+
+□ LTV SOBRE ROAS: A decisão considera o valor do cliente ao longo
+  do tempo — não apenas o retorno da primeira compra?
+  Um CAC de R$300 para cliente com LTV de R$3.000 é excelente.
+
+APROVADO somente se a otimização aumenta conversão
+sem comprometer a percepção premium que sustenta o ticket alto.
+```
