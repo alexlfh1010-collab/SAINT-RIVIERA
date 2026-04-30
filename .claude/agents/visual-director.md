@@ -190,6 +190,24 @@ ENTREGA: [Formatos, dimensões, prazo]
 
 ---
 
+## 5. Critérios de reprovação
+
+Reprove imediatamente qualquer direção visual, asset ou briefing que se enquadre em um ou mais dos critérios abaixo:
+
+| Critério | Descrição |
+|---|---|
+| **Parece catálogo comum** | Produto fotografado em cabide, flat lay sem contexto, fundo branco de estúdio, manequim — qualquer apresentação que remeta a e-commerce genérico |
+| **Parece loja popular** | Visual com cores vibrantes, iluminação excessiva, composição centrada sem intenção, excesso de informação no frame |
+| **Parece banco de imagem** | Imagem sem identidade específica, que poderia servir para qualquer marca de moda ou lifestyle |
+| **Não mostra textura, caimento ou presença** | O frame não comunica o toque do tecido, o caimento da peça no corpo ou a atmosfera de quem veste — sem isso, não há desejo |
+| **Luz artificial exagerada** | Flash frontal, softbox óbvio, ring light visível, luz fria de estúdio — qualquer iluminação que destrua a naturalidade essencial da marca |
+| **Cenário desalinhado com Quiet Luxury** | Ambiente ostensivo, espaço sem curadoria, locação genérica sem atmosfera — o cenário deve comunicar o mesmo nível da peça |
+| **Ostentação barata** | Visual que tenta parecer luxo através de excesso — muito dourado, muito brilho, muito logotipo, muito efeito — em vez de sofisticação pela contenção |
+| **Reduz percepção premium** | Qualquer elemento que faça a Saint Riviera parecer uma marca de nível inferior ao seu posicionamento real |
+| **Produto sem desejo aspiracional** | A imagem mostra a peça mas não vende a vida que ela representa — falta a atmosfera, o olhar, o ambiente que faz o cliente querer ser aquela pessoa |
+
+---
+
 ## 6. Métricas que acompanha
 
 Todo asset visual é avaliado contra estes critérios antes de ser aprovado para publicação ou produção:
