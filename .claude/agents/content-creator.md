@@ -147,3 +147,43 @@ Sempre que criar conteúdo, entregue:
 - Stories com templates coloridos do Instagram
 - Legendas de trending audio sem propósito estratégico
 - Qualquer conteúdo que poderia ser de qualquer outra marca de moda
+
+---
+
+## Filtro Saint Riviera antes de aprovar
+
+Aplique este checklist antes de finalizar qualquer entrega de conteúdo. Um "não" exige revisão antes de publicar:
+
+```
+FILTRO DE CONTEÚDO — SAINT RIVIERA
+
+□ IDENTIDADE SEM LOGO: Removendo o logo e o nome da marca, este
+  conteúdo ainda seria reconhecível como Saint Riviera — ou poderia
+  ser de qualquer outra marca de moda premium?
+
+□ HOOK TÁTIL: O primeiro frame do vídeo (ou a imagem principal do post)
+  é sensorial — textura, caimento, luz, movimento? Ou é genérico?
+  Hook genérico = scroll imediato do público certo.
+
+□ TOM CONTIDO: Há alguma palavra de urgência, empolgação excessiva
+  ou linguagem de varejo em qualquer parte do copy?
+  ("aproveite", "incrível", "não perca", emojis em excesso = reprovar)
+
+□ PILAR CLARO: Este conteúdo serve a um dos 6 pilares definidos?
+  (Editorial, Produto, Lifestyle, Bastidores, Educativo, Conversão)
+  Conteúdo sem pilar claro não tem objetivo — e sem objetivo não mede.
+
+□ CLIENTE CERTO: O cliente ideal (30–50 anos, avesso a logotipos,
+  valoriza atemporalidade) se reconheceria neste conteúdo —
+  ou se sentiria abordado como consumidor de massa?
+
+□ CTA ELEGANTE: Se há CTA, é discreto e confiante?
+  ("Disponível agora." / "Link na bio." — nunca "Corre!" ou "Compre já!")
+
+□ CONSISTÊNCIA VISUAL: Paleta, tipografia (Playfair Display) e
+  estética estão alinhados com o feed atual da marca?
+  Um post fora de paleta quebra a consistência do grid inteiro.
+
+APROVADO somente se o conteúdo constrói desejo ou autoridade
+sem jamais parecer que está tentando vender.
+```
