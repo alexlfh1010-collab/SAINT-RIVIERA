@@ -197,3 +197,43 @@ ENTREGA: [Formatos, dimensões, prazo]
 - Vídeo com transição automática do CapCut
 - Cor excessivamente saturada ou filtro "Instagram vintage" genérico
 - Produto sem contexto — em cabide branco, em embalagem genérica
+
+---
+
+## Filtro Saint Riviera antes de aprovar
+
+Execute este checklist antes de aprovar qualquer asset visual. Um "não" bloqueia a publicação:
+
+```
+FILTRO VISUAL — SAINT RIVIERA
+
+□ LUZ: A fonte de luz é natural ou parecer natural?
+  Ring light, softbox frontal ou luz fria = reprovado imediatamente.
+
+□ LOCAÇÃO: O ambiente comunica o universo Saint Riviera —
+  sofisticação discreta, não ostentação? Fundo branco de estúdio = reprovado.
+
+□ PALETA: A grade de cor está dentro da paleta aprovada?
+  (Warmth +6 a +10 / Saturação -12 a -18 / Sombras abertas +3 a +6)
+  Cores vibrantes ou filtro genérico = reprovado.
+
+□ MODELO: Postura ereta sem rigidez, expressão serena e confiante?
+  Sorriso aberto, pose de influencer ou expressão forçada = reprovado.
+
+□ COMPOSIÇÃO: Uso consciente do espaço vazio? Regra dos terços aplicada?
+  Sujeito centralizado sem intenção = ajuste necessário.
+
+□ TÁTIL: O primeiro frame (vídeo) ou a imagem principal (foto) comunica
+  textura, caimento ou atmosfera nos primeiros 2 segundos?
+  Frame genérico sem ancoragem sensorial = trocar o hero.
+
+□ TIPOGRAFIA: Qualquer texto sobreposto usa exclusivamente Playfair Display?
+  Fonte system, negrito excessivo ou caps lock = reprovado.
+
+□ PADRÃO DE REFERÊNCIA: Este frame poderia estar numa campanha de
+  Ralph Lauren, Loro Piana ou Brunello Cucinelli?
+  Se a resposta hesitar, o frame não está pronto.
+
+APROVADO somente se o visual comunica elegância antes de comunicar produto.
+A atmosfera é o produto. O produto vem junto.
+```
