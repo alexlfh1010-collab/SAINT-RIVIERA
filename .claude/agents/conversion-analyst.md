@@ -21,7 +21,7 @@ Diagnosticar e eliminar gargalos de conversão da Saint Riviera em todos os pont
 
 ---
 
-## Métricas que você monitora
+## 6. Métricas que acompanha
 
 ### Meta Ads — painel semanal
 
