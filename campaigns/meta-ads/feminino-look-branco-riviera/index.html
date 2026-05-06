@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saint Riviera — Painel de Aprovação | Look Branco Feminino</title>
+    <style>
+        /* ===== RESET ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        /* ===== VARIÁVEIS ===== */
+        :root {
+            --cru:          #F5F0E8;
+            --areia:        #D4B896;
+            --areia-clara:  #EAE0D0;
+            --navy:         #1C2B3A;
+            --preto:        #0F0F0F;
+            --ouro:         #C8A96A;
+            --ouro-claro:   #EDD9A8;
+            --cinza:        #8A7F74;
+            --cinza-claro:  #C8BFB6;
+            --branco:       #FFFFFF;
+            --verde:        #2D4A3E;
+            --vermelho:     #6B2E2E;
+            --serif:        Georgia, 'Times New Roman', 'Palatino Linotype', serif;
+            --sans:         'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --sombra:       0 2px 24px rgba(28,43,58,0.07);
+            --sombra-media: 0 6px 40px rgba(28,43,58,0.12);
+        }
+
+        /* ===== BASE ===== */
+        html { font-size: 15px; scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--cru);
+            color: var(--preto);
+            font-family: var(--sans);
+            line-height: 1.65;
+        }
+
+        /* ===== TIPOGRAFIA ===== */
+        h1, h2, h3, h4 {
+            font-family: var(--serif);
+            font-weight: normal;
+            letter-spacing: 0.02em;
+            color: var(--navy);
+        }
+        h1 { font-size: 2.8rem; line-height: 1.1; }
+        h2 { font-size: 1.6rem; line-height: 1.25; }
+        h3 { font-size: 1.1rem; }
+        p  { color: #3A3530; }
+
+        /* ===== LAYOUT ===== */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+        .section    { padding: 64px 0; }
+        .section + .section { border-top: 1px solid var(--areia-clara); }
+
+        /* ===== HEADER ===== */
+        .site-header {
+            background: var(--navy);
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            border-bottom: 1px solid rgba(200,169,106,0.2);
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .brand-wordmark {
+            font-family: var(--serif);
+            font-size: 1.15rem;
+            color: var(--cru);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+        .header-right { display: flex; align-items: center; gap: 24px; }
+        .header-meta  { font-size: 0.75rem; color: var(--cinza-claro); letter-spacing: 0.06em; }
+        .status-pill  {
+            padding: 5px 16px;
+            border: 1px solid var(--ouro);
+            color: var(--ouro);
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: var(--navy);
+            padding: 88px 0 72px;
+        }
+        .hero-eyebrow {
+            font-size: 0.72rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--ouro);
+            margin-bottom: 18px;
+        }
+        .hero h1 { color: var(--cru); max-width: 680px; margin-bottom: 22px; }
+        .hero-desc {
+            color: var(--cinza-claro);
+            font-size: 0.95rem;
+            max-width: 520px;
+            line-height: 1.75;
+            margin-bottom: 44px;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 44px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(200,169,106,0.25);
+        }
+        .hero-stat { display: flex; flex-direction: column; gap: 5px; }
+        .stat-value {
+            font-family: var(--serif);
+            font-size: 1.7rem;
+            color: var(--ouro);
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.7rem;
+            color: var(--cinza-claro);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* ===== SECTION HEADER ===== */
+        .sec-head { margin-bottom: 40px; }
+        .sec-eyebrow {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ouro);
+            margin-bottom: 10px;
+        }
+        .sec-head h2 { margin-bottom: 10px; }
+        .gold-rule { width: 36px; height: 1px; background: var(--ouro); margin: 14px 0; }
+        .sec-head p { font-size: 0.88rem; color: var(--cinza); max-width: 560px; line-height: 1.7; }
+
+        /* ===== PREVIEWS ===== */
+        .previews-grid {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .preview-label {
+            padding: 11px 20px;
+            background: var(--navy);
+            color: var(--cru);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* Feed Card */
+        .ig-card { background: var(--branco); box-shadow: var(--sombra); }
+
+        .ig-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--cinza-claro);
+        }
+        .ig-avatar {
+            width: 34px; height: 34px; border-radius: 50%;
+            background: var(--navy);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .ig-avatar span { color: var(--cru); font-size: 0.6rem; letter-spacing: 0.05em; font-family: var(--serif); }
+        .ig-info { flex: 1; }
+        .ig-name   { font-size: 0.83rem; font-weight: 600; color: var(--preto); display: block; }
+        .ig-spons  { font-size: 0.7rem; color: var(--cinza); }
+        .ig-dots   { color: var(--cinza); font-size: 1.1rem; }
+
+        .ig-image {
+            width: 100%;
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, #EAE0D2 0%, #D8D0C0 30%, #C8C0B0 60%, #D8D0C2 80%, #EAE2D4 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 32px;
+            position: relative;
+            text-align: center;
+        }
+        .ig-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 55%, rgba(28,43,58,0.18) 100%);
+        }
+        .ig-placeholder {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 0.88rem;
+            color: rgba(28,43,58,0.55);
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+        .ig-overlay-text {
+            position: absolute;
+            bottom: 22px;
+            left: 22px;
+            right: 22px;
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--branco);
+            text-shadow: 0 1px 6px rgba(0,0,0,0.25);
+            z-index: 2;
+        }
+
+        .ig-actions {
+            padding: 10px 14px 2px;
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+        .ig-icon { font-size: 1.25rem; color: var(--preto); }
+        .ig-icon-save { margin-left: auto; }
+
+        .ig-caption {
+            padding: 5px 14px 12px;
+            font-size: 0.82rem;
+            color: var(--preto);
+            line-height: 1.5;
+        }
+        .ig-caption strong { font-weight: 600; }
+
+        .ig-cta-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 14px;
+            background: var(--cru);
+            border-top: 1px solid var(--cinza-claro);
+        }
+        .ig-headline { font-size: 0.8rem; color: var(--cinza); }
+        .ig-cta-btn  {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--navy);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        /* Story Card */
+        .story-wrap { display: flex; justify-content: center; }
+        .phone {
+            background: var(--navy);
+            border-radius: 32px;
+            padding: 12px;
+            box-shadow: 0 24px 60px rgba(28,43,58,0.35);
+            width: 100%;
+            max-width: 280px;
+        }
+        .phone-screen {
+            border-radius: 22px;
+            overflow: hidden;
+            aspect-ratio: 9/16;
+            position: relative;
+            background: linear-gradient(160deg, #C8C0B0 0%, #B8B0A0 40%, #A8A098 70%, #C0B8A8 100%);
+            display: flex;
+            flex-direction: column;
+        }
+        .progress-row {
+            display: flex;
+            gap: 3px;
+            padding: 10px 10px 0;
+        }
+        .prog-seg {
+            flex: 1;
+            height: 2px;
+            background: rgba(255,255,255,0.35);
+            border-radius: 1px;
+        }
+        .prog-seg.done { background: rgba(255,255,255,0.9); }
+        .story-user {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 10px;
+        }
+        .s-avatar {
+            width: 26px; height: 26px; border-radius: 50%;
+            background: rgba(255,255,255,0.88);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .s-avatar span { font-size: 0.5rem; color: var(--navy); font-family: var(--serif); }
+        .s-name  { color: rgba(255,255,255,0.95); font-size: 0.7rem; font-weight: 500; }
+        .s-spons { color: rgba(255,255,255,0.6); font-size: 0.62rem; }
+
+        .story-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            text-align: center;
+            gap: 18px;
+        }
+        .s-ph {
+            font-size: 0.65rem;
+            color: rgba(255,255,255,0.45);
+            font-style: italic;
+        }
+        .s-text {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--branco);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            line-height: 1.45;
+        }
+
+        .story-foot {
+            padding: 10px 12px 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+        .s-cta {
+            background: rgba(255,255,255,0.9);
+            color: var(--navy);
+            padding: 9px 26px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-radius: 2px;
+        }
+        .s-swipe { font-size: 0.6rem; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; }
+
+        /* ===== STRATEGY GRID ===== */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+        .s-card {
+            background: var(--branco);
+            padding: 28px 22px;
+            box-shadow: var(--sombra);
+            position: relative;
+        }
+        .s-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: var(--ouro);
+        }
+        .c-label {
+            font-size: 0.68rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--cinza);
+            margin-bottom: 8px;
+        }
+        .c-value {
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            color: var(--navy);
+            line-height: 1.35;
+            margin-bottom: 7px;
+        }
+        .c-sub { font-size: 0.76rem; color: var(--cinza); line-height: 1.5; }
+
+        /* ===== A/B VARIATIONS ===== */
+        .ab-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+        }
+        .ab-card {
+            background: var(--branco);
+            padding: 24px 20px;
+            box-shadow: var(--sombra);
+            border-top: 3px solid var(--cinza-claro);
+        }
+        .ab-card.hot { border-top-color: var(--ouro); }
+        .ab-code {
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--cinza);
+            font-family: monospace;
+            margin-bottom: 10px;
+        }
+        .ab-angle {
+            font-family: var(--serif);
+            font-size: 1rem;
+            color: var(--navy);
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        .ab-excerpt {
+            font-size: 0.76rem;
+            font-style: italic;
+            color: #5A5550;
+            line-height: 1.55;
+            margin-bottom: 16px;
+        }
+        .ab-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .ab-tag.pri { background: var(--ouro-claro); color: #6B4E1A; }
+        .ab-tag.sec { background: var(--areia-clara); color: var(--navy); }
+
+        /* ===== METRICS TABLE ===== */
+        .metrics-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--branco);
+            box-shadow: var(--sombra);
+        }
+        .metrics-table th {
+            background: var(--navy);
+            color: var(--cru);
+            padding: 14px 20px;
+            text-align: left;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+        .metrics-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--areia-clara);
+            font-size: 0.83rem;
+            vertical-align: middle;
+        }
+        .metrics-table tr:last-child td { border-bottom: none; }
+        .metrics-table tr:hover td { background: var(--cru); }
+        .m-name { font-weight: 600; color: var(--navy); }
+        .m-ok   { color: #2D5A3D; font-weight: 500; }
+        .m-warn { color: var(--vermelho); }
+        .dot {
+            display: inline-block;
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        .dot-g { background: #2D5A3D; }
+        .dot-r { background: var(--vermelho); }
+
+        /* ===== DECISION CARDS ===== */
+        .decision-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            box-shadow: var(--sombra-media);
+        }
+        .d-card { padding: 44px 36px; }
+        .d-card.pausar  { background: #F8F0F0; border-left: 4px solid var(--vermelho); }
+        .d-card.manter  { background: var(--navy); }
+        .d-card.escalar { background: #EFF5F1; border-right: 4px solid var(--verde); }
+
+        .d-title {
+            font-family: var(--serif);
+            font-size: 1.4rem;
+            margin-bottom: 22px;
+            letter-spacing: 0.02em;
+        }
+        .d-card.pausar  .d-title { color: var(--vermelho); }
+        .d-card.manter  .d-title { color: var(--ouro); }
+        .d-card.escalar .d-title { color: var(--verde); }
+
+        .d-cond { font-size: 0.78rem; color: var(--cinza); margin-bottom: 4px; line-height: 1.5; }
+        .d-card.manter .d-cond { color: var(--cinza-claro); }
+
+        .d-thresh {
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            margin-bottom: 14px;
+        }
+        .d-card.pausar  .d-thresh { color: var(--vermelho); }
+        .d-card.manter  .d-thresh { color: var(--cru); }
+        .d-card.escalar .d-thresh { color: var(--verde); }
+
+        .d-action {
+            font-size: 0.76rem;
+            font-style: italic;
+            padding-top: 16px;
+            margin-top: 16px;
+            border-top: 1px solid;
+            line-height: 1.6;
+        }
+        .d-card.pausar  .d-action { border-color: rgba(107,46,46,0.2);  color: var(--vermelho); }
+        .d-card.manter  .d-action { border-color: rgba(200,169,106,0.3); color: var(--ouro); }
+        .d-card.escalar .d-action { border-color: rgba(45,74,62,0.2);   color: var(--verde); }
+
+        /* ===== CHECKLIST ===== */
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+        .cl-item {
+            background: var(--branco);
+            padding: 26px 22px;
+            box-shadow: var(--sombra);
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .cl-box {
+            width: 24px; height: 24px;
+            border: 1.5px solid var(--areia);
+            flex-shrink: 0;
+            margin-top: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cl-box.ok { background: var(--navy); border-color: var(--navy); }
+        .cl-box.ok::after   { content: '✓'; color: var(--ouro); font-size: 0.8rem; }
+        .cl-box.pend::after { content: '–'; color: var(--cinza-claro); font-size: 0.9rem; }
+
+        .cl-agent {
+            font-size: 0.65rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--cinza);
+            margin-bottom: 5px;
+        }
+        .cl-desc {
+            font-family: var(--serif);
+            font-size: 0.92rem;
+            color: var(--navy);
+            line-height: 1.4;
+            margin-bottom: 5px;
+        }
+        .cl-note { font-size: 0.73rem; color: var(--cinza); font-style: italic; }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background: var(--navy);
+            padding: 44px 0;
+            text-align: center;
+            border-top: 1px solid rgba(200,169,106,0.2);
+        }
+        .footer-name {
+            font-family: var(--serif);
+            font-size: 1.15rem;
+            color: var(--cru);
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .footer-tag  { font-size: 0.82rem; color: var(--cinza-claro); font-style: italic; margin-bottom: 20px; }
+        .footer-meta { font-size: 0.7rem; color: var(--cinza); letter-spacing: 0.06em; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .previews-grid   { grid-template-columns: 1fr; }
+            .strategy-grid   { grid-template-columns: repeat(2, 1fr); }
+            .ab-grid         { grid-template-columns: repeat(2, 1fr); }
+            .decision-row    { grid-template-columns: 1fr; }
+            .checklist-grid  { grid-template-columns: 1fr; }
+            .hero-stats      { flex-wrap: wrap; gap: 24px; }
+            h1               { font-size: 2rem; }
+            .container       { padding: 0 20px; }
+            .section         { padding: 44px 0; }
+            .d-card.pausar   { border-left: none; border-top: 4px solid var(--vermelho); }
+            .d-card.escalar  { border-right: none; border-top: 4px solid var(--verde); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ======================== HEADER ======================== -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <span class="brand-wordmark">Saint Riviera</span>
+                <div class="header-right">
+                    <span class="header-meta">Campanha Feminina · Mai 2026</span>
+                    <span class="status-pill">Em Aprovação</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======================== HERO ======================== -->
+    <section class="hero">
+        <div class="container">
+            <p class="hero-eyebrow">Painel Interno de Aprovação de Campanha — Meta Ads</p>
+            <h1>Look Branco<br>Feminino Riviera</h1>
+            <p class="hero-desc">
+                Campanha de prospecção feminina para o Conjunto Riviera Blanc.
+                Objetivo: atrair público feminino qualificado entre 28–48 anos em
+                São Paulo e Rio de Janeiro e converter em vendas na loja Shopify,
+                protegendo o posicionamento Quiet Luxury em cada ponto do funil.
+            </p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="stat-value">R$100</span>
+                    <span class="stat-label">Orçamento inicial</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-value">R$20/dia</span>
+                    <span class="stat-label">Por 5 dias</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-value">2</span>
+                    <span class="stat-label">Criativos em teste</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-value">Vendas</span>
+                    <span class="stat-label">Objetivo Meta Ads</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-value">≥ 2,2x</span>
+                    <span class="stat-label">ROAS mínimo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== PREVIEWS ======================== -->
+    <section class="section">
+        <div class="container">
+            <div class="sec-head">
+                <p class="sec-eyebrow">Simulação de Criativos</p>
+                <h2>Preview dos Anúncios</h2>
+                <div class="gold-rule"></div>
+                <p>Visualização de como os anúncios aparecem no feed do Instagram e nos Stories/Reels antes da publicação no Gerenciador de Anúncios.</p>
+            </div>
+
+            <div class="previews-grid">
+
+                <!-- FEED -->
+                <div>
+                    <div class="preview-label">Anúncio A · Feed Instagram · Formato 4:5 · Criativo: SR-FEM-05-PERTENCIMENTO</div>
+                    <div class="ig-card">
+                        <div class="ig-bar">
+                            <div class="ig-avatar"><span>SR</span></div>
+                            <div class="ig-info">
+                                <span class="ig-name">saintriviera</span>
+                                <span class="ig-spons">Patrocinado</span>
+                            </div>
+                            <span class="ig-dots">···</span>
+                        </div>
+
+                        <div class="ig-image">
+                            <p class="ig-placeholder">
+                                Imagem principal —<br>
+                                duas mulheres em looks<br>
+                                brancos/off-white na Riviera.<br>
+                                Varanda. Vista para o mar.<br>
+                                Atmosfera europeia.
+                            </p>
+                            <div class="ig-overlay-text">Para quem reconhece.</div>
+                        </div>
+
+                        <div class="ig-actions">
+                            <span class="ig-icon">♡</span>
+                            <span class="ig-icon" style="font-size:1.05rem">◻</span>
+                            <span class="ig-icon" style="font-size:1rem">↗</span>
+                            <span class="ig-icon ig-icon-save" style="font-size:1.1rem">⊹</span>
+                        </div>
+
+                        <div class="ig-caption">
+                            <strong>saintriviera</strong>&nbsp;
+                            Há um grupo que reconhece. Não o logotipo — o caimento. Não o preço — a escolha. O branco de linho numa varanda com vista para o mar não é acidente. É curadoria. A Saint Riviera é feita para quem entende essa diferença.
+                            <br><br>
+                            Conjunto Riviera Blanc — linho belga, corte editado, produzido em pequena escala no Brasil.
+                        </div>
+
+                        <div class="ig-cta-row">
+                            <span class="ig-headline">Para quem entende o caimento</span>
+                            <span class="ig-cta-btn">Saiba mais ›</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STORY -->
+                <div>
+                    <div class="preview-label">Anúncio B · Stories &amp; Reels · Formato 9:16 · Criativo: SR-FEM-02-LIFESTYLE</div>
+                    <div class="story-wrap">
+                        <div class="phone">
+                            <div class="phone-screen">
+                                <div class="progress-row">
+                                    <div class="prog-seg done"></div>
+                                    <div class="prog-seg"></div>
+                                    <div class="prog-seg"></div>
+                                </div>
+                                <div class="story-user">
+                                    <div class="s-avatar"><span>SR</span></div>
+                                    <div>
+                                        <span class="s-name">saintriviera</span>
+                                        <span class="s-spons">&nbsp;· Patrocinado</span>
+                                    </div>
+                                </div>
+                                <div class="story-body">
+                                    <p class="s-ph">[ look branco · Riviera ]</p>
+                                    <p class="s-text">
+                                        Para a tarde<br>
+                                        que pede presença<br>
+                                        sem pedir esforço.
+                                    </p>
+                                </div>
+                                <div class="story-foot">
+                                    <div class="s-cta">Saiba mais</div>
+                                    <p class="s-swipe">Deslize para cima</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== STRATEGY CARDS ======================== -->
+    <section class="section" style="background: var(--branco);">
+        <div class="container">
+            <div class="sec-head">
+                <p class="sec-eyebrow">Configuração da Campanha</p>
+                <h2>Cards Estratégicos</h2>
+                <div class="gold-rule"></div>
+            </div>
+
+            <div class="strategy-grid">
+                <div class="s-card">
+                    <div class="c-label">Público-alvo</div>
+                    <div class="c-value">Mulheres · 28–48 anos</div>
+                    <div class="c-sub">SP: Jardins, Itaim, VNC · RJ: Leblon, Ipanema, Lagoa — Advantage+ Audience</div>
+                </div>
+                <div class="s-card">
+                    <div class="c-label">Orçamento</div>
+                    <div class="c-value">R$20/dia · 5 dias</div>
+                    <div class="c-sub">Total R$100 · ABO · 1 conjunto · 2 anúncios simultâneos</div>
+                </div>
+                <div class="s-card">
+                    <div class="c-label">Objetivo</div>
+                    <div class="c-value">Vendas (Purchase)</div>
+                    <div class="c-sub">Evento: Compra · Pixel Saint Riviera ativo e verificado</div>
+                </div>
+                <div class="s-card">
+                    <div class="c-label">Posicionamentos</div>
+                    <div class="c-value">Feed + Reels</div>
+                    <div class="c-sub">Instagram e Facebook · Marketplace, Audience Network e Messenger desativados</div>
+                </div>
+                <div class="s-card">
+                    <div class="c-label">Criativo principal</div>
+                    <div class="c-value">SR-FEM-05-PERTENCIMENTO</div>
+                    <div class="c-sub">Variação B: SR-FEM-02-LIFESTYLE · Testar ambos simultaneamente</div>
+                </div>
+                <div class="s-card">
+                    <div class="c-label">Ângulo psicológico</div>
+                    <div class="c-value">Pertencimento silencioso</div>
+                    <div class="c-sub">Reconhece o caimento, não o logotipo — identidade de grupo sem ostentação</div>
+                </div>
+                <div class="s-card">
+                    <div class="c-label">Métrica de decisão</div>
+                    <div class="c-value">ROAS ≥ 2,2x</div>
+                    <div class="c-sub">CPA alvo ≤ R$200 · CTR link ≥ 1,0% · ATC ≥ 6% dos visitantes</div>
+                </div>
+                <div class="s-card">
+                    <div class="c-label">Função no funil</div>
+                    <div class="c-value">Topo — tráfego frio</div>
+                    <div class="c-sub">Prospecção qualificada por identidade · Não usar para remarketing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== A/B VARIATIONS ======================== -->
+    <section class="section">
+        <div class="container">
+            <div class="sec-head">
+                <p class="sec-eyebrow">Copy &amp; Criativo</p>
+                <h2>Variações A/B</h2>
+                <div class="gold-rule"></div>
+                <p>Cinco ângulos distintos para teste progressivo. Iniciar com V5 (Pertencimento) e V2 (Lifestyle) nos R$100 iniciais. As demais entram conforme o orçamento escala e o aprendizado avança.</p>
+            </div>
+
+            <div class="ab-grid">
+                <div class="ab-card">
+                    <div class="ab-code">SR-FEM-01 · Identidade</div>
+                    <div class="ab-angle">Autoridade passiva</div>
+                    <div class="ab-excerpt">"Há uma distinção que nenhum logotipo compra. É o caimento que responde antes da apresentação."</div>
+                    <span class="ab-tag sec">Morna · Lookalike</span>
+                </div>
+                <div class="ab-card hot">
+                    <div class="ab-code">SR-FEM-02 · Lifestyle</div>
+                    <div class="ab-angle">O lugar que pede presença</div>
+                    <div class="ab-excerpt">"Há lugares que pedem uma roupa à altura. Uma varanda com vista para o mar. Uma tarde sem agenda."</div>
+                    <span class="ab-tag pri">Prioritário · Teste A</span>
+                </div>
+                <div class="ab-card">
+                    <div class="ab-code">SR-FEM-03 · Tátil</div>
+                    <div class="ab-angle">Qualidade que se sente</div>
+                    <div class="ab-excerpt">"O linho belga tem uma memória própria. Ele amassa — e é isso que confirma que é real."</div>
+                    <span class="ab-tag sec">Morna · Remarketing</span>
+                </div>
+                <div class="ab-card">
+                    <div class="ab-code">SR-FEM-04 · Minimal</div>
+                    <div class="ab-angle">Branco como escolha</div>
+                    <div class="ab-excerpt">"O branco não é uma cor neutra. É a escolha mais difícil — e a mais precisa."</div>
+                    <span class="ab-tag sec">Morna · Lookalike</span>
+                </div>
+                <div class="ab-card hot">
+                    <div class="ab-code">SR-FEM-05 · Pertencimento</div>
+                    <div class="ab-angle">O grupo que reconhece</div>
+                    <div class="ab-excerpt">"Há um grupo que reconhece. Não o logotipo — o caimento. Não o preço — a escolha."</div>
+                    <span class="ab-tag pri">Prioritário · Teste B</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== METRICS ======================== -->
+    <section class="section" style="background: var(--branco);">
+        <div class="container">
+            <div class="sec-head">
+                <p class="sec-eyebrow">Performance</p>
+                <h2>Dashboard de Métricas</h2>
+                <div class="gold-rule"></div>
+                <p>Referência de decisão para toda a duração da campanha. Nenhum ajuste deve ser feito sem consultar esta tabela e sem pelo menos R$40 gastos.</p>
+            </div>
+
+            <table class="metrics-table">
+                <thead>
+                    <tr>
+                        <th style="width:14%">Métrica</th>
+                        <th style="width:14%">Valor saudável</th>
+                        <th style="width:12%">Alerta</th>
+                        <th>Se estiver ruim</th>
+                        <th>Se estiver bom</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="m-name">CPM</span></td>
+                        <td><span class="m-ok"><span class="dot dot-g"></span>R$35–55</span></td>
+                        <td><span class="m-warn">&gt; R$70</span></td>
+                        <td>Expandir segmentação ou localização — público muito restrito</td>
+                        <td>CPM baixo pode indicar público pouco qualificado — verificar CTR link antes de comemorar</td>
+                    </tr>
+                    <tr>
+                        <td><span class="m-name">Hook rate</span></td>
+                        <td><span class="m-ok"><span class="dot dot-g"></span>≥ 25%</span></td>
+                        <td><span class="m-warn">&lt; 18%</span></td>
+                        <td>Os primeiros 2s não estão funcionando — trocar por macro de textura ou detalhe de caimento</td>
+                        <td>Criativo está parando o scroll do público certo. Manter e observar CTR link.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="m-name">CTR link</span></td>
+                        <td><span class="m-ok"><span class="dot dot-g"></span>≥ 1,0%</span></td>
+                        <td><span class="m-warn">&lt; 0,7%</span></td>
+                        <td>Pausar criativo com pior CTR. Testar variação de copy mais direta.</td>
+                        <td>Cliques qualificados chegando à loja. Observar ATC para confirmar qualidade.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="m-name">CPC link</span></td>
+                        <td><span class="m-ok"><span class="dot dot-g"></span>≤ R$3,50</span></td>
+                        <td><span class="m-warn">&gt; R$5,00</span></td>
+                        <td>Diagnosticar CTR vs. CPM antes de agir — cada um tem solução diferente</td>
+                        <td>Custo eficiente para fashion premium. Escalar se ATC confirmar qualidade.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="m-name">Add to Cart</span></td>
+                        <td><span class="m-ok"><span class="dot dot-g"></span>≥ 6%</span></td>
+                        <td><span class="m-warn">&lt; 3%</span></td>
+                        <td>Problema na página de produto — não no anúncio. Auditar imagem, descrição e prova social.</td>
+                        <td>Funil funcionando. Observar checkpoint → purchase para confirmar saúde completa.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="m-name">Checkout iniciado</span></td>
+                        <td><span class="m-ok"><span class="dot dot-g"></span>≥ 50% do ATC</span></td>
+                        <td><span class="m-warn">&lt; 35%</span></td>
+                        <td>Frete percebido como alto — tornar política de entrega visível antes do carrinho</td>
+                        <td>Intenção real de compra confirmada. Verificar taxa de finalização.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="m-name">Purchase</span></td>
+                        <td><span class="m-ok"><span class="dot dot-g"></span>≥ 60% do checkout</span></td>
+                        <td><span class="m-warn">&lt; 45%</span></td>
+                        <td>Checkout longo ou falta de confiança — auditar etapas, selos, parcelamento</td>
+                        <td>Calcular ROAS e confirmar viabilidade de escala progressiva.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="m-name">CPA</span></td>
+                        <td><span class="m-ok"><span class="dot dot-g"></span>≤ R$200</span></td>
+                        <td><span class="m-warn">&gt; R$350</span></td>
+                        <td>Diagnosticar funil antes de pausar — CPA alto pode ser problema de página, não de criativo</td>
+                        <td>CPA R$200 para LTV R$2.000+ em 24 meses é excelente investimento de aquisição</td>
+                    </tr>
+                    <tr>
+                        <td><span class="m-name">ROAS</span></td>
+                        <td><span class="m-ok"><span class="dot dot-g"></span>≥ 2,2x</span></td>
+                        <td><span class="m-warn">&lt; 1,5x</span></td>
+                        <td>Verificar compras assistidas antes de pausar. ROAS baixo na 1ª semana pode ser aprendizado normal.</td>
+                        <td>Escalar +20% a cada 3 dias. Para escala rápida: duplicar ad set em CBO separado.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ======================== DECISION ======================== -->
+    <section class="section">
+        <div class="container">
+            <div class="sec-head">
+                <p class="sec-eyebrow">Decisão Estratégica</p>
+                <h2>Pausar · Manter · Escalar</h2>
+                <div class="gold-rule"></div>
+                <p>Critérios objetivos para cada decisão. Avaliar sempre após R$40 gastos — nunca antes. Antes disso, os dados de fashion premium são insuficientes para qualquer conclusão.</p>
+            </div>
+
+            <div class="decision-row">
+                <div class="d-card pausar">
+                    <h3 class="d-title">Pausar</h3>
+                    <p class="d-cond">CTR link abaixo de</p>
+                    <p class="d-thresh">0,5% após R$40</p>
+                    <p class="d-cond">ou CPC link acima de</p>
+                    <p class="d-thresh">R$8,00 por 2 dias</p>
+                    <p class="d-cond">ou nenhum ATC após</p>
+                    <p class="d-thresh">R$60 gastos</p>
+                    <p class="d-action">Pausar criativo com pior CTR. Diagnosticar funil antes de qualquer novo investimento. Testar novo ângulo de copy antes de reativar.</p>
+                </div>
+
+                <div class="d-card manter">
+                    <h3 class="d-title">Manter</h3>
+                    <p class="d-cond">ROAS entre</p>
+                    <p class="d-thresh">1,5x e 2,5x</p>
+                    <p class="d-cond">com pelo menos 1 ATC após</p>
+                    <p class="d-thresh">R$40–60 gastos</p>
+                    <p class="d-cond">ou algoritmo ainda em</p>
+                    <p class="d-thresh">fase de aprendizado</p>
+                    <p class="d-action">Não mexer. Aguardar mais 3–5 dias de dados antes de qualquer decisão. Interrupção neste período reinicia o aprendizado.</p>
+                </div>
+
+                <div class="d-card escalar">
+                    <h3 class="d-title">Escalar</h3>
+                    <p class="d-cond">ROAS acima de</p>
+                    <p class="d-thresh">2,5x sustentado</p>
+                    <p class="d-cond">com CTR link acima de</p>
+                    <p class="d-thresh">1,0% + ATC ≥ 6%</p>
+                    <p class="d-cond">e Purchase com</p>
+                    <p class="d-thresh">CPA ≤ R$200</p>
+                    <p class="d-action">+20% no orçamento a cada 3 dias. Para escala rápida: duplicar o ad set em campanha CBO separada — preserva o aprendizado atual.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== CHECKLIST ======================== -->
+    <section class="section" style="background: var(--branco);">
+        <div class="container">
+            <div class="sec-head">
+                <p class="sec-eyebrow">Aprovação Final</p>
+                <h2>Checklist de Publicação</h2>
+                <div class="gold-rule"></div>
+                <p>Todos os agentes precisam aprovar antes de qualquer real ser investido. A aprovação do fundador é o único gatilho de publicação.</p>
+            </div>
+
+            <div class="checklist-grid">
+                <div class="cl-item">
+                    <div class="cl-box ok"></div>
+                    <div>
+                        <div class="cl-agent">Brand Director</div>
+                        <div class="cl-desc">Posicionamento intacto — sem urgência, desconto ou linguagem de varejo em nenhum ponto do funil</div>
+                        <div class="cl-note">Aprovado · Todos os filtros Saint Riviera verificados</div>
+                    </div>
+                </div>
+                <div class="cl-item">
+                    <div class="cl-box ok"></div>
+                    <div>
+                        <div class="cl-agent">Visual Director</div>
+                        <div class="cl-desc">Imagem aprovada — luz natural, locação com atmosfera, paleta dentro dos parâmetros Quiet Luxury</div>
+                        <div class="cl-note">Aprovado · Ajuste de warmth +8 e saturação -14 recomendado</div>
+                    </div>
+                </div>
+                <div class="cl-item">
+                    <div class="cl-box ok"></div>
+                    <div>
+                        <div class="cl-agent">Copywriter</div>
+                        <div class="cl-desc">5 variações de copy aprovadas — léxico limpo, nenhuma palavra proibida, 2 versões prioritárias definidas</div>
+                        <div class="cl-note">Aprovado · SR-FEM-05 e SR-FEM-02 como testes A e B</div>
+                    </div>
+                </div>
+                <div class="cl-item">
+                    <div class="cl-box ok"></div>
+                    <div>
+                        <div class="cl-agent">Paid Traffic</div>
+                        <div class="cl-desc">Estrutura de campanha aprovada — ABO, Advantage+, posicionamentos, regras de decisão e CPA alvo definidos</div>
+                        <div class="cl-note">Aprovado · Pixel, CAPI e eventos a verificar antes da publicação</div>
+                    </div>
+                </div>
+                <div class="cl-item">
+                    <div class="cl-box ok"></div>
+                    <div>
+                        <div class="cl-agent">Conversion Analyst</div>
+                        <div class="cl-desc">Funil pós-clique auditado — página de produto, prova social, recuperação de carrinho e direct preparados</div>
+                        <div class="cl-note">Aprovado · Mínimo 8 avaliações na página antes de ativar escala</div>
+                    </div>
+                </div>
+                <div class="cl-item">
+                    <div class="cl-box pend"></div>
+                    <div>
+                        <div class="cl-agent">Fundador</div>
+                        <div class="cl-desc">Revisão final de todos os documentos e autorização para publicar no Gerenciador de Anúncios da Meta</div>
+                        <div class="cl-note">Aguardando aprovação — gatilho final antes da publicação</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== FOOTER ======================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-name">Saint Riviera</div>
+            <div class="footer-tag">Para quem entende que elegância não precisa de apresentação.</div>
+            <div class="footer-meta">Documento interno de aprovação de campanha · Confidencial · Maio 2026</div>
+        </div>
+    </footer>
+
+</body>
+</html>
