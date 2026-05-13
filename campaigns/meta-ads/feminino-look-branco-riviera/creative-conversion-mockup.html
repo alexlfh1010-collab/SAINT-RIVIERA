@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saint Riviera — Mockup de Criativo: Villa Toscana / Look Off-White</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1C2B3A;
+      --navy-light: #243447;
+      --navy-lighter: #2d4059;
+      --cru: #F5F0E8;
+      --ouro: #C8A96A;
+      --areia: #D4B896;
+      --verde-toscana: #4a6741;
+      --verde-medio: #3d5a36;
+      --verde-escuro: #2a3e27;
+      --branco: #FAFAF8;
+      --cinza-medio: #8a9aaa;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--navy);
+      color: var(--cru);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ─── HEADER ──────────────────────────────────────────────── */
+    .site-header {
+      border-bottom: 1px solid rgba(200,169,106,0.25);
+      padding: 32px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-header .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      letter-spacing: 0.18em;
+      color: var(--cru);
+      text-transform: uppercase;
+    }
+    .site-header .doc-meta {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      color: var(--ouro);
+      text-transform: uppercase;
+      text-align: right;
+    }
+
+    /* ─── INTRO ───────────────────────────────────────────────── */
+    .intro {
+      max-width: 960px;
+      margin: 56px auto 0;
+      padding: 0 48px;
+    }
+    .intro-label {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ouro);
+      margin-bottom: 16px;
+    }
+    .intro h1 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 36px;
+      color: var(--cru);
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+    .intro p {
+      font-size: 17px;
+      color: var(--areia);
+      font-weight: 300;
+      max-width: 640px;
+      line-height: 1.75;
+    }
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: var(--ouro);
+      margin: 40px 0;
+    }
+
+    /* ─── SECTION TITLES ──────────────────────────────────────── */
+    .section-wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 64px 48px;
+    }
+    .section-title {
+      font-size: 10px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--ouro);
+      margin-bottom: 8px;
+    }
+    .section-h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: 26px;
+      color: var(--cru);
+      margin-bottom: 40px;
+    }
+
+    /* ─── SIMULATION BACKGROUND ───────────────────────────────── */
+    /* Simulates European garden scene when no image is loaded */
+    .ad-bg {
+      background:
+        radial-gradient(ellipse at 70% 30%, rgba(218,196,140,0.18) 0%, transparent 55%),
+        linear-gradient(175deg,
+          #2a3e27 0%,
+          #3d5a36 18%,
+          #4a6741 32%,
+          #405f39 46%,
+          #3a5533 60%,
+          #2e4728 75%,
+          #263d22 100%
+        );
+    }
+    /* Warm golden hour glow */
+    .ad-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 65% 15%, rgba(210,175,95,0.22) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    /* Cypress tree silhouettes */
+    .ad-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(
+          to right,
+          transparent 0px,
+          transparent 48px,
+          rgba(30,48,25,0.45) 48px,
+          rgba(30,48,25,0.45) 60px,
+          transparent 60px,
+          transparent 108px
+        );
+      background-size: 200% 120%;
+      background-position: 60% top;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.15) 55%, transparent 80%);
+      pointer-events: none;
+    }
+    /* Model silhouette hint */
+    .model-hint {
+      position: absolute;
+      bottom: 0;
+      right: 22%;
+      width: 38%;
+      height: 88%;
+      background: radial-gradient(ellipse at 50% 20%, rgba(245,240,232,0.13) 0%, rgba(245,240,232,0.07) 40%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* ─── AD FRAME BASE ───────────────────────────────────────── */
+    .ad-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .ad-frame .ad-bg {
+      position: absolute;
+      inset: 0;
+    }
+    .ad-frame .ad-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ─── FEED 4:5 SIZE ───────────────────────────────────────── */
+    .feed-frame {
+      width: 270px;
+      height: 338px; /* 4:5 ratio */
+    }
+
+    /* ─── STORY 9:16 SIZE ─────────────────────────────────────── */
+    .story-frame {
+      width: 216px;
+      height: 384px; /* 9:16 ratio */
+    }
+
+    /* ─── GRADIENT OVERLAYS ───────────────────────────────────── */
+    .grad-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 22%;
+      background: linear-gradient(to bottom, rgba(10,18,12,0.38) 0%, transparent 100%);
+      z-index: 3;
+      pointer-events: none;
+    }
+    .grad-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 22%;
+      background: linear-gradient(to top, rgba(10,18,12,0.42) 0%, transparent 100%);
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    /* ─── AD TEXT ELEMENTS ────────────────────────────────────── */
+    .ad-headline {
+      position: absolute;
+      z-index: 4;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--cru);
+      text-shadow: 0px 1px 3px rgba(0,0,0,0.35);
+      line-height: 1.25;
+    }
+    .ad-tagline {
+      position: absolute;
+      z-index: 4;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      color: var(--cru);
+      text-shadow: 0px 1px 3px rgba(0,0,0,0.35);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .ad-logo {
+      position: absolute;
+      z-index: 4;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--cru);
+      opacity: 0.88;
+      font-size: 10px;
+    }
+    .ad-cta {
+      position: absolute;
+      z-index: 4;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--ouro);
+      font-size: 9px;
+    }
+    .ad-product-tag {
+      position: absolute;
+      z-index: 4;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--cru);
+      text-shadow: 0px 1px 3px rgba(0,0,0,0.40);
+      line-height: 1.45;
+    }
+    .tag-ouro {
+      color: var(--ouro);
+    }
+
+    /* ─── GRID LAYOUTS ────────────────────────────────────────── */
+    .previews-grid {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .preview-col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .preview-label {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ouro);
+      text-align: center;
+    }
+    .preview-note {
+      font-size: 12px;
+      color: var(--cinza-medio);
+      text-align: center;
+      max-width: 270px;
+      line-height: 1.55;
+      font-style: italic;
+    }
+    .variation-row {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+    .variation-info {
+      flex: 1;
+      min-width: 280px;
+      max-width: 480px;
+      padding-top: 8px;
+    }
+    .var-number {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ouro);
+      margin-bottom: 8px;
+    }
+    .var-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--cru);
+      margin-bottom: 12px;
+    }
+    .var-body {
+      font-size: 14px;
+      color: var(--areia);
+      font-weight: 300;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .var-tag {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ouro);
+      border: 1px solid rgba(200,169,106,0.35);
+      padding: 4px 10px;
+      border-radius: 2px;
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+
+    /* ─── INFO PANELS ─────────────────────────────────────────── */
+    .panel {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(200,169,106,0.18);
+      border-radius: 4px;
+      padding: 28px 32px;
+      margin-bottom: 28px;
+    }
+    .panel-title {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ouro);
+      margin-bottom: 14px;
+    }
+    .panel h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--cru);
+      margin-bottom: 16px;
+    }
+    .panel p {
+      font-size: 14px;
+      color: var(--areia);
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .panel p:last-child { margin-bottom: 0; }
+
+    .score-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .score-item {
+      background: rgba(200,169,106,0.06);
+      border-left: 2px solid var(--ouro);
+      padding: 12px 16px;
+    }
+    .score-label {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ouro);
+      margin-bottom: 6px;
+    }
+    .score-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: var(--cru);
+      display: inline;
+    }
+    .score-max {
+      font-size: 14px;
+      color: var(--cinza-medio);
+    }
+    .score-desc {
+      font-size: 12px;
+      color: var(--areia);
+      font-weight: 300;
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    .copy-block {
+      background: rgba(28,43,58,0.6);
+      border: 1px solid rgba(200,169,106,0.15);
+      border-radius: 3px;
+      padding: 20px 24px;
+      margin-bottom: 20px;
+    }
+    .copy-block-label {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ouro);
+      margin-bottom: 12px;
+    }
+    .copy-block p {
+      font-size: 14px;
+      color: var(--cru);
+      font-weight: 300;
+      line-height: 1.9;
+      white-space: pre-line;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .list-premium {
+      list-style: none;
+      padding: 0;
+    }
+    .list-premium li {
+      font-size: 14px;
+      color: var(--areia);
+      font-weight: 300;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      line-height: 1.6;
+      padding-left: 16px;
+      position: relative;
+    }
+    .list-premium li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--ouro);
+    }
+
+    .table-premium {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    .table-premium th {
+      text-align: left;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ouro);
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(200,169,106,0.25);
+      font-weight: 400;
+    }
+    .table-premium td {
+      padding: 10px 14px;
+      color: var(--areia);
+      font-weight: 300;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      line-height: 1.5;
+      vertical-align: top;
+    }
+    .table-premium tr:last-child td { border-bottom: none; }
+    .td-hl { color: var(--cru); }
+    .td-ouro { color: var(--ouro); }
+
+    /* ─── FOOTER ──────────────────────────────────────────────── */
+    .site-footer {
+      border-top: 1px solid rgba(200,169,106,0.18);
+      padding: 32px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 48px;
+    }
+    .site-footer span {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cinza-medio);
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .site-header, .section-wrap, .intro, .site-footer {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      .two-col { grid-template-columns: 1fr; }
+      .previews-grid { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══════════════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="brand">Saint Riviera</div>
+  <div class="doc-meta">
+    Mockup de Criativo — Meta Ads<br>
+    Villa Toscana / Look Off-White<br>
+    Análise completa · Maio 2026
+  </div>
+</header>
+
+<!-- ═══ INTRO ════════════════════════════════════════════════════ -->
+<div class="intro">
+  <div class="intro-label">Conselho Executivo de Criativo — 6 Agentes</div>
+  <h1>Como transformar essa imagem<br>em um criativo de alta conversão.</h1>
+  <p>Análise profunda de uma fotografia de uma mulher em jardim de villa europeia, look off-white completo — com direção criativa, edição, copy premium, estratégia de tráfego e decisão final de veiculação para Meta Ads.</p>
+  <div class="divider"></div>
+</div>
+
+<!-- ═══ SECTION 1 — FEED 4:5 MOCKUPS ═══════════════════════════ -->
+<div class="section-wrap" style="padding-top: 0;">
+  <div class="section-title">Seção 01 / Previews Visuais</div>
+  <div class="section-h2">Feed 4:5 — Três Variações</div>
+
+  <div class="previews-grid">
+
+    <!-- VARIAÇÃO 1 — Sem texto (editorial puro) -->
+    <div class="preview-col">
+      <div class="preview-label">Var. 1 — Editorial Puro</div>
+      <div class="ad-frame feed-frame">
+        <div class="ad-bg"></div>
+        <div class="model-hint"></div>
+        <div class="grad-bottom"></div>
+        <div class="ad-content">
+          <div class="ad-logo" style="bottom: 18px; left: 50%; transform: translateX(-50%);">Saint Riviera</div>
+        </div>
+      </div>
+      <div class="preview-note">Sem texto na imagem.<br>Copy inteiro no campo primary text.</div>
+    </div>
+
+    <!-- VARIAÇÃO 2 — Frase de identidade -->
+    <div class="preview-col">
+      <div class="preview-label">Var. 2 — Identidade</div>
+      <div class="ad-frame feed-frame">
+        <div class="ad-bg"></div>
+        <div class="model-hint"></div>
+        <div class="grad-top"></div>
+        <div class="grad-bottom"></div>
+        <div class="ad-content">
+          <div class="ad-headline" style="top: 9%; left: 11%; font-size: 15px; max-width: 52%;">
+            Elegância não precisa de público.
+          </div>
+          <div class="ad-tagline" style="top: 32%; left: 11%; font-size: 8.5px;">
+            Riviera Blanc
+          </div>
+          <div class="ad-logo" style="bottom: 16px; left: 50%; transform: translateX(-50%);">Saint Riviera</div>
+        </div>
+      </div>
+      <div class="preview-note">Headline superior esquerdo.<br>Tagline em Cormorant Light.</div>
+    </div>
+
+    <!-- VARIAÇÃO 3 — Foco em produto -->
+    <div class="preview-col">
+      <div class="preview-label">Var. 3 — Produto</div>
+      <div class="ad-frame feed-frame">
+        <div class="ad-bg"></div>
+        <div class="model-hint"></div>
+        <div class="grad-top"></div>
+        <div class="grad-bottom"></div>
+        <div class="ad-content">
+          <div class="ad-headline tag-ouro" style="top: 9%; left: 11%; font-size: 16px; max-width: 58%;">
+            O caimento que não cede.
+          </div>
+          <div class="ad-product-tag" style="top: 30%; right: 8%; font-size: 8px; text-align: right;">
+            Blusa Canelada Off-Shoulder<br>Calça Pantalona Wide-Leg<br><span style="opacity:0.6;">Conjunto Riviera Blanc</span>
+          </div>
+          <div class="ad-tagline" style="bottom: 32px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 7.5px;">
+            Ver o look completo
+          </div>
+          <div class="ad-logo" style="bottom: 16px; left: 50%; transform: translateX(-50%);">Saint Riviera</div>
+        </div>
+      </div>
+      <div class="preview-note">Headline em ouro (#C8A96A).<br>Tag de produto canto direito.</div>
+    </div>
+
+    <!-- VARIAÇÃO 4 — Lifestyle / Toscana -->
+    <div class="preview-col">
+      <div class="preview-label">Var. 4 — Lifestyle</div>
+      <div class="ad-frame feed-frame">
+        <div class="ad-bg"></div>
+        <div class="model-hint"></div>
+        <div class="grad-top"></div>
+        <div class="grad-bottom"></div>
+        <div class="ad-content">
+          <div class="ad-headline" style="top: 9%; left: 11%; font-size: 12px; max-width: 55%; opacity: 0.9;">
+            Toscana. Off-white.<br>Tarde de sábado.
+          </div>
+          <div class="ad-logo" style="bottom: 16px; left: 50%; transform: translateX(-50%);">Saint Riviera</div>
+        </div>
+      </div>
+      <div class="preview-note">Uma linha evocativa.<br>Imagem faz o resto.</div>
+    </div>
+
+    <!-- VARIAÇÃO 5 — Elegância feminina -->
+    <div class="preview-col">
+      <div class="preview-label">Var. 5 — Feminina</div>
+      <div class="ad-frame feed-frame">
+        <div class="ad-bg"></div>
+        <div class="model-hint"></div>
+        <div class="grad-top"></div>
+        <div class="grad-bottom"></div>
+        <div class="ad-content">
+          <div class="ad-headline" style="bottom: 38px; left: 50%; transform: translateX(-50%); text-align: center; width: 80%; font-size: 11px;">
+            A mulher que não precisa<br>de aprovação já sabe<br>como entrar numa sala.
+          </div>
+          <div class="ad-logo" style="bottom: 16px; right: 10px; font-size: 7.5px; letter-spacing: 0.18em;">SR</div>
+        </div>
+      </div>
+      <div class="preview-note">Headline no rodapé central.<br>Copy de identidade feminina.</div>
+    </div>
+
+  </div><!-- end previews-grid -->
+</div>
+
+<!-- ═══ SECTION 2 — STORY 9:16 ══════════════════════════════════ -->
+<div class="section-wrap" style="padding-top: 0; border-top: 1px solid rgba(200,169,106,0.12);">
+  <div class="section-title">Seção 02 / Story e Reels</div>
+  <div class="section-h2">Story 9:16 — Posicionamento de Texto</div>
+
+  <div class="previews-grid">
+
+    <!-- Story Var. A — Topo + rodapé -->
+    <div class="preview-col">
+      <div class="preview-label">Story A — Awareness</div>
+      <div class="ad-frame story-frame">
+        <div class="ad-bg"></div>
+        <div class="model-hint"></div>
+        <div class="grad-top" style="height:18%;"></div>
+        <div class="grad-bottom" style="height:20%;"></div>
+        <div class="ad-content">
+          <div class="ad-headline" style="top: 7%; left: 50%; transform: translateX(-50%); text-align: center; font-size: 14px; width: 78%;">
+            Há presença que antecede qualquer palavra.
+          </div>
+          <div class="ad-tagline" style="bottom: 44px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 8px; opacity:0.85;">
+            Ver coleção
+          </div>
+          <div class="ad-logo" style="bottom: 18px; left: 50%; transform: translateX(-50%);">Saint Riviera</div>
+        </div>
+      </div>
+      <div class="preview-note">Headline no topo.<br>CTA + logo no rodapé.</div>
+    </div>
+
+    <!-- Story Var. B — Com tagline lateral -->
+    <div class="preview-col">
+      <div class="preview-label">Story B — Produto</div>
+      <div class="ad-frame story-frame">
+        <div class="ad-bg"></div>
+        <div class="model-hint"></div>
+        <div class="grad-top" style="height:16%;"></div>
+        <div class="grad-bottom" style="height:22%;"></div>
+        <div class="ad-content">
+          <div class="ad-headline tag-ouro" style="top: 6%; left: 50%; transform: translateX(-50%); text-align: center; font-size: 13px; width: 76%;">
+            O caimento que comunica antes da palavra.
+          </div>
+          <div class="ad-product-tag" style="top: 36%; left: 8%; font-size: 8px; max-width: 36%;">
+            Blusa Off-Shoulder<br>Pantalona Wide-Leg<br><span style="opacity:0.6; font-size: 7px;">Riviera Blanc</span>
+          </div>
+          <div class="ad-tagline" style="bottom: 42px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 8px; color: var(--ouro);">
+            Conhecer a peça
+          </div>
+          <div class="ad-logo" style="bottom: 18px; left: 50%; transform: translateX(-50%);">Saint Riviera</div>
+        </div>
+      </div>
+      <div class="preview-note">Tag de produto à esquerda<br>(espaço de jardim, sem cobrir look).</div>
+    </div>
+
+    <!-- Story Var. C — Retargeting -->
+    <div class="preview-col">
+      <div class="preview-label">Story C — Retargeting</div>
+      <div class="ad-frame story-frame">
+        <div class="ad-bg"></div>
+        <div class="model-hint"></div>
+        <div class="grad-top" style="height:16%;"></div>
+        <div class="grad-bottom" style="height:22%;"></div>
+        <div class="ad-content">
+          <div class="ad-headline" style="top: 6%; left: 50%; transform: translateX(-50%); text-align: center; font-size: 13px; width: 72%;">
+            Ainda aqui.<br>Quando você quiser.
+          </div>
+          <div class="ad-tagline" style="bottom: 42px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 8px; color: var(--ouro);">
+            Ver novamente
+          </div>
+          <div class="ad-logo" style="bottom: 18px; left: 50%; transform: translateX(-50%);">Saint Riviera</div>
+        </div>
+      </div>
+      <div class="preview-note">Sem urgência.<br>Para audiência quente.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ SECTION 3 — DIAGNÓSTICO VISUAL ══════════════════════════ -->
+<div class="section-wrap" style="border-top: 1px solid rgba(200,169,106,0.12);">
+  <div class="section-title">Seção 03 / Análise — Visual Director</div>
+  <div class="section-h2">Diagnóstico Visual da Imagem</div>
+
+  <div class="two-col" style="gap: 24px; margin-bottom: 32px;">
+    <div class="panel">
+      <div class="panel-title">Composição e Luz</div>
+      <p>O plano americano em formato portrait já existe em equilíbrio nativo com o feed vertical. O olho entra pelos <strong style="color:var(--cru)">ombros à mostra</strong> — a região off-shoulder é o ponto de entrada mais forte: reúne skin tone, textura do canelado e movimento de ombro.</p>
+      <p>A luz golden hour de tarde (16h–18h30) funciona com vantagem dupla: é aquecida o suficiente para parar o scroll e não tem a frieza clínica de estúdio que sinaliza "anúncio barato".</p>
+      <p>O <strong style="color:var(--cru)">rabo-de-cavalo impecável</strong> cria uma linha vertical limpa que organiza o frame — elemento compositivo não intencional que funciona como coluna do anúncio.</p>
+    </div>
+    <div class="panel">
+      <div class="panel-title">Paleta e Produto</div>
+      <p>Off-white/ivory sobre verde europeu é uma das combinações de maior apelo aspiracional em fotografia de moda premium. A paleta visual do <strong style="color:var(--cru)">escapismo qualificado</strong>: branco como pureza/leveza, verde como privilégio/espaço.</p>
+      <p>O verde saturado compite com o off-white saturado — nenhum dos dois vence sozinho. Solução: desaturar o verde seletivamente (−15 a −20) enquanto o ivory da roupa permanece limpo.</p>
+      <p>O <strong style="color:var(--ouro)">ouro dos acessórios</strong> (cinto, corrente, brincos) funciona como terceiro elemento da paleta — está cumprindo função de branding dentro do frame. Não editar.</p>
+    </div>
+  </div>
+
+  <!-- Tabela de ajustes -->
+  <div class="panel">
+    <div class="panel-title">Ajustes de Pós-Produção — Feed 4:5</div>
+    <table class="table-premium">
+      <thead>
+        <tr>
+          <th>Parâmetro</th>
+          <th>Valor</th>
+          <th>Justificativa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="td-hl">Temperatura</td><td class="td-ouro">+12</td><td>Reforça golden hour, aproxima do padrão warmth da marca</td></tr>
+        <tr><td class="td-hl">Exposição</td><td class="td-ouro">+0.3</td><td>Abre levemente as sombras preservando volume</td></tr>
+        <tr><td class="td-hl">Contraste</td><td class="td-ouro">−8</td><td>Reduz dureza, mantém look fotográfico editorial</td></tr>
+        <tr><td class="td-hl">Sombras</td><td class="td-ouro">+18</td><td>Sombras abertas — padrão Saint Riviera, nunca preto absoluto</td></tr>
+        <tr><td class="td-hl">Saturação global</td><td class="td-ouro">−14</td><td>Dentro da faixa aprovada (−12 a −18)</td></tr>
+        <tr><td class="td-hl">Saturação verde (seletivo)</td><td class="td-ouro">−20</td><td>Verde do jardim recua sem perder naturalidade</td></tr>
+        <tr><td class="td-hl">Luminosidade roupa (seletivo)</td><td class="td-ouro">+10</td><td>A roupa deve ser o elemento mais claro do frame</td></tr>
+        <tr><td class="td-hl">Grão</td><td class="td-ouro">8% / tamanho 20</td><td>Grão analógico sutil — padrão editorial da marca</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Tipografia -->
+  <div class="panel">
+    <div class="panel-title">Guia Tipográfico — Para Esta Imagem</div>
+    <div class="two-col">
+      <div>
+        <p style="color:var(--cru); margin-bottom:8px;"><strong>Headline:</strong> Playfair Display Italic</p>
+        <p>Regular (não bold). A inclinação do italic dialoga com a naturalidade da modelo — não é rígido como Roman, não é dramático como script. Sobre imagem de jardim com luz quente, o italic parece ter nascido com a foto.</p>
+      </div>
+      <div>
+        <p style="color:var(--cru); margin-bottom:8px;"><strong>Tagline / CTA:</strong> Cormorant Garamond Light</p>
+        <p>Tracking +80 a +120. O espaçamento amplo transforma uma linha de 4–5 palavras em uma régua visual limpa. É o "sussurro" após a headline — orienta sem gritar.</p>
+      </div>
+    </div>
+    <div style="margin-top: 20px;">
+      <p><strong style="color:var(--cru)">Cor do texto:</strong> #F5F0E8 (cru) com text-shadow sutil <code style="color:var(--ouro); font-size:12px;">0px 1px 3px rgba(0,0,0,0.35)</code> — imperceptível esteticamente, decisivo para legibilidade mobile.</p>
+      <p style="margin-top: 8px;"><strong style="color:var(--ouro)">Alternativa de headline de impacto:</strong> texto em #C8A96A (ouro). Sobre verde dessaturado com luz dourada, o ouro cria contraste e harmonia ao mesmo tempo. Usar com parcimônia — apenas a headline principal.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SECTION 4 — COPY ═════════════════════════════════════════ -->
+<div class="section-wrap" style="border-top: 1px solid rgba(200,169,106,0.12);">
+  <div class="section-title">Seção 04 / Copywriting — Copywriter</div>
+  <div class="section-h2">15 Frases Premium + Primary Texts</div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 40px;">
+    <!-- frases -->
+    <div style="padding: 14px 16px; border-left: 2px solid rgba(200,169,106,0.35);">
+      <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ouro); margin-bottom: 6px;">Frase 1 — Manifesto</div>
+      <p style="font-family: 'Playfair Display', serif; font-style:italic; font-size: 15px; color: var(--cru); line-height:1.4;">"Há presença que antecede qualquer palavra."</p>
+    </div>
+    <div style="padding: 14px 16px; border-left: 2px solid rgba(200,169,106,0.35);">
+      <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ouro); margin-bottom: 6px;">Frase 2 — Status</div>
+      <p style="font-family: 'Playfair Display', serif; font-style:italic; font-size: 15px; color: var(--cru); line-height:1.4;">"O branco de quem não precisa se provar."</p>
+    </div>
+    <div style="padding: 14px 16px; border-left: 2px solid rgba(200,169,106,0.35);">
+      <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ouro); margin-bottom: 6px;">Frase 3 — Identidade</div>
+      <p style="font-family: 'Playfair Display', serif; font-style:italic; font-size: 15px; color: var(--cru); line-height:1.4;">"Elegância não precisa de público."</p>
+    </div>
+    <div style="padding: 14px 16px; border-left: 2px solid rgba(200,169,106,0.35);">
+      <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ouro); margin-bottom: 6px;">Frase 4 — Pertencimento</div>
+      <p style="font-family: 'Playfair Display', serif; font-style:italic; font-size: 15px; color: var(--cru); line-height:1.4;">"Certos jardins reconhecem certas pessoas."</p>
+    </div>
+    <div style="padding: 14px 16px; border-left: 2px solid rgba(200,169,106,0.35);">
+      <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ouro); margin-bottom: 6px;">Frase 7 — Autoconfiança</div>
+      <p style="font-family: 'Playfair Display', serif; font-style:italic; font-size: 15px; color: var(--cru); line-height:1.4;">"Refinamento que dispensa confirmação."</p>
+    </div>
+    <div style="padding: 14px 16px; border-left: 2px solid rgba(200,169,106,0.35);">
+      <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ouro); margin-bottom: 6px;">Frase 9 — Produto</div>
+      <p style="font-family: 'Playfair Display', serif; font-style:italic; font-size: 15px; color: var(--cru); line-height:1.4;">"Branco integral. Para quem não vacila."</p>
+    </div>
+    <div style="padding: 14px 16px; border-left: 2px solid rgba(200,169,106,0.35);">
+      <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ouro); margin-bottom: 6px;">Frase 11 — Atração</div>
+      <p style="font-family: 'Playfair Display', serif; font-style:italic; font-size: 15px; color: var(--cru); line-height:1.4;">"Certo look não pede atenção — recebe."</p>
+    </div>
+    <div style="padding: 14px 16px; border-left: 2px solid rgba(200,169,106,0.35);">
+      <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ouro); margin-bottom: 6px;">Frase 15 — Essencialismo</div>
+      <p style="font-family: 'Playfair Display', serif; font-style:italic; font-size: 15px; color: var(--cru); line-height:1.4;">"Vista o que resta quando o supérfluo vai embora."</p>
+    </div>
+    <div style="padding: 14px 16px; border-left: 2px solid rgba(200,169,106,0.35);">
+      <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ouro); margin-bottom: 6px;">Frase 8 — Chegada</div>
+      <p style="font-family: 'Playfair Display', serif; font-style:italic; font-size: 15px; color: var(--cru); line-height:1.4;">"Pantalona branca. Escolha de quem chegou."</p>
+    </div>
+  </div>
+
+  <!-- Primary texts -->
+  <div class="section-title" style="margin-bottom: 20px;">Primary Texts Completos — 5 Ângulos</div>
+
+  <div class="copy-block">
+    <div class="copy-block-label">Primary Text 1 — Identidade Feminina · Audiência Fria-Morna</div>
+    <p>Há um ponto da vida em que a roupa para de ser escolha e vira declaração.
+
+Não declaração para os outros. Para si mesma.
+
+O branco integral não é tendência — é a edição de tudo que não serve mais.
+Tricô canelado, pantalona de caimento limpo, couro branco com fivela dourada.
+O conjunto de quem não troca mais peça por peça. Edita.
+
+Saint Riviera. Para quem já chegou onde estava indo.</p>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-block-label">Primary Text 4 — Editorial Silencioso · Audiência Fria / Awareness</div>
+    <p>Ela não olha para a câmera.
+
+Não precisa.
+
+Há uma qualidade de presença que antecede o olhar, a palavra, a apresentação.
+O look branco integral não anuncia — existe. O jardim da villa não é fundo —
+é contexto natural.
+
+Certas mulheres não entram numa sala. Acontecem nela.
+
+Saint Riviera. Elegância que não precisa de apresentação.</p>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-block-label">Primary Text 5 — Retargeting · Audiência Quente</div>
+    <p>Você já viu o conjunto.
+
+O tricô off-shoulder. A pantalona de caimento limpo. O branco que não cede.
+
+Há peças que a gente revisita antes de decidir — não por dúvida,
+mas porque vale a pena olhar de novo.
+
+O conjunto branco ainda está aqui. Produzido em edição limitada.
+Sem pressa da nossa parte.</p>
+  </div>
+
+  <!-- CTAs -->
+  <div class="panel" style="margin-top: 32px;">
+    <div class="panel-title">5 CTAs Aprovados — Sem Verbos de Transação</div>
+    <table class="table-premium">
+      <thead><tr><th>CTA</th><th>Quando usar</th><th>Lógica</th></tr></thead>
+      <tbody>
+        <tr><td class="td-hl td-ouro">Ver coleção</td><td>Topo de funil, audiência fria</td><td>Verbo de exploração, não transação</td></tr>
+        <tr><td class="td-hl td-ouro">Descobrir</td><td>Criativos editoriais / lifestyle</td><td>Uma palavra. Jornada de descoberta, não compra</td></tr>
+        <tr><td class="td-hl td-ouro">Ver o look completo</td><td>Criativo com parte do produto</td><td>"Completo" sugere curadoria e totalidade</td></tr>
+        <tr><td class="td-hl td-ouro">Conhecer a peça</td><td>Audiência morna, produto específico</td><td>Produto merece ser estudado, não apenas adquirido</td></tr>
+        <tr><td class="td-hl td-ouro">Ver novamente</td><td>Retargeting exclusivamente</td><td>Honestidade elegante — reconhece o processo do cliente</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══ SECTION 5 — TRÁFEGO PAGO ════════════════════════════════ -->
+<div class="section-wrap" style="border-top: 1px solid rgba(200,169,106,0.12);">
+  <div class="section-title">Seção 05 / Estratégia — Paid Traffic</div>
+  <div class="section-h2">Estrutura de Campanha e Critérios de Decisão</div>
+
+  <div class="two-col" style="gap:24px; margin-bottom:32px;">
+    <div class="panel">
+      <div class="panel-title">Diagnóstico de Performance</div>
+      <p><strong style="color:var(--cru)">Thumbstop:</strong> Alto. O contraste cromático off-white/verde + luz golden hour para o scroll de forma instintiva. O cérebro humano responde à luz quente antes de processar o conteúdo.</p>
+      <p><strong style="color:var(--cru)">Placement ideal:</strong> Feed 4:5 como principal. Stories como adaptação secundária com crop cirúrgico. Não usar como estático em Reels.</p>
+      <p><strong style="color:var(--cru)">Fundo europeu:</strong> Ajuda para o ICP feminino de SP/RJ/Floripa que viaja ou aspira viajar para Europa. Risco: parecer editorial italiano sem ancoragem de produto. O copy corrige isso.</p>
+      <p><strong style="color:var(--cru)">Melhor uso:</strong> Aquecimento em frio → conversão em retargeting. Não usar com objetivo Purchase em tráfego completamente frio.</p>
+    </div>
+    <div class="panel">
+      <div class="panel-title">Critérios de Escala e Pausa</div>
+      <p><strong style="color:var(--ouro)">Pausa no Dia 3:</strong> Hook rate &lt; 25% → pausar criativo. CTR link &lt; 0,5% → pausar ad set.</p>
+      <p><strong style="color:var(--ouro)">Pausa no Dia 5:</strong> CPM &gt; R$70 sem melhora. CTR &lt; 0,7% por 3 dias consecutivos.</p>
+      <p><strong style="color:var(--ouro)">Pausa no Dia 7:</strong> Menos de 1 compra E ROAS &lt; 1,2x E budget &gt; R$50 por ad set.</p>
+      <p><strong style="color:var(--ouro)">Escala no Dia 5:</strong> CTR &gt; 1,4% E CPC &lt; R$3,20 E hook rate &gt; 35% → aumentar 20%.</p>
+      <p><strong style="color:var(--ouro)">Escala no Dia 10:</strong> ROAS &gt; 2,5x por 3 dias → duplicar em CBO separada.</p>
+      <p style="margin-top:8px; color: var(--cinza-medio); font-size:12px;">CPA alvo calculado: R$169 (ticket médio R$680 × margem 62% ÷ ROAS 2,5x)</p>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">3 Públicos de Teste</div>
+    <table class="table-premium">
+      <thead>
+        <tr><th>Público</th><th>Targeting</th><th>Budget %</th><th>Lógica</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-hl">A — Advantage+ Broad</td>
+          <td>Feminino 28–52 · SP/RJ/CWB/FLN/BC · Advantage+ Audience sem interesses manuais</td>
+          <td class="td-ouro">40%</td>
+          <td>Meta 2025 supera targeting manual quando o criativo é forte e o pixel tem histórico.</td>
+        </tr>
+        <tr>
+          <td class="td-hl">B — Cluster Luxo Feminino</td>
+          <td>Feminino 30–48 · SP/RJ capital · Interesses: Hermès OR Chanel OR Loro Piana AND Viagens Internacionais · Alto poder aquisitivo</td>
+          <td class="td-ouro">35%</td>
+          <td>CPM mais alto (R$45–65) mas qualidade de sinal superior. Cenário europeu ressoa diretamente.</td>
+        </tr>
+        <tr>
+          <td class="td-hl">C — Lookalike 1–3% Engajadores</td>
+          <td>Lookalike de engajadores IG 365d · 1–3% · Feminino 27–50 · Brasil</td>
+          <td class="td-ouro">25%</td>
+          <td>Matematicamente mais próximo do cliente ideal sem ser retargeting. Seed de qualidade.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">5 Métricas Prioritárias</div>
+    <table class="table-premium">
+      <thead><tr><th>Métrica</th><th>Mínimo</th><th>Ideal</th><th>Por que importa</th></tr></thead>
+      <tbody>
+        <tr><td class="td-hl">Hook Rate (2s)</td><td>30%</td><td class="td-ouro">45%</td><td>Imagem estática sem movimento — hook alto confirma que a composição detém atenção</td></tr>
+        <tr><td class="td-hl">CTR Link</td><td>0,9%</td><td class="td-ouro">1,6%</td><td>Imagem aspiracional — CTR &lt; 0,9% indica copy não fazendo a ponte entre desejo e ação</td></tr>
+        <tr><td class="td-hl">CPM</td><td>R$38</td><td class="td-ouro">R$28</td><td>CPM &gt; R$55 indica problema de relevance score com esse público premium</td></tr>
+        <tr><td class="td-hl">Frequência</td><td>máx 2,0</td><td class="td-ouro">máx 1,5</td><td>Estático satura mais rápido que vídeo — &gt; 2,5 com queda de CTR = troca imediata</td></tr>
+        <tr><td class="td-hl">ATC Rate</td><td>5%</td><td class="td-ouro">8%</td><td>&lt; 4% indica desconexão entre o público que clicou e a página de produto</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══ SECTION 6 — DECISÃO FINAL ═══════════════════════════════ -->
+<div class="section-wrap" style="border-top: 1px solid rgba(200,169,106,0.12);">
+  <div class="section-title">Seção 06 / Decisão Final — Brand Director + Conversion Analyst</div>
+  <div class="section-h2">10 Perguntas. Respostas Sem "Depende".</div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px;">
+    <div class="panel">
+      <div class="panel-title">1 — Essa imagem vale anúncio?</div>
+      <p><strong style="color:var(--ouro)">Sim.</strong> É um ativo de posicionamento de primeiro nível. Comunica Old Money, Quiet Luxury e autoridade visual feminina em um único frame. Raras imagens fazem isso sem logotipo visível.</p>
+    </div>
+    <div class="panel">
+      <div class="panel-title">2 — Você subiria em tráfego?</div>
+      <p><strong style="color:var(--ouro)">Sim,</strong> com condição: objetivo de Traffic ou ViewContent para frio. Nunca Purchase na primeira campanha. A imagem constrói público qualificado — o retargeting converte.</p>
+    </div>
+    <div class="panel">
+      <div class="panel-title">3 — Qual versão primeiro?</div>
+      <p>Sem texto na imagem (Variação 1). Testar se a imagem sozinha tem thumbstop. Se hook rate &gt; 30%, avançar para variação com frase de identidade.</p>
+    </div>
+    <div class="panel">
+      <div class="panel-title">4 — Qual texto colocaria?</div>
+      <p style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 16px; color: var(--cru); line-height: 1.4;">"Elegância não precisa de público."</p>
+    </div>
+    <div class="panel">
+      <div class="panel-title">5 — Qual CTA?</div>
+      <p><strong style="color:var(--ouro)">Ver coleção.</strong> Para frio. Em retargeting: "Ver novamente." Nunca "Compre agora." O público premium interpreta urgência artificial como sinal de qualidade inferior.</p>
+    </div>
+    <div class="panel">
+      <div class="panel-title">6 — Quais públicos primeiro?</div>
+      <p>Público A (Advantage+ Broad Feminino 28–52) + Público B (Cluster Luxo c/ interesses Hermès/Loro Piana). Em paralelo, com budgets separados por 7 dias.</p>
+    </div>
+    <div class="panel">
+      <div class="panel-title">7 — Venda direta ou aquecimento?</div>
+      <p><strong style="color:var(--ouro)">Aquecimento.</strong> A imagem ativa desejo aspiracional — não urgência de compra. Projetada para construir LTV, não ROAS imediato. Converte em retargeting.</p>
+    </div>
+    <div class="panel">
+      <div class="panel-title">8 — ROAS esperado nos primeiros 7 dias?</div>
+      <p>Com objetivo Traffic/ViewContent: <strong style="color:var(--ouro)">não é métrica de ROAS — é métrica de qualidade de audiência.</strong> Esperar CPC &lt; R$3,50 e &gt; 200 visitantes qualificados. Em retargeting semana 2–3: ROAS 1,8x–2,5x.</p>
+    </div>
+    <div class="panel">
+      <div class="panel-title">9 — Top 3 riscos para conversão</div>
+      <ul class="list-premium">
+        <li>Página de produto não está à altura da imagem (fotografia de estúdio genérica, copy de varejo)</li>
+        <li>Usando Purchase como objetivo em tráfego completamente frio</li>
+        <li>Copy genérico ou urgente quebrando o posicionamento criado pela imagem</li>
+      </ul>
+    </div>
+    <div class="panel" style="background: rgba(200,169,106,0.06); border-color: rgba(200,169,106,0.4);">
+      <div class="panel-title">10 — Se a Saint Riviera fosse sua, o que faria?</div>
+      <p>Subiria essa imagem <strong style="color:var(--cru)">sem texto</strong> para Público A com R$20/dia, objetivo Traffic. Dia 3 avaliaria hook rate. Se &gt;35%, adicionaria frase "Elegância não precisa de público" e continuaria por mais 4 dias. Dia 7 montaria retargeting com Variação 3 (produto) para todos os visitantes. Semana 3 escalaria o vencedor em CBO separado com R$80/dia. A imagem tem potencial de ser um criativo evergreen da marca — não descontinuaria tão cedo.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SECTION 7 — AI PROMPTS ═══════════════════════════════════ -->
+<div class="section-wrap" style="border-top: 1px solid rgba(200,169,106,0.12);">
+  <div class="section-title">Seção 07 / Edição por IA — Visual Director</div>
+  <div class="section-h2">3 Prompts de Edição</div>
+
+  <div class="panel">
+    <div class="panel-title">Prompt 1 — Midjourney / DALL-E 3 · Retocar mantendo realismo</div>
+    <p style="font-family: monospace; font-size: 12px; color: var(--cru); background: rgba(0,0,0,0.25); padding: 16px; border-radius: 3px; line-height: 1.8; white-space: pre-wrap;">Editorial fashion photograph, photorealistic enhancement.
+A 30-year-old Brazilian woman wearing a ribbed off-shoulder ivory/off-white knit top and wide-leg white palazzo pants with a white leather belt with gold buckle. She carries a structured white bag with a gold chain. Small gold hoop earrings. Dark hair in a sleek ponytail. Standing in a European luxury villa garden with tall cypress trees and historic stone building.
+
+ENHANCE: Warm golden hour light (+12 temperature), garments 15–20% brighter than background, background garden -20% saturation with f/2.8 depth of field, open shadows, subtle grain.
+PRESERVE: Authentic photographic quality, natural pose, off-shoulder neckline, wide-leg silhouette.
+Style reference: Brunello Cucinelli campaign, Loro Piana lookbook. Aspect ratio 4:5.</p>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Prompt 2 — Adobe Firefly / Photoshop Generative AI · Edição de fundo</div>
+    <p style="font-family: monospace; font-size: 12px; color: var(--cru); background: rgba(0,0,0,0.25); padding: 16px; border-radius: 3px; line-height: 1.8; white-space: pre-wrap;">Generative background refinement for luxury fashion editorial.
+SUBJECT (do not modify): The woman, her complete outfit, hair, pose, expression.
+BACKGROUND: Apply progressive lens blur (equivalent f/2.8) starting at model outline. Castello remains visible but loses architectural sharpness — reads as "European luxury" not "specific landmark." Reduce green saturation by 15–20%. Add subtle warm haze in distance. Result: photorealistic, no AI artifacts.</p>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Prompt 3 — Nova geração · Composição ideal para tráfego pago</div>
+    <p style="font-family: monospace; font-size: 12px; color: var(--cru); background: rgba(0,0,0,0.25); padding: 16px; border-radius: 3px; line-height: 1.8; white-space: pre-wrap;">Ultra-high-quality editorial fashion photography, analog film look, luxury brand campaign aesthetic. Brazilian woman, 30yo, dark hair sleek low ponytail, serene expression, NOT looking at camera. Wearing: ribbed off-shoulder ivory knit top, wide-leg white palazzo pants, white leather belt with polished gold buckle, white structured bag with gold chain. Small gold hoop earrings.
+
+COMPOSITION: American plan shot, 4:5 ratio. Model at right-center. 30–35% negative space LEFT for text placement. Rule of thirds.
+LIGHT: Golden hour 17:00–18:00, warm lateral light, no flash.
+COLOR GRADE: +12 temperature, -14 saturation, lifted blacks, subtle analog grain. Garden green muted and warm-toned.
+STYLE: Loro Piana Spring, Ralph Lauren Purple Label, Brunello Cucinelli. Quiet Luxury. No poses. Just presence. No watermarks.</p>
+  </div>
+</div>
+
+<!-- ═══ SECTION 8 — SEQUÊNCIA DE LANÇAMENTO ════════════════════ -->
+<div class="section-wrap" style="border-top: 1px solid rgba(200,169,106,0.12);">
+  <div class="section-title">Seção 08 / Plano de Execução — Content Creator + Paid Traffic</div>
+  <div class="section-h2">Sequência de Lançamento — 4 Semanas</div>
+
+  <table class="table-premium">
+    <thead>
+      <tr>
+        <th>Semana</th>
+        <th>Variação Ativa</th>
+        <th>Objetivo Meta</th>
+        <th>Público</th>
+        <th>Métrica de Decisão</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="td-ouro">Semana 1</td>
+        <td>Var. 1 (editorial) + Var. 2 (identidade)</td>
+        <td>Traffic / LP Views</td>
+        <td>Público A (Broad) + B (Luxo)</td>
+        <td>CTR &gt; 1,2% confirma imagem com tração</td>
+      </tr>
+      <tr>
+        <td class="td-ouro">Semana 2</td>
+        <td>Var. 5 (elegância feminina) em frio + Var. 3 (produto) em remarketing</td>
+        <td>LP Views + ATC</td>
+        <td>Frio: Público A/B refinado. Remarketing: visitantes 14d</td>
+        <td>ATC rate &gt; 5% no remarketing</td>
+      </tr>
+      <tr>
+        <td class="td-ouro">Semana 3</td>
+        <td>Var. 3 (produto) como fundo de funil principal</td>
+        <td>Purchase (remarketing) + ATC (frio)</td>
+        <td>60% remarketing, 40% prospecção</td>
+        <td>CPA &lt; R$169 no remarketing</td>
+      </tr>
+      <tr>
+        <td class="td-ouro">Semana 4</td>
+        <td>Var. 4 (lifestyle) em awareness + vencedor escalado</td>
+        <td>Alcance (awareness) + Purchase (escala)</td>
+        <td>Var. 4: novo público frio premium. Escala: CBO do vencedor</td>
+        <td>ROAS &gt; 2,5x por 3 dias → +20% budget</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top: 28px; padding: 20px 24px; border-left: 3px solid var(--ouro); background: rgba(200,169,106,0.06);">
+    <p style="font-family: 'Playfair Display', serif; font-size: 15px; color: var(--cru); font-style: italic; line-height: 1.6;">"A variação com maior potencial de venda direta é a Var. 3 — usada em remarketing. A variação que constrói marca de longo prazo é a Var. 4. A variação que equilibra os dois objetivos com maior eficiência de budget é a Var. 5 — deve receber o maior investimento em prospecção."</p>
+    <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ouro); margin-top: 8px;">Content Creator — Saint Riviera</div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════════ -->
+<footer class="site-footer">
+  <span>Saint Riviera · Meta Ads Creative Brief</span>
+  <span>Villa Toscana / Look Off-White · Maio 2026</span>
+  <span>Uso interno — Não publicar</span>
+</footer>
+
+</body>
+</html>
