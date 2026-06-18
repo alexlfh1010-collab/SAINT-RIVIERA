@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Storyboard — Saint Riviera | Presença e Percepção</title>
+<style>
+  :root {
+    --cru: #F5F0E8;
+    --navy: #1C2B3A;
+    --ouro: #C8A96A;
+    --areia: #D4B896;
+    --chumbo: #4A5568;
+    --off: #EDE8DF;
+    --text: #1C2B3A;
+    --light: #F9F6F1;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: var(--light);
+    color: var(--navy);
+    line-height: 1.5;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: var(--navy);
+    padding: 28px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(200,169,106,0.3);
+  }
+  .site-header .brand {
+    color: var(--cru);
+    font-size: 18px;
+    letter-spacing: 4px;
+    font-weight: normal;
+  }
+  .site-header .brand span {
+    color: var(--ouro);
+  }
+  .site-header .subtitle {
+    color: var(--areia);
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-family: Helvetica Neue, Arial, sans-serif;
+    text-transform: uppercase;
+  }
+
+  /* NAV */
+  .seq-nav {
+    background: var(--cru);
+    border-bottom: 1px solid rgba(28,43,58,0.12);
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    position: sticky;
+    top: 77px;
+    z-index: 90;
+  }
+  .seq-nav a {
+    display: block;
+    padding: 16px 36px;
+    text-decoration: none;
+    color: var(--chumbo);
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-family: Helvetica Neue, Arial, sans-serif;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  .seq-nav a:hover { color: var(--navy); border-bottom-color: var(--ouro); }
+  .seq-nav a.active { color: var(--navy); border-bottom-color: var(--navy); font-weight: bold; }
+
+  /* SECTION */
+  .sequence-section {
+    padding: 64px 48px 80px;
+    max-width: 1480px;
+    margin: 0 auto;
+  }
+  .sequence-section + .sequence-section {
+    border-top: 1px solid rgba(28,43,58,0.1);
+  }
+
+  .section-header {
+    margin-bottom: 48px;
+  }
+  .section-tag {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ouro);
+    font-family: Helvetica Neue, Arial, sans-serif;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .section-title {
+    font-size: 32px;
+    color: var(--navy);
+    font-weight: normal;
+    margin-bottom: 8px;
+  }
+  .section-theme {
+    font-size: 15px;
+    color: var(--chumbo);
+    font-style: italic;
+    margin-bottom: 6px;
+  }
+  .section-desc {
+    font-size: 13px;
+    color: var(--chumbo);
+    font-family: Helvetica Neue, Arial, sans-serif;
+    max-width: 600px;
+  }
+
+  /* STORY GRID */
+  .story-row {
+    display: flex;
+    gap: 28px;
+    overflow-x: auto;
+    padding-bottom: 24px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .story-row::-webkit-scrollbar { height: 4px; }
+  .story-row::-webkit-scrollbar-track { background: var(--off); border-radius: 2px; }
+  .story-row::-webkit-scrollbar-thumb { background: var(--areia); border-radius: 2px; }
+
+  /* STORY CARD */
+  .story-card {
+    flex: 0 0 240px;
+    scroll-snap-align: start;
+  }
+
+  /* PHONE MOCKUP */
+  .phone {
+    width: 240px;
+    height: 426px; /* 9:16 */
+    border-radius: 28px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 16px 48px rgba(28,43,58,0.25), 0 2px 8px rgba(28,43,58,0.12);
+    border: 2px solid rgba(28,43,58,0.15);
+  }
+
+  .phone-screen {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* PROGRESS DOTS */
+  .progress-dots {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    gap: 3px;
+    z-index: 10;
+  }
+  .dot {
+    flex: 1;
+    height: 2px;
+    border-radius: 1px;
+    background: rgba(255,255,255,0.4);
+  }
+  .dot.active {
+    background: rgba(255,255,255,0.9);
+  }
+  .dot.past {
+    background: rgba(255,255,255,0.7);
+  }
+
+  /* INSTAGRAM HEADER */
+  .ig-header {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 10;
+  }
+  .ig-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--ouro);
+    border: 1.5px solid rgba(255,255,255,0.8);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    color: white;
+    font-family: Helvetica Neue, Arial, sans-serif;
+  }
+  .ig-name {
+    font-size: 10px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    font-family: Helvetica Neue, Arial, sans-serif;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  }
+
+  /* IMAGE AREA */
+  .image-area {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .image-label {
+    font-family: Helvetica Neue, Arial, sans-serif;
+    font-size: 10px;
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 12px;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* TEXT OVERLAY */
+  .story-text {
+    position: absolute;
+    z-index: 10;
+    left: 14px;
+    right: 14px;
+    font-style: italic;
+    line-height: 1.35;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  }
+  .story-text.pos-bottom { bottom: 52px; }
+  .story-text.pos-center { top: 50%; transform: translateY(-50%); }
+  .story-text.pos-top { top: 62px; }
+  .story-text.pos-bottom-center { bottom: 52px; text-align: center; }
+
+  .story-text.color-cru { color: var(--cru); }
+  .story-text.color-navy { color: var(--navy); }
+  .story-text.color-ouro { color: var(--ouro); }
+
+  .story-text.size-lg { font-size: 14px; }
+  .story-text.size-md { font-size: 12px; }
+  .story-text.size-sm { font-size: 10px; }
+  .story-text.regular { font-style: normal; }
+
+  /* CTA BAR */
+  .cta-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 44px;
+    background: rgba(28,43,58,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    backdrop-filter: blur(4px);
+  }
+  .cta-bar.hidden { display: none; }
+  .cta-text {
+    font-size: 9px;
+    color: var(--cru);
+    letter-spacing: 2px;
+    font-family: Helvetica Neue, Arial, sans-serif;
+    text-transform: uppercase;
+  }
+  .cta-bar.cta-ouro { background: rgba(200,169,106,0.9); }
+  .cta-bar.cta-ouro .cta-text { color: var(--navy); }
+
+  /* METADATA */
+  .story-meta {
+    padding: 14px 4px 4px;
+  }
+  .meta-number {
+    font-size: 10px;
+    color: var(--ouro);
+    font-family: Helvetica Neue, Arial, sans-serif;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .meta-title {
+    font-size: 14px;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .meta-media {
+    font-size: 10px;
+    color: var(--chumbo);
+    font-family: Helvetica Neue, Arial, sans-serif;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .meta-product {
+    font-size: 10px;
+    color: var(--ouro);
+    font-family: Helvetica Neue, Arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+  .meta-intent {
+    font-size: 10px;
+    color: var(--chumbo);
+    font-family: Helvetica Neue, Arial, sans-serif;
+    font-style: italic;
+    margin-top: 3px;
+    line-height: 1.4;
+  }
+  .media-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 9px;
+    font-family: Helvetica Neue, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .badge-video { background: rgba(28,43,58,0.1); color: var(--navy); }
+  .badge-photo { background: rgba(200,169,106,0.2); color: #8B7840; }
+  .badge-canvas { background: rgba(212,184,150,0.3); color: #7A6040; }
+
+  /* GRADIENT BACKGROUNDS */
+  .bg-navy { background: linear-gradient(160deg, #1C2B3A 0%, #243547 100%); }
+  .bg-cru { background: linear-gradient(160deg, #F5F0E8 0%, #EDE6D9 100%); }
+  .bg-areia { background: linear-gradient(160deg, #D4B896 0%, #C8A96A 100%); }
+
+  .bg-collar { background: linear-gradient(180deg, #BEB8B0 0%, #A8A49E 30%, #9A9690 60%, #8E8A84 100%); }
+  .bg-walk { background: linear-gradient(180deg, #C8C4BC 0%, #B8B4AC 25%, #A8A8A4 50%, #9A9A98 75%, #5C6068 100%); }
+  .bg-polo { background: linear-gradient(180deg, #C4C0BC 0%, #B0ACA8 40%, #9CA09C 70%, #8A8E8C 100%); }
+  .bg-button { background: linear-gradient(180deg, #E8E4DC 0%, #D4CEC4 40%, #C0BEB8 70%, #A8A8A4 100%); }
+  .bg-texture-areia { background: linear-gradient(135deg, #D8CFC2 0%, #CEC5B6 30%, #C4BAA8 60%, #D0C8B8 100%); }
+  .bg-mirror { background: linear-gradient(180deg, #3A4050 0%, #2E3540 30%, #242C38 60%, #1C2430 100%); }
+
+  .bg-hands { background: linear-gradient(180deg, #D8D4CC 0%, #C8C4BC 30%, #B8B4AC 60%, #ACA8A0 100%); }
+  .bg-wideleg { background: linear-gradient(180deg, #E0DCD4 0%, #D4CEC4 30%, #C8C0B4 60%, #B8B0A4 100%); }
+  .bg-fabric { background: linear-gradient(180deg, #D4CEC8 0%, #C8C2BC 40%, #BCBAB4 70%, #B0B0AC 100%); }
+  .bg-riviera { background: linear-gradient(180deg, #F0ECE4 0%, #E8E4DC 40%, #E0DCD4 70%, #D8D4CC 100%); }
+  .bg-editorial { background: linear-gradient(160deg, #E8E4DC 0%, #D8D4CA 50%, #C8C4BA 100%); }
+
+  .bg-linen-wind { background: linear-gradient(180deg, #D0CCBF 0%, #C4C0B4 30%, #BCC0BC 60%, #B0B8B4 100%); }
+  .bg-flatlay { background: linear-gradient(180deg, #F0ECE4 0%, #E4E0D8 50%, #D8D4CC 100%); }
+  .bg-look-full { background: linear-gradient(180deg, #3C4050 0%, #303848 30%, #262E3C 60%, #1C2430 100%); }
+
+  /* SECTION DIVIDER */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--areia), transparent);
+    margin: 0 48px;
+  }
+
+  /* LEGEND SECTION */
+  .legend {
+    padding: 48px;
+    max-width: 1480px;
+    margin: 0 auto;
+  }
+  .legend h3 {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-family: Helvetica Neue, Arial, sans-serif;
+    color: var(--ouro);
+    margin-bottom: 24px;
+    font-weight: normal;
+  }
+  .legend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .legend-item {
+    padding: 20px;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid rgba(28,43,58,0.08);
+  }
+  .legend-item h4 {
+    font-size: 13px;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .legend-item p {
+    font-size: 12px;
+    color: var(--chumbo);
+    font-family: Helvetica Neue, Arial, sans-serif;
+    line-height: 1.5;
+  }
+
+  /* FOOTER */
+  .site-footer {
+    background: var(--navy);
+    padding: 40px 48px;
+    text-align: center;
+    margin-top: 40px;
+  }
+  .site-footer p {
+    color: rgba(245,240,232,0.5);
+    font-size: 11px;
+    font-family: Helvetica Neue, Arial, sans-serif;
+    letter-spacing: 1px;
+  }
+  .site-footer .brand-footer {
+    color: var(--ouro);
+    font-size: 16px;
+    letter-spacing: 6px;
+    margin-bottom: 12px;
+    font-weight: normal;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div>
+    <div class="brand">SAINT <span>RIVIERA</span></div>
+    <div class="subtitle">Storyboard Preview — Presença e Percepção</div>
+  </div>
+  <div style="color: var(--areia); font-size:12px; font-family: Helvetica Neue, sans-serif; letter-spacing:1px;">
+    22 Stories · 3 Sequências · Maio 2026
+  </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav class="seq-nav">
+  <a href="#masculino" class="active">Masculino · 7 Stories</a>
+  <a href="#feminino">Feminino · 7 Stories</a>
+  <a href="#mista">Mista · 8 Stories</a>
+</nav>
+
+<!-- ============================================ -->
+<!-- SEQUÊNCIA MASCULINA                          -->
+<!-- ============================================ -->
+<section class="sequence-section" id="masculino">
+  <div class="section-header">
+    <span class="section-tag">Sequência 01</span>
+    <h2 class="section-title">Sequência Masculina</h2>
+    <p class="section-theme">"O homem é lido antes de ser ouvido."</p>
+    <p class="section-desc">Produto principal: Conjunto Classic Navy. Postar sexta-feira. Maior probabilidade de venda direta.</p>
+  </div>
+
+  <div class="story-row">
+
+    <!-- M1 -->
+    <div class="story-card">
+      <div class="phone">
+        <div class="phone-screen bg-collar">
+          <div class="progress-dots">
+            <div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+          <div class="ig-header">
+            <div class="ig-avatar">SR</div>
+            <div class="ig-name">saintriviera</div>
+          </div>
+          <div class="image-area">
+            <div class="image-label">Mãos ajustando<br>colarinho da camisa<br>Câmera lenta · 5s<br>Luz de janela lateral</div>
+          </div>
+          <div class="story-text pos-bottom size-lg color-cru">
+            "Antes de você falar,<br>a sala já decidiu."
+          </div>
+          <div class="cta-bar hidden"><span class="cta-text"></span></div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <span class="meta-number">M01</span>
+        <div class="meta-title">O Espelho</div>
+        <div class="meta-media"><span class="media-badge badge-video">Vídeo 5s</span> câmera lenta</div>
+        <div class="meta-product">Camisa Social Slim</div>
+        <div class="meta-intent">Sem CTA — cria tensão emocional</div>
+      </div>
+    </div>
+
+    <!-- M2 -->
+    <div class="story-card">
+      <div class="phone">
+        <div class="phone-screen bg-walk">
+          <div class="progress-dots">
+            <div class="dot past"></div><div class="dot active"></div><div class="dot"></div>
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+          <div class="ig-header">
+            <div class="ig-avatar">SR</div>
+            <div class="ig-name">saintriviera</div>
+          </div>
+          <div class="image-area">
+            <div class="image-label">Homem de costas<br>caminhando em corredor<br>Câmera lenta · 6s<br>Postura reta</div>
+          </div>
+          <div class="story-text pos-bottom-center size-md color-cru regular">
+            "Postura, caimento, tecido.<br>Nessa ordem."
+          </div>
+          <div class="cta-bar hidden"></div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <span class="meta-number">M02</span>
+        <div class="meta-title">O Código</div>
+        <div class="meta-media"><span class="media-badge badge-video">Vídeo 6s</span> câmera lenta</div>
+        <div class="meta-product">Calça Alfaiataria Slim</div>
+        <div class="meta-intent">Sem CTA — educa sem ensinar</div>
+      </div>
+    </div>
+
+    <!-- M3 -->
+    <div class="story-card">
+      <div class="phone">
+        <div class="phone-screen bg-navy">
+          <div class="progress-dots">
+            <div class="dot past"></div><div class="dot past"></div><div class="dot active"></div>
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+          <div class="ig-header">
+            <div class="ig-avatar">SR</div>
+            <div class="ig-name">saintriviera</div>
+          </div>
+          <div class="story-text pos-center size-md color-cru" style="text-align:center; left:20px; right:20px;">
+            "Um homem mal vestido<br>precisa trabalhar o dobro<br>para ser levado a sério.<br><br>Mesmo que ninguém admita."
+          </div>
+          <div class="cta-bar hidden"></div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <span class="meta-number">M03</span>
+        <div class="meta-title">O Custo Invisível</div>
+        <div class="meta-media"><span class="media-badge badge-canvas">Canva</span> fundo navy</div>
+        <div class="meta-product">Conceitual — sem produto</div>
+        <div class="meta-intent">Nomeia a dor. Story mais forte da sequência.</div>
+      </div>
+    </div>
+
+    <!-- M4 -->
+    <div class="story-card">
+      <div class="phone">
+        <div class="phone-screen bg-polo">
+          <div class="progress-dots">
+            <div class="dot past"></div><div class="dot past"></div><div class="dot past"></div>
+            <div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+          <div class="ig-header">
+            <div class="ig-avatar">SR</div>
+            <div class="ig-name">saintriviera</div>
+          </div>
+          <div class="image-area">
+            <div class="image-label">Polo sendo vestido<br>Ombro assentando<br>Câmera lenta · 6s<br>Mãos ajustando</div>
+          </div>
+          <div class="story-text pos-bottom size-md color-cru">
+            "O caimento faz o trabalho.<br>Você só precisa entrar."
+          </div>
+          <div class="cta-bar hidden"></div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <span class="meta-number">M04</span>
+        <div class="meta-title">A Solução</div>
+        <div class="meta-media"><span class="media-badge badge-video">Vídeo 6s</span> câmera lenta</div>
+        <div class="meta-product">Polo de Tricô Navy</div>
+        <div class="meta-intent">Sem CTA — ativa desejo tátil</div>
+      </div>
+    </div>
+
+    <!-- M5 -->
+    <div class="story-card">
+      <div class="phone">
+        <div class="phone-screen bg-button">
+          <div class="progress-dots">
+            <div class="dot past"></div><div class="dot past"></div><div class="dot past"></div>
+            <div class="dot past"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+          <div class="ig-header">
+            <div class="ig-avatar">SR</div>
+            <div class="ig-name">saintriviera</div>
+          </div>
+          <div class="image-area">
+            <div class="image-label">Macro: botão madrepérola<br>OU mão sobre tecido<br>Fundo madeira escura<br>Luz lateral</div>
+          </div>
+          <div class="story-text pos-bottom size-sm color-navy regular">
+            "Algodão egípcio. 120 fios.<br>Costurado em pequena escala."
+          </div>
+          <div class="cta-bar cta-ouro"><span class="cta-text">Ver a camisa →</span></div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <span class="meta-number">M05</span>
+        <div class="meta-title">O Detalhe</div>
+        <div class="meta-media"><span class="media-badge badge-video">Vídeo 5s</span> macro</div>
+        <div class="meta-product">Camisa Social Slim — Branco Cru</div>
+        <div class="meta-intent">Primeiro CTA — cliente está pronto</div>
+      </div>
+    </div>
+
+    <!-- M6 -->
+    <div class="story-card">
+      <div class="phone">
+        <div class="phone-screen bg-areia">
+          <div class="progress-dots">
+            <div class="dot past"></div><div class="dot past"></div><div class="dot past"></div>
+            <div class="dot past"></div><div class="dot past"></div><div class="dot active"></div><div class="dot"></div>
+          </div>
+          <div class="ig-header">
+            <div class="ig-avatar" style="background:var(--navy);">SR</div>
+            <div class="ig-name" style="color: var(--navy);">saintriviera</div>
+          </div>
+          <div class="story-text pos-center size-md color-navy" style="text-align:center; left:20px; right:20px;">
+            "Para o homem que entende<br>que elegância não é<br>sobre roupa.<br><br>É sobre leitura."
+          </div>
+          <div class="cta-bar hidden"></div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <span class="meta-number">M06</span>
+        <div class="meta-title">A Identidade</div>
+        <div class="meta-media"><span class="media-badge badge-canvas">Canva</span> fundo areia</div>
+        <div class="meta-product">Universo da marca</div>
+        <div class="meta-intent">Pertencimento — prepara o CTA final</div>
+      </div>
+    </div>
+
+    <!-- M7 -->
+    <div class="story-card">
+      <div class="phone">
+        <div class="phone-screen bg-mirror">
+          <div class="progress-dots">
+            <div class="dot past"></div><div class="dot past"></div><div class="dot past"></div>
+            <div class="dot past"></div><div class="dot past"></div><div class="dot past"></div><div class="dot active"></div>
+          </div>
+          <div class="ig-header">
+            <div class="ig-avatar">SR</div>
+            <div class="ig-name">saintriviera</div>
+          </div>
+          <div class="image-area">
+            <div class="image-label">Look completo no espelho<br>Polo navy + Calça chumbo<br>Ombro ao tornozelo<br>Sem rosto</div>
+          </div>
+          <div class="story-text pos-bottom size-sm color-cru regular">
+            "Conjunto Classic Navy.<br>Disponível agora."
+          </div>
+          <div class="cta-bar"><span class="cta-text">Link na bio →</span></div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <span class="meta-number">M07</span>
+        <div class="meta-title">A Conversão</div>
+        <div class="meta-media"><span class="media-badge badge-photo">Foto</span> editorial</div>
+        <div class="meta-product">Conjunto Classic Navy — R$ 890</div>
+        <div class="meta-intent">CTA final — venda direta</div>
+      </div>
+    </div>
+
+  </div><!-- end story-row -->
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================ -->
+<!-- SEQUÊNCIA FEMININA                           -->
+<!-- ============================================ -->
+<section class="sequence-section" id="feminino">
+  <div class="section-header">
+    <span class="section-tag">Sequência 02</span>
+    <h2 class="section-title">Sequência Feminina</h2>
+    <p class="section-theme">"A mulher elegante não precisa disputar atenção. Ela é percebida."</p>
+    <p class="section-desc">Produto principal: Conjunto Riviera Blanc. Postar no sábado. Gera mais respostas no direct.</p>
+  </div>
+
+  <div class="story-row">
+
+    <!-- F1 -->
+    <div class="story-card">
+      <div class="phone">
+        <div class="phone-screen bg-hands">
+          <div class="progress-dots">
+            <div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+          <div class="ig-header">
+            <div class="ig-avatar">SR</div>
+            <div class="ig-name">saintriviera</div>
+          </div>
+          <div class="image-area">
+            <div class="image-label">Mãos femininas<br>ajustando punho<br>Camisa linho branco<br>Câmera lenta · 5s</div>
+          </div>
+          <div class="story-text pos-bottom size-md color-cru">
+            "Há mulheres que entram<br>numa sala e mudam<br>o silêncio."
+          </div>
+          <div class="cta-bar hidden"></div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <span class="meta-number">F01</span>
+        <div class="meta-title">A Presença</div>
+        <div class="meta-media"><span class="media-badge badge-video">Vídeo 5s</span> câmera lenta</div>
+        <div class="meta-product">Camisa de Linho Lavado</div>
+        <div class="meta-intent">Âncora emocional da sequência</div>
+      </div>
+    </div>
+
+    <!-- F2 -->
+    <div class="story-card">
+      <div class="phone">
+        <div class="phone-screen bg-wideleg">
+          <div class="progress-dots">
+            <div class="dot past"></div><div class="dot active"></div><div class="dot"></div>
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+          <div class="ig-header">
+            <div class="ig-avatar">SR</div>
+            <div class="ig-name">saintriviera</div>
+          </div>
+          <div class="image-area">
+            <div class="image-label">Calça wide-leg<br>em movimento<br>Câmera baixa<br>Câmera lenta · 6s</div>
+          </div>
+          <div class="story-text pos-center size-lg color-navy regular" style="text-align:center;">
+            "Presença não é volume.<br>É precisão."
+          </div>
+          <div class="cta-bar hidden"></div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <span class="meta-number">F02</span>
+        <div class="meta-title">A Precisão</div>
+        <div class="meta-media"><span class="media-badge badge-video">Vídeo 6s</span> câmera lenta</div>
+        <div class="meta-product">Calça Alfaiataria Wide-Leg</div>
+        <div class="meta-intent">Define elegância contida — proposta da marca</div>
+      </div>
+    </div>
+
+    <!-- F3 -->
+    <div class="story-card">
+      <div class="phone">
+        <div class="phone-screen bg-navy">
+          <div class="progress-dots">
+            <div class="dot past"></div><div class="dot past"></div><div class="dot active"></div>
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+          <div class="ig-header">
+            <div class="ig-avatar">SR</div>
+            <div class="ig-name">saintriviera</div>
+          </div>
+          <div class="story-text pos-center size-md color-cru" style="text-align:center; left:16px; right:16px;">
+            "Cansativo demais<br>tentar ser vista<br>por quem não<br>sabe olhar."
+          </div>
+          <div class="cta-bar hidden"></div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <span class="meta-number">F03</span>
+        <div class="meta-title">O Cansaço</div>
+        <div class="meta-media"><span class="media-badge badge-canvas">Canva</span> fundo navy</div>
+        <div class="meta-product">Conceitual — gera direct</div>
+        <div class="meta-intent">Story que mais gera resposta emocional</div>
+      </div>
+    </div>
+
+    <!-- F4 -->
+    <div class="story-card">
+      <div class="phone">
+        <div class="phone-screen bg-riviera">
+          <div class="progress-dots">
+            <div class="dot past"></div><div class="dot past"></div><div class="dot past"></div>
+            <div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+          <div class="ig-header">
+            <div class="ig-avatar" style="background:var(--navy);">SR</div>
+            <div class="ig-name" style="color: var(--navy);">saintriviera</div>
+          </div>
+          <div class="image-area">
+            <div class="image-label">Detalhe Riviera Blanc<br>Botão de coco<br>Cós ou caimento<br>Macro · luz janela</div>
+          </div>
+          <div class="story-text pos-bottom size-lg color-navy">
+            "Elegância não compete.<br>Ela apenas existe."
+          </div>
+          <div class="cta-bar hidden"></div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <span class="meta-number">F04</span>
+        <div class="meta-title">A Elegância</div>
+        <div class="meta-media"><span class="media-badge badge-photo">Foto</span> macro</div>
+        <div class="meta-product">Conjunto Riviera Blanc</div>
+        <div class="meta-intent">Resolve o cansaço do F3 com o produto</div>
+      </div>
+    </div>
+
+    <!-- F5 -->
+    <div class="story-card">
+      <div class="phone">
+        <div class="phone-screen bg-fabric">
+          <div class="progress-dots">
+            <div class="dot past"></div><div class="dot past"></div><div class="dot past"></div>
+            <div class="dot past"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+          <div class="ig-header">
+            <div class="ig-avatar">SR</div>
+            <div class="ig-name">saintriviera</div>
+          </div>
+          <div class="image-area">
+            <div class="image-label">Mão sobre linho<br>Macro de trama<br>Câmera lenta · 5s<br>Luz lateral 90°</div>
+          </div>
+          <div class="story-text pos-bottom size-sm color-navy regular">
+            "Linho belga e algodão orgânico.<br>Lavagem enzimática.<br>Um branco que aceita o verão."
+          </div>
+          <div class="cta-bar cta-ouro"><span class="cta-text">Ver o conjunto →</span></div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <span class="meta-number">F05</span>
+        <div class="meta-title">O Argumento Tátil</div>
+        <div class="meta-media"><span class="media-badge badge-video">Vídeo 5s</span> macro</div>
+        <div class="meta-product">Conjunto Riviera Blanc</div>
+        <div class="meta-intent">Primeiro CTA — desejo tátil ativado</div>
+      </div>
+    </div>
+
+    <!-- F6 -->
+    <div class="story-card">
+      <div class="phone">
+        <div class="phone-screen bg-cru">
+          <div class="progress-dots">
+            <div class="dot past"></div><div class="dot past"></div><div class="dot past"></div>
+            <div class="dot past"></div><div class="dot past"></div><div class="dot active"></div><div class="dot"></div>
+          </div>
+          <div class="ig-header">
+            <div class="ig-avatar" style="background:var(--navy);">SR</div>
+            <div class="ig-name" style="color: var(--navy);">saintriviera</div>
+          </div>
+          <div class="story-text pos-center size-md color-navy" style="text-align:center; left:16px; right:16px;">
+            "Para a mulher que escolheu<br>ser inconfundível<br>sem precisar ser óbvia."
+          </div>
+          <div class="cta-bar hidden"></div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <span class="meta-number">F06</span>
+        <div class="meta-title">A Declaração</div>
+        <div class="meta-media"><span class="media-badge badge-canvas">Canva</span> fundo cru</div>
+        <div class="meta-product">Universo da marca</div>
+        <div class="meta-intent">Pertencimento — quem chegou aqui vai comprar</div>
+      </div>
+    </div>
+
+    <!-- F7 -->
+    <div class="story-card">
+      <div class="phone">
+        <div class="phone-screen bg-editorial">
+          <div class="progress-dots">
+            <div class="dot past"></div><div class="dot past"></div><div class="dot past"></div>
+            <div class="dot past"></div><div class="dot past"></div><div class="dot past"></div><div class="dot active"></div>
+          </div>
+          <div class="ig-header">
+            <div class="ig-avatar" style="background:var(--navy);">SR</div>
+            <div class="ig-name" style="color: var(--navy);">saintriviera</div>
+          </div>
+          <div class="image-area">
+            <div class="image-label">Look completo<br>Riviera Blanc<br>Sacada ou café elegante<br>Ombro ao tornozelo</div>
+          </div>
+          <div class="story-text pos-bottom size-sm color-navy regular">
+            "Riviera Blanc.<br>Linho lavado,<br>produzido em 200 peças."
+          </div>
+          <div class="cta-bar"><span class="cta-text">Link na bio →</span></div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <span class="meta-number">F07</span>
+        <div class="meta-title">A Conversão</div>
+        <div class="meta-media"><span class="media-badge badge-photo">Foto</span> editorial</div>
+        <div class="meta-product">Conjunto Riviera Blanc</div>
+        <div class="meta-intent">CTA final — venda direta</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================ -->
+<!-- SEQUÊNCIA MISTA                              -->
+<!-- ============================================ -->
+<section class="sequence-section" id="mista">
+  <div class="section-header">
+    <span class="section-tag">Sequência 03 — Postar Hoje</span>
+    <h2 class="section-title">Sequência Mista</h2>
+    <p class="section-theme">"Goste ou não, sua roupa fala antes de você."</p>
+    <p class="section-desc">Universal — homens e mulheres. Postar hoje (quinta). Mais fácil de produzir. Melhor para construir marca.</p>
+  </div>
+
+  <div class="story-row">
+
+    <!-- X1 -->
+    <div class="story-card">
+      <div class="phone">
+        <div class="phone-screen bg-navy">
+          <div class="progress-dots">
+            <div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+          <div class="ig-header">
+            <div class="ig-avatar">SR</div>
+            <div class="ig-name">saintriviera</div>
+          </div>
+          <div class="story-text size-lg color-cru" style="top:32%; left:14px; right:14px; text-align:center; font-style:normal;">
+            "Você já foi julgado antes<br>de abrir a boca hoje."
+          </div>
+          <div class="story-text size-sm color-cru" style="top:60%; left:14px; right:14px; text-align:center;">
+            "Não é opinião.<br>É neurociência."
+          </div>
+          <div class="cta-bar hidden"></div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <span class="meta-number">X01</span>
+        <div class="meta-title">O Veredito</div>
+        <div class="meta-media"><span class="media-badge badge-canvas">Canva</span> fundo navy</div>
+        <div class="meta-product">Sem produto — provocação</div>
+        <div class="meta-intent">Cria a premissa de toda a sequência</div>
+      </div>
+    </div>
+
+    <!-- X2 -->
+    <div class="story-card">
+      <div class="phone">
+        <div class="phone-screen" style="background: linear-gradient(160deg, #1E2E3E 0%, #243040 100%);">
+          <div class="progress-dots">
+            <div class="dot past"></div><div class="dot active"></div><div class="dot"></div>
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+          <div class="ig-header">
+            <div class="ig-avatar">SR</div>
+            <div class="ig-name">saintriviera</div>
+          </div>
+          <div class="story-text size-sm color-cru regular" style="top:25%; left:18px; right:18px; text-align:center; line-height:1.7;">
+            "Em 100 milissegundos,<br>o cérebro decide:<br><br>competente ou não.<br>confiável ou não.<br>vale ou não."
+          </div>
+          <div class="story-text size-sm color-cru" style="top:70%; left:18px; right:18px; text-align:center;">
+            "Antes do aperto de mão.<br>Antes do nome."
+          </div>
+          <div class="cta-bar hidden"></div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <span class="meta-number">X02</span>
+        <div class="meta-title">A Ciência</div>
+        <div class="meta-media"><span class="media-badge badge-canvas">Canva</span> fundo navy texturizado</div>
+        <div class="meta-product">Sem produto — argumento</div>
+        <div class="meta-intent">Torna a provocação irrefutável</div>
+      </div>
+    </div>
+
+    <!-- X3 -->
+    <div class="story-card">
+      <div class="phone">
+        <div class="phone-screen bg-collar">
+          <div class="progress-dots">
+            <div class="dot past"></div><div class="dot past"></div><div class="dot active"></div>
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+          <div class="ig-header">
+            <div class="ig-avatar">SR</div>
+            <div class="ig-name">saintriviera</div>
+          </div>
+          <div class="image-area">
+            <div class="image-label">Close: colarinho<br>Botão madrepérola<br>Fundo desfocado<br>Luz natural</div>
+          </div>
+          <div class="story-text pos-bottom size-sm color-cru" style="bottom:16px;">
+            "A questão não é se você<br>se importa com roupa.<br>É se você se importa<br>com como é lido."
+          </div>
+          <div class="cta-bar hidden"></div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <span class="meta-number">X03</span>
+        <div class="meta-title">A Questão</div>
+        <div class="meta-media"><span class="media-badge badge-photo">Foto</span> macro colarinho</div>
+        <div class="meta-product">Camisa Social Slim</div>
+        <div class="meta-intent">Remove objeção de vaidade — é estratégia</div>
+      </div>
+    </div>
+
+    <!-- X4 -->
+    <div class="story-card">
+      <div class="phone">
+        <div class="phone-screen bg-linen-wind">
+          <div class="progress-dots">
+            <div class="dot past"></div><div class="dot past"></div><div class="dot past"></div>
+            <div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+          <div class="ig-header">
+            <div class="ig-avatar">SR</div>
+            <div class="ig-name">saintriviera</div>
+          </div>
+          <div class="image-area">
+            <div class="image-label">Tecido ao vento<br>Câmera lenta · 5s<br>Luz de tarde<br>Camisa ou calça</div>
+          </div>
+          <div class="story-text pos-bottom size-sm color-navy regular">
+            "Roupa errada não é<br>falta de estilo.<br>É ruído que interfere<br>na sua mensagem."
+          </div>
+          <div class="cta-bar hidden"></div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <span class="meta-number">X04</span>
+        <div class="meta-title">O Ruído</div>
+        <div class="meta-media"><span class="media-badge badge-video">Vídeo 5s</span> câmera lenta</div>
+        <div class="meta-product">Camisa de Linho Lavado</div>
+        <div class="meta-intent">Ativa urgência de "consertar o ruído"</div>
+      </div>
+    </div>
+
+    <!-- X5 -->
+    <div class="story-card">
+      <div class="phone">
+        <div class="phone-screen" style="background: linear-gradient(180deg, #2A3040 0%, #3A4050 40%, #686060 70%, #504848 100%);">
+          <div class="progress-dots">
+            <div class="dot past"></div><div class="dot past"></div><div class="dot past"></div>
+            <div class="dot past"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+          <div class="ig-header">
+            <div class="ig-avatar">SR</div>
+            <div class="ig-name">saintriviera</div>
+          </div>
+          <div class="story-text size-md color-cru regular" style="top:12%; left:14px; right:14px;">
+            "Caimento certo.<br>Tecido certo.<br>Paleta certa.<br>O resto é postura."
+          </div>
+          <div class="image-area" style="top:45%;">
+            <div class="image-label" style="color:rgba(255,255,255,0.5);">Calça + barra + sapato<br>câmera baixa</div>
+          </div>
+          <div class="cta-bar hidden"></div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <span class="meta-number">X05</span>
+        <div class="meta-title">A Equação</div>
+        <div class="meta-media"><span class="media-badge badge-photo">Foto</span> detalhe barra</div>
+        <div class="meta-product">Calça Alfaiataria Slim</div>
+        <div class="meta-intent">Simplifica — elegância tem fórmula</div>
+      </div>
+    </div>
+
+    <!-- X6 -->
+    <div class="story-card">
+      <div class="phone">
+        <div class="phone-screen bg-flatlay">
+          <div class="progress-dots">
+            <div class="dot past"></div><div class="dot past"></div><div class="dot past"></div>
+            <div class="dot past"></div><div class="dot past"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+          <div class="ig-header">
+            <div class="ig-avatar" style="background:var(--navy);">SR</div>
+            <div class="ig-name" style="color: var(--navy);">saintriviera</div>
+          </div>
+          <div class="image-area">
+            <div class="image-label" style="color:rgba(28,43,58,0.5);">Flat lay: polo + camisa<br>Mesa madeira escura<br>Câmera de cima<br>Luz lateral</div>
+          </div>
+          <div class="story-text pos-bottom size-sm color-navy regular">
+            "Saint Riviera não vende<br>tendência.<br>Vende o que fica."
+          </div>
+          <div class="cta-bar"><span class="cta-text">Conhecer a coleção →</span></div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <span class="meta-number">X06</span>
+        <div class="meta-title">A Marca</div>
+        <div class="meta-media"><span class="media-badge badge-photo">Foto</span> flat lay editorial</div>
+        <div class="meta-product">Polo + Camisa Social</div>
+        <div class="meta-intent">Primeiro CTA — diferencia da moda de massa</div>
+      </div>
+    </div>
+
+    <!-- X7 -->
+    <div class="story-card">
+      <div class="phone">
+        <div class="phone-screen bg-look-full">
+          <div class="progress-dots">
+            <div class="dot past"></div><div class="dot past"></div><div class="dot past"></div>
+            <div class="dot past"></div><div class="dot past"></div><div class="dot past"></div><div class="dot active"></div><div class="dot"></div>
+          </div>
+          <div class="ig-header">
+            <div class="ig-avatar">SR</div>
+            <div class="ig-name">saintriviera</div>
+          </div>
+          <div class="image-area">
+            <div class="image-label">Look completo no espelho<br>Ombro ao tornozelo<br>Parede neutra<br>Postura natural</div>
+          </div>
+          <div class="story-text pos-bottom size-sm color-cru">
+            "Para quem entende que<br>a primeira impressão<br>não é sobre sorte.<br>É sobre escolha."
+          </div>
+          <div class="cta-bar cta-ouro"><span class="cta-text">Ver os looks →</span></div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <span class="meta-number">X07</span>
+        <div class="meta-title">A Escolha</div>
+        <div class="meta-media"><span class="media-badge badge-photo">Foto</span> espelho</div>
+        <div class="meta-product">Look completo — qualquer conjunto</div>
+        <div class="meta-intent">CTA no pico da motivação</div>
+      </div>
+    </div>
+
+    <!-- X8 -->
+    <div class="story-card">
+      <div class="phone">
+        <div class="phone-screen bg-flatlay">
+          <div class="progress-dots">
+            <div class="dot past"></div><div class="dot past"></div><div class="dot past"></div>
+            <div class="dot past"></div><div class="dot past"></div><div class="dot past"></div><div class="dot past"></div><div class="dot active"></div>
+          </div>
+          <div class="ig-header">
+            <div class="ig-avatar" style="background:var(--navy);">SR</div>
+            <div class="ig-name" style="color: var(--navy);">saintriviera</div>
+          </div>
+          <div class="image-area">
+            <div class="image-label" style="color:rgba(28,43,58,0.5);">Flat lay completo:<br>polo + camisa + calça<br>Fundo linho cru<br>Paleta navy/areia</div>
+          </div>
+          <div class="story-text pos-center size-md color-navy regular" style="text-align:center; left:20px; right:20px;">
+            "Nova coleção disponível.<br>Produzida em<br>pequena escala."
+          </div>
+          <div class="cta-bar cta-ouro"><span class="cta-text">Explorar coleção →</span></div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <span class="meta-number">X08</span>
+        <div class="meta-title">O CTA Final</div>
+        <div class="meta-media"><span class="media-badge badge-photo">Foto</span> flat lay editorial</div>
+        <div class="meta-product">Coleção completa</div>
+        <div class="meta-intent">Fecha com urgência real — escassez verdadeira</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- LEGEND -->
+<section class="legend">
+  <h3>Legenda de produção</h3>
+  <div class="legend-grid">
+    <div class="legend-item">
+      <h4>Hoje (quinta) — postar agora</h4>
+      <p>Sequência Mista: X01 a X08. Mais fácil de produzir — vários stories são só Canva. Horários: 8h30 (X1–X3), 12h15 (X4–X6), 18h45 (X7–X8).</p>
+    </div>
+    <div class="legend-item">
+      <h4>Sexta — maior chance de venda</h4>
+      <p>Sequência Masculina: M01 a M07. Horários: 8h30 (M1–M2), 12h (M3–M4), 18h30 (M5–M7). CTA: Conjunto Classic Navy.</p>
+    </div>
+    <div class="legend-item">
+      <h4>Sábado — mais resposta no direct</h4>
+      <p>Sequência Feminina: F01 a F07. Gera mais mensagens espontâneas. CTA: Conjunto Riviera Blanc.</p>
+    </div>
+    <div class="legend-item">
+      <h4>Resposta no direct — preço</h4>
+      <p>"O polo está R$490. A calça, R$580. O conjunto completo, R$890. Posso te enviar o link direto — qual peça você viu?"</p>
+    </div>
+    <div class="legend-item">
+      <h4>Canva — tamanho e fontes</h4>
+      <p>1080 × 1920px · Playfair Display (Regular ou Italic) · Margem: 8% em cada lado · Duração: 5–7s por story</p>
+    </div>
+    <div class="legend-item">
+      <h4>Para produzir agora sem câmera</h4>
+      <p>Stories X01, X02, M03, M06, F03, F06 são só Canva (fundo + texto). Nenhuma foto necessária. Produza esses primeiro.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="brand-footer">SAINT RIVIERA</div>
+  <p>Documento interno · Storyboard Preview · Presença e Percepção</p>
+  <p style="margin-top:8px;">Guia de produção completo: production-guide.md | Playbook: docs/stories-playbook-presenca.md</p>
+</footer>
+
+<script>
+  // Simple nav highlighting on scroll
+  const sections = document.querySelectorAll('.sequence-section');
+  const navLinks = document.querySelectorAll('.seq-nav a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        const id = entry.target.id;
+        const active = document.querySelector(`.seq-nav a[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  sections.forEach(s => observer.observe(s));
+
+  // Smooth scroll
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>

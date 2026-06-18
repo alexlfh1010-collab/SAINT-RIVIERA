@@ -1,0 +1,123 @@
+{
+  "brand": "Saint Riviera",
+  "palette": {
+    "navy": "#1C2B3A",
+    "off_white": "#F5F0E8",
+    "gold": "#C8A96A",
+    "sand": "#D4B896"
+  },
+  "color_grade_base": {
+    "warmth": "+9",
+    "saturation": "-15 to -18",
+    "shadows": "+5",
+    "grain": "5-7%"
+  },
+  "funil_sequence": "Prompt_1 (awareness, público frio) → Prompt_3 (consideração, público morno) → Prompt_4 (conversão, público quente)",
+  "prompts": [
+    {
+      "id": "01",
+      "name": "HERO AD — Conjunto Masculino",
+      "formato": "16:9 | 8s | Feed + Meta Ads awareness",
+      "objetivo": "Awareness — Reconhecimento de Marca, público frio",
+      "prompt": "A man in his late thirties, lean and composed, stands near a floor-to-ceiling window in a high-end São Paulo apartment at golden hour. He wears a crisp ivory dress shirt in fine Egyptian cotton — the fabric catching the warm lateral light so that every thread becomes visible, the collar open at the top button, the shirt tucked cleanly into navy tailored trousers with a subtle break at the ankle. The setting is sparse and deliberate: a low concrete shelf with a single hardcover book, a glass of water, warm timber floors. The camera opens on a tight rack focus from the fabric texture of his shirt sleeve — the weave rendered in microscopic detail against the amber backlight — then slowly pulls back in a 6-second dolly move to reveal the full figure, the man turning slightly to look toward the window, never at the camera. His expression is unhurried, settled, the expression of someone who has already arrived. The light from the window is a deep amber-gold at 2700K, casting long shadows across the floor and a warm gradient across his torso. Color grading: warmth pushed to +9, saturation pulled to -15, shadows lifted to +5, highlights kissed with a faint gold channel. No artificial sources. The final frame holds him in the right third of the composition, the window occupying the left, negative space used with intention. The atmosphere is interior, quiet, established.",
+      "style": "cinematic editorial, Old Money fashion film, European luxury brand campaign, natural light documentary aesthetic",
+      "camera_motion": "slow rack focus from close-up shirt sleeve texture pulling back into a smooth 3-second dolly retreat, settling on a composed medium shot — figure occupying right third of frame",
+      "lighting": "golden hour window light, single source, lateral angle from camera left, 2700K color temperature, no fill, ambient bounce from timber floor creates soft warm shadow lift",
+      "color_palette": ["#1C2B3A", "#F5F0E8", "#C8A96A", "#D4B896"],
+      "aspect_ratio": "16:9",
+      "duration_seconds": 8,
+      "fps": 24,
+      "mood": "established authority, quiet confidence, interior calm — the feeling of a man who needs nothing to prove",
+      "negative_prompt": "logos, text overlays, fast cuts, neon lighting, artificial studio light, ring light reflections, busy backgrounds, crowded spaces, vibrant saturated colors, aggressive posing, smile directed at camera, shopping mall, synthetic fabrics appearance, overexposed highlights",
+      "copy_sugerida": [
+        "Para quem entende que elegância não precisa de apresentação.",
+        "O tecido que não precisa de apresentação.",
+        "Feito para quem já chegou."
+      ],
+      "musica": "Piano ou cello solo, abaixo de 90 BPM, sem letra. Referência: Nordic Pio (Artlist).",
+      "meta_ads": "Objetivo: Reconhecimento de Marca. Público frio: homens 30-48, interesses em moda premium, viagem de negócios, lifestyle executivo. Primeiros 3 dias sem copy — só o vídeo."
+    },
+    {
+      "id": "02",
+      "name": "PRODUCT CLOSE-UP — Textura e Caimento",
+      "formato": "16:9 | 6s | Carrossel + Retargeting",
+      "objetivo": "Meio de funil — tráfego para página de produto, retargeting de visitantes",
+      "prompt": "An extreme close-up study of a fine merino knit polo shirt folded with deliberate imprecision on a raw linen surface the color of warm sand. The fabric is the subject and the protagonist. The camera opens less than four centimeters from the surface of the knit — individual loops of wool yarn rendered with the clarity of a macro lens at f2.8, the texture casting micro-shadows across its own surface under a single shaft of diffused northern window light entering from the left. The light is cool-warm, approximately 3200K, soft enough to sculpt without harshness, precise enough to reveal the torsion in each thread. After two seconds, a pair of hands — male, mid-forties, unadorned except for a simple brushed-gold watch — enters frame from the lower right and lifts a fold of the fabric with two fingers, allowing the knit to fall back on itself in slow motion, revealing its natural drape and weight. The camera executes a micro-dolly move, pulling back three centimeters to reveal the collar and shoulder fold of the shirt, the navy body of the polo occupying the right half of the frame against the ecru surface. Color grading: warmth at +8, saturation at -16, shadows open at +4, a faint golden channel applied to the highlights to give the fabric a lived-in warmth. The final frame lingers on the texture with a 1-second hold. No human face. No environment beyond the surface. The fabric is the entire world of this frame.",
+      "style": "luxury product macro film, tactile editorial, artisan fashion documentary — references Loro Piana product campaign aesthetic",
+      "camera_motion": "static macro opening with micro-dolly pull-back of 3cm over 4 seconds, no rotation, no shake — movement is geological in its slowness",
+      "lighting": "diffused northern window light from camera left, single source, 3200K, no fill, micro-shadows from knit texture are visible — this is the visual argument",
+      "color_palette": ["#1C2B3A", "#F5F0E8", "#D4B896", "#C8A96A"],
+      "aspect_ratio": "16:9",
+      "duration_seconds": 6,
+      "fps": 24,
+      "mood": "tactile desire, material intimacy, the quiet argument of quality — this is what it feels like before you touch it",
+      "negative_prompt": "full body shots, faces, backgrounds with depth, busy environments, artificial lighting, overexposed fabric, polyester sheen, fast movement, text, logos, vibrant colors, sharp hard shadows, ring light, studio setup",
+      "copy_sugerida": [
+        "Merino extrafino. Cada ponto tecido para durar.",
+        "A qualidade que você sente antes de ver.",
+        "Tricot que responde ao toque antes de responder ao olhar."
+      ],
+      "nota_direcao": "A mão com relógio de ouro escovado é detalhe intencional — posiciona o perfil do cliente sem mostrar rosto.",
+      "meta_ads": "Objetivo: Tráfego ou Conversão. Público: retargeting de visitantes da página de produto (14 dias), lookalike de compradores. NUNCA usar como primeiro criativo em público frio."
+    },
+    {
+      "id": "03",
+      "name": "LIFESTYLE — Presença Social Feminina",
+      "formato": "16:9 | 10s | Reel + Meta Ads consideração",
+      "objetivo": "Consideração — tráfego para coleção, lookalike de clientes",
+      "prompt": "A woman in her mid-thirties moves through the marble lobby of a five-star hotel in the early evening. She wears a coordinated set: wide-leg tailored trousers in deep navy with a fluid break, paired with a loose-tucked ecru silk blouse, a camel overcoat draped over one shoulder rather than worn, the coat's wool visible as a soft halo of warmth in the peripheral light. She is not walking toward a destination — she is in motion as a natural state. The camera follows her from a low angle, roughly hip height, in a tracking shot that holds her figure in the center-left third of the frame. The lobby behind her is deliberate architecture: polished Carrara marble floors reflecting her silhouette in amber, tall floral arrangements out of focus in the background, a desk concierge at the far left edge, the whole space breathing money without announcing it. The light is a combination of warm indirect ceiling spots — all at 2800K — and a large arched window to the right that contributes a fading exterior blue, creating a subtle contrast that adds dimension to the ecru of her blouse. The overcoat on her shoulder catches the ceiling light and falls in a single long fold, demonstrating the weight and drape of the wool. Her expression is directed forward. She does not acknowledge the camera. Color grading: warmth +10, saturation -14, shadows +5, a slight desaturation in the blues to prevent the lobby from competing with the clothing. The final two seconds hold on her back as she walks further into the lobby, the navy of her trousers and the camel of the coat creating the brand's palette in motion.",
+      "style": "lifestyle fashion film, European luxury travel editorial, aspirational but not ostentatious — references Ralph Lauren Purple Label campaign aesthetic",
+      "camera_motion": "low-angle tracking shot following subject at walking pace, camera at hip height, slight forward momentum creating a sense of forward narrative — no handheld shake, stabilized glide",
+      "lighting": "warm indirect lobby ceiling light at 2800K as primary source, fading exterior blue from arched window as secondary — creating warm-cool dimension without artificial studio feel",
+      "color_palette": ["#1C2B3A", "#F5F0E8", "#C8A96A", "#D4B896"],
+      "aspect_ratio": "16:9",
+      "duration_seconds": 10,
+      "fps": 24,
+      "mood": "effortless presence, the luxury of being at ease in extraordinary spaces, arrival without announcement",
+      "negative_prompt": "looking at camera, posing, logos, text, busy pedestrian streets, shopping centers, fast cuts, handheld shake, neon lighting, bright saturated color, ostentatious jewelry, suitcase with visible brand logos, rushed movement, crowded lobby, synthetic fabric sheen, forced smile",
+      "copy_sugerida": [
+        "Há lugares que não exigem entrada — exigem presença.",
+        "O conjunto que antecede qualquer conversa.",
+        "Para quando o ambiente precisa saber quem você é antes de você falar."
+      ],
+      "nota_direcao": "O casaco no ombro (não vestido) é direção intencional: comunica descontração sofisticada. A paleta completa da marca aparece em um único frame: navy nas calças, off-white na blusa, gold na luz do lobby, sand no casaco camel.",
+      "meta_ads": "Objetivo: Conversão — Compra ou Add to Cart. Lookalike 1-3% de lista de clientes + retargeting de quem assistiu 50%+ dos outros criativos. Segmentação: incluir homens 30-50 (o masculino que reconhece a mulher e associa ao universo da marca)."
+    },
+    {
+      "id": "04",
+      "name": "REELS/STORIES VERTICAL — Impacto de 3 Segundos",
+      "formato": "9:16 | 6s | Stories + Reels + Conversão",
+      "objetivo": "Conversão — público quente, retargeting, Stories e Reels ads",
+      "prompt": "A vertical format film for mobile consumption. A man, early forties, stands before a full-length mirror with a dark antique-bronze frame in a bedroom that exists only as suggestion — a timber wall panel behind him, a corner of a bed with white linen visible in the extreme left edge of the frame, nothing more. He wears a complete look: navy knit polo shirt with a fine ribbed collar, tailored sand-colored trousers with a clean front crease, dark leather loafers. The shot opens on a tight vertical frame of the mirror reflection — the camera positioned so that we see both the man's reflection and, at the left edge of the real frame, a sliver of his actual shoulder, creating a subtle depth that says this is a real space, not a set. A single lateral light source from the right — a floor lamp just out of frame, warm at 2600K — casts a dramatic but soft directional light across his torso, sculpting the ribbed texture of the polo in fine relief and painting the creased front of the trousers with a gradient from warm amber at the hip to deep shadow at the knee. He is not posing. He is making a final adjustment: one hand at the collar of the polo, a single movement lasting two seconds, then dropping. His eyes in the mirror are focused and quiet, not performing. After the collar adjustment, the camera executes a slow tilt — starting at face level and moving down over four seconds to end on the shoes, passing the polo texture, the trouser break, arriving at the leather of the loafers against the timber floor. The tilt ends with a one-second hold on the shoes and the floor. Color grading: warmth +9, saturation -17, shadows +6, vignette 15% — the edges of the vertical frame darken to direct attention to the center. The pacing is slow enough to stop a scroll. The first frame — his face and collar in the mirror — must hold within 1.5 seconds of opening.",
+      "style": "vertical fashion film, mirror editorial, intimate morning ritual — references Brunello Cucinelli behind-the-scenes aesthetic translated to mobile-first format",
+      "camera_motion": "static opening on mirror reflection for 2 seconds, then a slow vertical tilt downward over 4 seconds ending at shoes — movement is continuous, no cuts, no jump",
+      "lighting": "single warm floor lamp source from camera right, 2600K, directional and soft, sculpting fabric texture — no fill, deliberate shadow on camera-left side of subject",
+      "color_palette": ["#1C2B3A", "#D4B896", "#C8A96A", "#F5F0E8"],
+      "aspect_ratio": "9:16",
+      "duration_seconds": 6,
+      "fps": 24,
+      "mood": "intimate self-possession, the private moment before the public one — getting dressed as an act of intention",
+      "negative_prompt": "text overlays, call to action text, buy now, price tags, logos, ring light reflection in mirror, bright flat lighting, fast movement, posed expression, direct camera address, busy background, synthetic fabric, overexposed mirror reflection, TikTok transitions, CapCut effects, vibrant colors, bathroom setting",
+      "copy_sugerida": [
+        "O sobretudo.",
+        "O look completo está no link da bio.",
+        "Disponível. Enquanto faz sentido ser."
+      ],
+      "nota_direcao": "CRÍTICO: Reprovar se o reflexo do anel de luz aparecer nos olhos do modelo no espelho — isso destrói o posicionamento premium instantaneamente.",
+      "meta_ads": "Objetivo: Conversão ou Tráfego, posicionamento exclusivo Stories e Reels. Testar A/B contra Prompt 01 para descobrir se o público responde melhor ao aspiracional de ambiente (01) ou ao aspiracional de identidade privada (04). CPA esperado mais baixo para masculino 30-44 nas capitais.",
+      "kpi_referencia": "CTR esperado acima de 2.5% em público quente. Se abaixo de 1.8%, trocar thumbnail pelo frame do segundo 1 (textura + luz lateral)."
+    }
+  ],
+  "instrucoes_veo3": {
+    "plataforma": "labs.google.com → VideoFX (Veo 3)",
+    "como_usar": [
+      "1. Cole o campo 'prompt' na caixa de texto principal (em inglês, como está)",
+      "2. Cole o 'negative_prompt' no campo negativo",
+      "3. Selecione aspect_ratio e duration_seconds",
+      "4. Gere 3-4 variações por prompt",
+      "5. Escolha a variação com melhor movimento de câmera e textura de tecido"
+    ],
+    "ordem_de_teste": "Comece pelo Prompt 04 (vertical/espelho) — tem o hook visual mais forte para parar scroll",
+    "musica_proibida": "Sem beats, sem BPM alto, sem letra em português ou inglês sobre o vídeo"
+  }
+}

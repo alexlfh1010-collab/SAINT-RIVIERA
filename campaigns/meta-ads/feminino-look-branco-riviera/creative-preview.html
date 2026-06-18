@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saint Riviera — Creative Preview | Look Branco Feminino</title>
+    <style>
+
+        /* ══════════════════════════════════════════
+           RESET & TOKENS
+        ══════════════════════════════════════════ */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --cru:      #F5F0E8;
+            --areia:    #D4B896;
+            --navy:     #1C2B3A;
+            --preto:    #0C0C0C;
+            --ouro:     #C8A96A;
+            --ouro-p:   #EDD9A8;
+            --cinza:    #8A7F74;
+            --cinza-c:  #C4BAB0;
+            --branco:   #FFFFFF;
+            --verde:    #2D4A3E;
+
+            --serif:    Georgia, 'Times New Roman', 'Palatino Linotype', serif;
+            --sans:     'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+            --sh-soft:  0 2px 20px rgba(28,43,58,0.07);
+            --sh-med:   0 6px 40px rgba(28,43,58,0.13);
+            --sh-hard:  0 16px 60px rgba(28,43,58,0.22);
+        }
+
+        /* ══════════════════════════════════════════
+           BASE
+        ══════════════════════════════════════════ */
+        html { font-size: 15px; scroll-behavior: smooth; }
+
+        body {
+            background: var(--cru);
+            color: var(--preto);
+            font-family: var(--sans);
+            line-height: 1.65;
+        }
+
+        h1,h2,h3,h4 {
+            font-family: var(--serif);
+            font-weight: normal;
+            color: var(--navy);
+            letter-spacing: 0.02em;
+        }
+        h1 { font-size: 2.6rem; line-height: 1.1; }
+        h2 { font-size: 1.55rem; line-height: 1.25; }
+        h3 { font-size: 1.1rem; }
+        p  { color: #3A3530; }
+
+        .container   { max-width: 1160px; margin: 0 auto; padding: 0 40px; }
+        .section     { padding: 72px 0; }
+        .section + .section { border-top: 1px solid #E4DDD5; }
+
+        .eyebrow {
+            font-size: 0.68rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--ouro);
+            margin-bottom: 10px;
+        }
+        .gold-rule { width: 36px; height: 1px; background: var(--ouro); margin: 14px 0; }
+        .sec-sub   { font-size: 0.88rem; color: var(--cinza); max-width: 560px; line-height: 1.75; }
+
+
+        /* ══════════════════════════════════════════
+           HEADER
+        ══════════════════════════════════════════ */
+        .site-header {
+            background: var(--navy);
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            border-bottom: 1px solid rgba(200,169,106,0.18);
+        }
+        .hd-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .hd-brand {
+            font-family: var(--serif);
+            font-size: 1.1rem;
+            color: var(--cru);
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+        }
+        .hd-right { display: flex; align-items: center; gap: 20px; }
+        .hd-meta  { font-size: 0.72rem; color: var(--cinza-c); letter-spacing: 0.06em; }
+        .hd-badge {
+            padding: 5px 14px;
+            border: 1px solid var(--ouro);
+            color: var(--ouro);
+            font-size: 0.68rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+
+        /* ══════════════════════════════════════════
+           HERO
+        ══════════════════════════════════════════ */
+        .hero {
+            background: var(--navy);
+            padding: 80px 0 60px;
+        }
+        .hero h1 { color: var(--cru); margin-bottom: 18px; max-width: 620px; }
+        .hero-sub {
+            color: var(--cinza-c);
+            font-size: 0.95rem;
+            max-width: 480px;
+            line-height: 1.75;
+        }
+        .hero-tags { display: flex; gap: 10px; margin-top: 28px; flex-wrap: wrap; }
+        .tag {
+            padding: 5px 14px;
+            border: 1px solid rgba(200,169,106,0.35);
+            color: var(--ouro);
+            font-size: 0.68rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+
+        /* ══════════════════════════════════════════
+           IMAGE PLACEHOLDER — shared
+        ══════════════════════════════════════════ */
+        .riviera-bg {
+            background:
+                radial-gradient(ellipse at 65% 28%, rgba(255,248,230,0.38) 0%, transparent 55%),
+                radial-gradient(ellipse at 25% 75%, rgba(210,200,185,0.22) 0%, transparent 45%),
+                linear-gradient(
+                    180deg,
+                    #C8C4BA 0%,
+                    #BCB8B4 12%,
+                    #AEB2B0 24%,
+                    #A8B0AC 32%,
+                    #B0ACA4 46%,
+                    #C0B8AC 60%,
+                    #CEBFB0 73%,
+                    #D8CFC2 85%,
+                    #E2D8CC 100%
+                );
+        }
+        .img-label {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 0.8rem;
+            color: rgba(28,43,58,0.45);
+            text-align: center;
+            line-height: 1.7;
+            max-width: 200px;
+        }
+
+
+        /* ══════════════════════════════════════════
+           FEED MOCKUP — MAIN
+        ══════════════════════════════════════════ */
+        .feed-layout {
+            display: grid;
+            grid-template-columns: 480px 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        /* Instagram card chrome */
+        .ig-card {
+            background: var(--branco);
+            box-shadow: var(--sh-hard);
+            border-radius: 2px;
+        }
+        .ig-top {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 14px;
+            border-bottom: 1px solid #EBEBEB;
+        }
+        .ig-av {
+            width: 34px; height: 34px;
+            border-radius: 50%;
+            background: var(--navy);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .ig-av span { color: var(--cru); font-size: 0.58rem; letter-spacing: 0.04em; font-family: var(--serif); }
+        .ig-av-ring { /* gradient ring */
+            box-shadow: 0 0 0 2px var(--ouro);
+        }
+        .ig-info { flex: 1; }
+        .ig-nm   { font-size: 0.82rem; font-weight: 600; color: #111; display: block; }
+        .ig-sp   { font-size: 0.68rem; color: #8E8E8E; }
+        .ig-dots { font-size: 1.1rem; color: #555; cursor: pointer; }
+
+        /* Image area */
+        .ig-img-wrap {
+            width: 100%;
+            aspect-ratio: 4/5;
+            position: relative;
+            overflow: hidden;
+        }
+        .ig-img-wrap .riviera-bg {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 32px;
+        }
+
+        /* Safe-zone overlay */
+        .safe-frame {
+            position: absolute;
+            top: 6%;
+            left: 4%;
+            right: 4%;
+            bottom: 18%;
+            border: 1px dashed rgba(200,169,106,0.45);
+            pointer-events: none;
+            z-index: 3;
+        }
+        .safe-label {
+            position: absolute;
+            top: -18px;
+            left: 0;
+            font-size: 0.58rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(200,169,106,0.8);
+            white-space: nowrap;
+        }
+
+        /* Zone highlights */
+        .zone-top {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 14%;
+            background: rgba(28,43,58,0.08);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .zone-bottom {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 22%;
+            background: linear-gradient(to top, rgba(28,43,58,0.38), transparent);
+            z-index: 2;
+            display: flex;
+            align-items: flex-end;
+            padding: 16px 20px;
+        }
+        .zone-label-top {
+            font-size: 0.58rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Text overlay on image */
+        .img-overlay-text {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 1.2rem;
+            color: rgba(245,240,232,0.95);
+            text-shadow: 0 1px 8px rgba(0,0,0,0.22);
+            line-height: 1.4;
+            z-index: 4;
+            position: relative;
+        }
+
+        /* Annotation markers */
+        .ann {
+            position: absolute;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .ann-num {
+            width: 20px; height: 20px;
+            border-radius: 50%;
+            background: var(--ouro);
+            color: var(--navy);
+            font-size: 0.6rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .ann-text {
+            background: rgba(28,43,58,0.85);
+            color: var(--cru);
+            font-size: 0.6rem;
+            letter-spacing: 0.06em;
+            padding: 3px 8px;
+            white-space: nowrap;
+        }
+
+        /* Instagram action bar */
+        .ig-actions {
+            padding: 10px 14px 4px;
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+        .ig-ico { font-size: 1.25rem; color: #111; cursor: pointer; }
+        .ig-ico-save { margin-left: auto; }
+        .ig-likes { padding: 0 14px 6px; font-size: 0.82rem; font-weight: 600; color: #111; }
+        .ig-cap {
+            padding: 2px 14px 10px;
+            font-size: 0.81rem;
+            color: #111;
+            line-height: 1.5;
+        }
+        .ig-cap strong { font-weight: 600; }
+        .ig-more-cap { color: #8E8E8E; }
+        .ig-cta-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 14px;
+            background: var(--cru);
+            border-top: 1px solid #E8E2D8;
+        }
+        .ig-hl   { font-size: 0.78rem; color: #555; }
+        .ig-cta  { font-size: 0.72rem; font-weight: 700; color: var(--navy); letter-spacing: 0.07em; text-transform: uppercase; }
+
+        /* Annotations panel */
+        .ann-panel {
+            background: var(--branco);
+            box-shadow: var(--sh-soft);
+            padding: 28px 24px;
+        }
+        .ann-panel h3 {
+            margin-bottom: 20px;
+            font-size: 0.88rem;
+            letter-spacing: 0.06em;
+        }
+        .ann-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            align-items: flex-start;
+        }
+        .ann-row:last-child { margin-bottom: 0; }
+        .ann-badge {
+            width: 22px; height: 22px;
+            border-radius: 50%;
+            background: var(--ouro);
+            color: var(--navy);
+            font-size: 0.62rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .ann-desc { font-size: 0.8rem; color: var(--cinza); line-height: 1.5; }
+        .ann-desc strong { color: var(--navy); font-weight: 600; display: block; margin-bottom: 2px; }
+
+        .spec-block {
+            background: var(--cru);
+            padding: 16px;
+            margin-top: 18px;
+            border-left: 2px solid var(--ouro);
+        }
+        .spec-label { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cinza); margin-bottom: 6px; }
+        .spec-val   { font-size: 0.8rem; color: var(--navy); line-height: 1.6; }
+
+
+        /* ══════════════════════════════════════════
+           STORY / REELS MOCKUP
+        ══════════════════════════════════════════ */
+        .story-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+        .phone-wrap {
+            filter: drop-shadow(0 20px 50px rgba(28,43,58,0.35));
+        }
+        .phone-body {
+            background: #0A0A0A;
+            border-radius: 36px;
+            padding: 14px;
+            position: relative;
+        }
+        .phone-notch {
+            position: absolute;
+            top: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 22px;
+            background: #0A0A0A;
+            border-radius: 0 0 14px 14px;
+            z-index: 10;
+        }
+        .phone-screen {
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 9/16;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .phone-screen .riviera-bg {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Story UI */
+        .st-prog { display: flex; gap: 3px; padding: 38px 10px 0; position: relative; z-index: 5; }
+        .st-seg  { flex: 1; height: 2px; background: rgba(255,255,255,0.35); border-radius: 1px; }
+        .st-seg.on { background: rgba(255,255,255,0.88); }
+        .st-user {
+            display: flex; align-items: center; gap: 8px;
+            padding: 7px 12px;
+            position: relative; z-index: 5;
+        }
+        .st-av {
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.85);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .st-av span { font-size: 0.5rem; color: var(--navy); font-family: var(--serif); }
+        .st-nm    { color: rgba(255,255,255,0.94); font-size: 0.7rem; font-weight: 500; }
+        .st-sp    { color: rgba(255,255,255,0.6); font-size: 0.62rem; }
+
+        .st-body {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 5;
+            padding: 16px;
+            text-align: center;
+        }
+        .st-overlay {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 1.25rem;
+            color: var(--branco);
+            text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+            line-height: 1.4;
+        }
+
+        /* Safe area lines for story */
+        .st-safe-top {
+            position: absolute;
+            top: 20%;
+            left: 0; right: 0;
+            height: 1px;
+            background: rgba(200,169,106,0.4);
+            z-index: 6;
+        }
+        .st-safe-bot {
+            position: absolute;
+            bottom: 22%;
+            left: 0; right: 0;
+            height: 1px;
+            background: rgba(200,169,106,0.4);
+            z-index: 6;
+        }
+
+        .st-foot {
+            padding: 12px 14px 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 7px;
+            position: relative;
+            z-index: 5;
+        }
+        .st-btn {
+            background: rgba(245,240,232,0.9);
+            color: var(--navy);
+            padding: 9px 28px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-radius: 2px;
+        }
+        .st-swipe { font-size: 0.58rem; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; }
+
+        /* Story annotations panel */
+        .zone-diagram {
+            background: var(--branco);
+            box-shadow: var(--sh-soft);
+            overflow: hidden;
+        }
+        .zd-header { background: var(--navy); padding: 14px 20px; }
+        .zd-header span { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cru); }
+        .zd-body { padding: 0; }
+        .zd-row {
+            padding: 14px 20px;
+            border-bottom: 1px solid #EEEAE5;
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+        .zd-row:last-child { border-bottom: none; }
+        .zd-pct {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--ouro);
+            width: 36px;
+            flex-shrink: 0;
+            font-family: var(--serif);
+        }
+        .zd-bar { flex: 1; }
+        .zd-zone-name { font-size: 0.75rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 2px; }
+        .zd-zone-desc { font-size: 0.72rem; color: var(--cinza); line-height: 1.4; }
+        .zd-strip {
+            height: 6px;
+            border-radius: 3px;
+            margin-top: 6px;
+        }
+        .strip-restricted { background: rgba(139,46,46,0.25); }
+        .strip-safe       { background: rgba(45,74,62,0.25); }
+        .strip-warn       { background: rgba(200,169,106,0.35); }
+
+
+        /* ══════════════════════════════════════════
+           THREE VERSIONS
+        ══════════════════════════════════════════ */
+        .versions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .ver-card {
+            background: var(--branco);
+            box-shadow: var(--sh-med);
+        }
+        .ver-badge {
+            padding: 10px 16px;
+            font-size: 0.65rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            border-bottom: 1px solid #EEEAE5;
+        }
+        .ver-badge.ver-a { background: var(--navy); color: var(--cru); }
+        .ver-badge.ver-b { background: var(--ouro); color: var(--navy); }
+        .ver-badge.ver-c { background: #2D4A3E; color: var(--cru); }
+
+        .ver-img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            position: relative;
+            overflow: hidden;
+        }
+        .ver-img .riviera-bg {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Version-specific overlays */
+        .ver-a-overlay {
+            /* no overlay — clean */
+        }
+        .ver-b-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(to top, rgba(28,43,58,0.42), transparent);
+            padding: 20px 18px 18px;
+            z-index: 3;
+        }
+        .ver-b-text {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 1.05rem;
+            color: rgba(245,240,232,0.96);
+            text-shadow: 0 1px 6px rgba(0,0,0,0.2);
+            line-height: 1.35;
+        }
+        .ver-c-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 16px 16px 14px;
+            z-index: 3;
+            background: linear-gradient(to top, rgba(28,43,58,0.5) 0%, rgba(28,43,58,0.2) 60%, transparent 100%);
+        }
+        .ver-c-name {
+            font-family: var(--serif);
+            font-size: 0.95rem;
+            color: rgba(245,240,232,0.95);
+            letter-spacing: 0.04em;
+            display: block;
+            margin-bottom: 3px;
+        }
+        .ver-c-spec {
+            font-size: 0.68rem;
+            color: rgba(200,169,106,0.9);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        /* Placeholder text styling for images */
+        .ver-ph {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 0.72rem;
+            color: rgba(28,43,58,0.4);
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        .ver-info { padding: 20px 18px; }
+        .ver-angle {
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--cinza);
+            margin-bottom: 6px;
+        }
+        .ver-headline {
+            font-family: var(--serif);
+            font-size: 0.95rem;
+            color: var(--navy);
+            margin-bottom: 10px;
+            line-height: 1.35;
+        }
+        .ver-cap {
+            font-size: 0.76rem;
+            color: var(--cinza);
+            font-style: italic;
+            line-height: 1.55;
+            margin-bottom: 12px;
+        }
+        .ver-cta-line {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .ver-cta-pill {
+            padding: 4px 12px;
+            background: var(--navy);
+            color: var(--cru);
+            font-size: 0.62rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .ver-cta-label { font-size: 0.7rem; color: var(--cinza); }
+
+
+        /* ══════════════════════════════════════════
+           TYPOGRAPHY GUIDE
+        ══════════════════════════════════════════ */
+        .typo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .typo-card {
+            background: var(--branco);
+            box-shadow: var(--sh-soft);
+            overflow: hidden;
+        }
+        .typo-header {
+            padding: 12px 22px;
+            background: #F0EBE3;
+            border-bottom: 1px solid #E4DDD5;
+        }
+        .typo-role { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cinza); }
+        .typo-body { padding: 24px 22px; }
+        .typo-specimen { margin-bottom: 14px; }
+        .typo-meta {
+            font-size: 0.72rem;
+            color: var(--cinza);
+            line-height: 1.6;
+        }
+        .typo-meta span { display: block; }
+
+        /* Actual specimens */
+        .sp-headline {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 1.7rem;
+            color: var(--navy);
+            line-height: 1.2;
+            letter-spacing: 0.01em;
+        }
+        .sp-overlay-dark {
+            display: inline-block;
+            background: var(--navy);
+            padding: 12px 18px;
+        }
+        .sp-overlay-dark span {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 1.25rem;
+            color: rgba(245,240,232,0.96);
+            line-height: 1.35;
+        }
+        .sp-body-copy {
+            font-family: var(--sans);
+            font-size: 0.88rem;
+            color: #3A3530;
+            line-height: 1.7;
+        }
+        .sp-cta-text {
+            font-family: var(--sans);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--navy);
+        }
+
+        /* Color swatches */
+        .swatches {
+            display: flex;
+            gap: 0;
+            margin-bottom: 16px;
+            box-shadow: var(--sh-soft);
+        }
+        .swatch {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .sw-block { height: 50px; }
+        .sw-info  { padding: 8px 10px; background: var(--branco); }
+        .sw-name  { font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); display: block; }
+        .sw-use   { font-size: 0.62rem; color: var(--cinza); display: block; margin-top: 2px; }
+        .sw-when  { font-size: 0.6rem; color: var(--ouro); display: block; margin-top: 1px; }
+
+
+        /* ══════════════════════════════════════════
+           TEXT POSITIONING DIAGRAM
+        ══════════════════════════════════════════ */
+        .pos-layout {
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        .pos-diagram {
+            aspect-ratio: 4/5;
+            position: relative;
+            background: #D0C8B8;
+            box-shadow: var(--sh-med);
+        }
+        .pos-zone {
+            position: absolute;
+            left: 0; right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pos-zone-label {
+            font-size: 0.68rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .pz-top {
+            top: 0; height: 12%;
+            background: rgba(200,169,106,0.22);
+            border-bottom: 1px dashed rgba(200,169,106,0.5);
+        }
+        .pz-top .pos-zone-label { color: rgba(100,80,30,0.9); }
+
+        .pz-mid {
+            top: 12%; height: 62%;
+            background: transparent;
+        }
+        .pz-mid .pos-zone-label { color: rgba(28,43,58,0.35); }
+
+        .pz-bot {
+            top: 74%; height: 16%;
+            background: rgba(28,43,58,0.22);
+            border-top: 1px dashed rgba(245,240,232,0.4);
+        }
+        .pz-bot .pos-zone-label { color: rgba(245,240,232,0.85); }
+
+        .pz-chrome {
+            bottom: 0; height: 10%;
+            background: rgba(28,43,58,0.5);
+        }
+        .pz-chrome .pos-zone-label { color: rgba(200,169,106,0.9); }
+
+        .pos-side-note {
+            position: absolute;
+            right: -120px;
+            font-size: 0.62rem;
+            color: var(--cinza);
+            width: 110px;
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        .pos-rules {
+            background: var(--branco);
+            box-shadow: var(--sh-soft);
+            padding: 28px 24px;
+        }
+        .pos-rule {
+            padding: 14px 0;
+            border-bottom: 1px solid #EEEAE5;
+            display: flex;
+            gap: 14px;
+        }
+        .pos-rule:last-child { border-bottom: none; }
+        .rule-icon {
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            margin-top: 1px;
+        }
+        .icon-ok  { background: rgba(45,74,62,0.12); color: #2D4A3E; }
+        .icon-no  { background: rgba(139,46,46,0.1);  color: #6B2E2E; }
+        .icon-tip { background: rgba(200,169,106,0.15); color: #7A5C1A; }
+        .rule-content { font-size: 0.8rem; color: var(--cinza); line-height: 1.55; }
+        .rule-content strong { color: var(--navy); display: block; margin-bottom: 2px; font-size: 0.82rem; }
+
+
+        /* ══════════════════════════════════════════
+           FINAL RECOMMENDATION
+        ══════════════════════════════════════════ */
+        .rec-section { background: var(--navy); }
+        .rec-inner { max-width: 860px; margin: 0 auto; }
+        .rec-eyebrow { color: var(--ouro) !important; }
+        .rec-section h2 { color: var(--cru); margin-bottom: 36px; }
+
+        .rec-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 36px;
+        }
+        .rec-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(200,169,106,0.2);
+            padding: 28px 24px;
+        }
+        .rec-card.featured {
+            border-color: var(--ouro);
+            background: rgba(200,169,106,0.08);
+        }
+        .rec-order {
+            font-size: 0.65rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--ouro);
+            margin-bottom: 8px;
+        }
+        .rec-version {
+            font-family: var(--serif);
+            font-size: 1.1rem;
+            color: var(--cru);
+            margin-bottom: 8px;
+        }
+        .rec-why {
+            font-size: 0.8rem;
+            color: var(--cinza-c);
+            line-height: 1.65;
+        }
+
+        .rec-verdict {
+            background: rgba(200,169,106,0.1);
+            border-left: 3px solid var(--ouro);
+            padding: 22px 24px;
+        }
+        .rec-verdict-title {
+            font-family: var(--serif);
+            font-size: 1rem;
+            color: var(--ouro);
+            margin-bottom: 10px;
+        }
+        .rec-verdict-text {
+            font-size: 0.83rem;
+            color: var(--cinza-c);
+            line-height: 1.7;
+        }
+
+
+        /* ══════════════════════════════════════════
+           FOOTER
+        ══════════════════════════════════════════ */
+        .site-footer {
+            background: #0A0F14;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(200,169,106,0.15);
+        }
+        .ft-brand { font-family: var(--serif); font-size: 1.1rem; color: var(--cru); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 10px; }
+        .ft-tag   { font-size: 0.8rem; color: var(--cinza); font-style: italic; margin-bottom: 16px; }
+        .ft-meta  { font-size: 0.68rem; color: rgba(138,127,116,0.6); letter-spacing: 0.05em; }
+
+
+        /* ══════════════════════════════════════════
+           RESPONSIVE
+        ══════════════════════════════════════════ */
+        @media (max-width: 960px) {
+            .feed-layout, .story-layout, .pos-layout { grid-template-columns: 1fr; }
+            .versions-grid { grid-template-columns: 1fr; }
+            .typo-grid { grid-template-columns: 1fr; }
+            .rec-grid  { grid-template-columns: 1fr; }
+            h1 { font-size: 2rem; }
+            .container { padding: 0 20px; }
+            .feed-layout > *:first-child { max-width: 420px; margin: 0 auto; }
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     HEADER
+══════════════════════════════════════════ -->
+<header class="site-header">
+    <div class="container">
+        <div class="hd-inner">
+            <span class="hd-brand">Saint Riviera</span>
+            <div class="hd-right">
+                <span class="hd-meta">Creative Preview · Campanha Feminina · Mai 2026</span>
+                <span class="hd-badge">Aprovação Criativa</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="hero">
+    <div class="container">
+        <p class="eyebrow">Mockup Visual de Criativo</p>
+        <h1>Look Branco Feminino<br>Riviera — Preview</h1>
+        <p class="hero-sub">
+            Visualização completa de como o anúncio aparece no Instagram antes da publicação.
+            Três versões criativas, direção de tipografia, posicionamento de texto e
+            recomendação final de qual versão lançar primeiro.
+        </p>
+        <div class="hero-tags">
+            <span class="tag">Feed 4:5</span>
+            <span class="tag">Story 9:16</span>
+            <span class="tag">3 Versões A/B/C</span>
+            <span class="tag">Tipografia</span>
+            <span class="tag">Safe Zone</span>
+        </div>
+    </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 1 — FEED PREVIEW PRINCIPAL
+══════════════════════════════════════════ -->
+<section class="section">
+    <div class="container">
+        <div style="margin-bottom:40px">
+            <p class="eyebrow">Preview Principal · Feed Instagram</p>
+            <h2>Anúncio no Feed — Formato 4:5</h2>
+            <div class="gold-rule"></div>
+            <p class="sec-sub">Mockup com a versão B (frase de desejo sobreposta). Mostra o criativo como ele apareceria no feed, com indicação de safe zone, zona de texto e anotações de direção criativa.</p>
+        </div>
+
+        <div class="feed-layout">
+
+            <!-- Instagram card -->
+            <div class="ig-card">
+                <div class="ig-top">
+                    <div class="ig-av ig-av-ring"><span>SR</span></div>
+                    <div class="ig-info">
+                        <span class="ig-nm">saintriviera</span>
+                        <span class="ig-sp">Patrocinado</span>
+                    </div>
+                    <span class="ig-dots">···</span>
+                </div>
+
+                <div class="ig-img-wrap">
+                    <div class="riviera-bg" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:32px">
+                        <p class="img-label">
+                            Imagem principal —<br>
+                            duas mulheres em looks<br>
+                            brancos/off-white na Riviera.<br>
+                            Varanda. Vista para o mar.<br>
+                            Luz de tarde. Europa.
+                        </p>
+                    </div>
+
+                    <!-- Zones -->
+                    <div class="zone-top">
+                        <span class="zone-label-top">① Zona de logotipo</span>
+                    </div>
+                    <div class="zone-bottom">
+                        <span class="img-overlay-text">Para quem reconhece.</span>
+                    </div>
+
+                    <!-- Safe frame -->
+                    <div class="safe-frame">
+                        <span class="safe-label">② Safe zone — área ativa do criativo</span>
+                    </div>
+
+                    <!-- Annotation markers -->
+                    <div class="ann" style="top:8%;right:5%">
+                        <div class="ann-num">③</div>
+                        <div class="ann-text">Terço superior livre</div>
+                    </div>
+                    <div class="ann" style="bottom:24%;left:5%">
+                        <div class="ann-num">④</div>
+                        <div class="ann-text">Texto → terço inferior</div>
+                    </div>
+                </div>
+
+                <div class="ig-actions">
+                    <span class="ig-ico">♡</span>
+                    <span class="ig-ico">◻</span>
+                    <span class="ig-ico">↗</span>
+                    <span class="ig-ico ig-ico-save">⊹</span>
+                </div>
+                <div class="ig-likes">243 curtidas</div>
+                <div class="ig-cap">
+                    <strong>saintriviera</strong>&nbsp;
+                    Há um grupo que reconhece. Não o logotipo — o caimento. Não o preço — a escolha. O branco de linho numa varanda com vista para o mar não é acidente. É curadoria. A Saint Riviera é feita para quem entende essa diferença. Conjunto Riviera Blanc — linho belga, corte editado, produzido em pequena escala no Brasil.
+                    <span class="ig-more-cap"> mais</span>
+                </div>
+                <div class="ig-cta-bar">
+                    <span class="ig-hl">Para quem entende o caimento</span>
+                    <span class="ig-cta">Saiba mais ›</span>
+                </div>
+            </div>
+
+            <!-- Annotations panel -->
+            <div>
+                <div class="ann-panel">
+                    <h3>Anotações de Direção</h3>
+
+                    <div class="ann-row">
+                        <div class="ann-badge">①</div>
+                        <div class="ann-desc">
+                            <strong>Zona de topo — logotipo</strong>
+                            Reservada para branding discreto se necessário. Nesta campanha, recomendado deixar limpo — a imagem fala antes de qualquer logotipo.
+                        </div>
+                    </div>
+                    <div class="ann-row">
+                        <div class="ann-badge">②</div>
+                        <div class="ann-desc">
+                            <strong>Safe zone — área ativa</strong>
+                            Quadro tracejado delimita a área segura de composição. Elementos críticos (rosto, caimento, look completo) devem estar dentro deste frame em todos os posicionamentos.
+                        </div>
+                    </div>
+                    <div class="ann-row">
+                        <div class="ann-badge">③</div>
+                        <div class="ann-desc">
+                            <strong>Terço superior — respiro</strong>
+                            Não colocar texto ou elemento aqui. O terço superior pertence ao céu, ao ambiente, à atmosfera. Qualquer texto aqui destrói a composição editorial.
+                        </div>
+                    </div>
+                    <div class="ann-row">
+                        <div class="ann-badge">④</div>
+                        <div class="ann-desc">
+                            <strong>Terço inferior — texto</strong>
+                            Única zona aprovada para texto sobreposto. Máximo uma linha de 6 palavras. Georgia Italic, off-white (#F5F0E8), com gradiente escuro como base para garantir legibilidade.
+                        </div>
+                    </div>
+
+                    <div class="spec-block">
+                        <div class="spec-label">Especificações do texto sobreposto</div>
+                        <div class="spec-val">
+                            Fonte: Georgia Italic (substitui Playfair Display)<br>
+                            Tamanho: 18–22px (web) / 60–72px (produção)<br>
+                            Cor: #F5F0E8 (off-white cru)<br>
+                            Sombra: 0 1px 8px rgba(0,0,0,0.22)<br>
+                            Máximo: 6 palavras por linha<br>
+                            Alinhamento: esquerda, margem 20px
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 2 — STORY / REELS PREVIEW
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--branco)">
+    <div class="container">
+        <div style="margin-bottom:40px">
+            <p class="eyebrow">Preview · Story &amp; Reels</p>
+            <h2>Formato Vertical — 9:16</h2>
+            <div class="gold-rule"></div>
+            <p class="sec-sub">Mockup em tela de celular mostrando o anúncio no formato Story/Reels. As linhas douradas indicam a safe zone — área onde texto e CTA não competem com a interface do Instagram.</p>
+        </div>
+
+        <div class="story-layout">
+
+            <!-- Phone mockup -->
+            <div class="phone-wrap">
+                <div class="phone-body">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+
+                        <div class="riviera-bg" style="position:absolute;inset:0"></div>
+
+                        <!-- Safe zone lines -->
+                        <div class="st-safe-top"></div>
+                        <div class="st-safe-bot"></div>
+
+                        <!-- Instagram story UI -->
+                        <div class="st-prog">
+                            <div class="st-seg on"></div>
+                            <div class="st-seg"></div>
+                            <div class="st-seg"></div>
+                        </div>
+                        <div class="st-user">
+                            <div class="st-av"><span>SR</span></div>
+                            <div>
+                                <span class="st-nm">saintriviera</span>
+                                <span class="st-sp">&nbsp;· Patrocinado</span>
+                            </div>
+                        </div>
+
+                        <div class="st-body">
+                            <p class="st-overlay">
+                                Para a tarde<br>
+                                que pede presença<br>
+                                sem pedir esforço.
+                            </p>
+                        </div>
+
+                        <div class="st-foot">
+                            <div class="st-btn">Saiba mais</div>
+                            <p class="st-swipe">↑ Deslize para cima</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zone breakdown -->
+            <div>
+                <div class="zone-diagram">
+                    <div class="zd-header"><span>Estrutura de Zonas — 9:16</span></div>
+                    <div class="zd-body">
+                        <div class="zd-row">
+                            <div class="zd-pct">0–18%</div>
+                            <div class="zd-bar">
+                                <span class="zd-zone-name">Chrome do Instagram</span>
+                                <span class="zd-zone-desc">Progress bar + user row. Não posicionar elementos de criativo aqui — serão cobertos pela interface.</span>
+                                <div class="zd-strip strip-restricted"></div>
+                            </div>
+                        </div>
+                        <div class="zd-row">
+                            <div class="zd-pct">18–40%</div>
+                            <div class="zd-bar">
+                                <span class="zd-zone-name">Zona superior segura</span>
+                                <span class="zd-zone-desc">Pode conter elementos visuais, atmosfera. Evitar texto crítico — competição com o username do Instagram.</span>
+                                <div class="zd-strip strip-warn"></div>
+                            </div>
+                        </div>
+                        <div class="zd-row">
+                            <div class="zd-pct">40–70%</div>
+                            <div class="zd-bar">
+                                <span class="zd-zone-name">Zona central — foco visual</span>
+                                <span class="zd-zone-desc">Área principal de imagem. O look, os rostos, o ambiente. Texto aqui compete com o foco visual — evitar.</span>
+                                <div class="zd-strip strip-warn"></div>
+                            </div>
+                        </div>
+                        <div class="zd-row">
+                            <div class="zd-pct">70–80%</div>
+                            <div class="zd-bar">
+                                <span class="zd-zone-name">Zona de texto — aprovada</span>
+                                <span class="zd-zone-desc">Posição ideal para frase curta sobreposta. Gradiente escuro como base. Máximo 3 linhas em Georgia Italic.</span>
+                                <div class="zd-strip strip-safe"></div>
+                            </div>
+                        </div>
+                        <div class="zd-row">
+                            <div class="zd-pct">80–100%</div>
+                            <div class="zd-bar">
+                                <span class="zd-zone-name">Chrome do CTA</span>
+                                <span class="zd-zone-desc">Botão "Saiba mais" e indicador de swipe. Área gerenciada pelo Instagram — o botão é inserido automaticamente.</span>
+                                <div class="zd-strip strip-restricted"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background:var(--branco);box-shadow:var(--sh-soft);padding:22px 24px;margin-top:20px;border-left:2px solid var(--ouro)">
+                    <div style="font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--cinza);margin-bottom:10px">Hierarquia visual no 9:16</div>
+                    <div style="font-size:0.8rem;color:var(--navy);line-height:1.8">
+                        <strong>1.</strong> Imagem — fala antes de qualquer palavra<br>
+                        <strong>2.</strong> Frase sobreposta — máximo 3 linhas, Georgia Italic<br>
+                        <strong>3.</strong> CTA button — gerado pelo Meta, fundo branco translúcido<br>
+                        <strong>4.</strong> Swipe indicator — mínimo, discreto, abaixo do CTA
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 3 — TRÊS VERSÕES
+══════════════════════════════════════════ -->
+<section class="section">
+    <div class="container">
+        <div style="margin-bottom:40px">
+            <p class="eyebrow">Variações Criativas</p>
+            <h2>Versão A · B · C</h2>
+            <div class="gold-rule"></div>
+            <p class="sec-sub">Três abordagens visuais para o mesmo criativo. Cada versão serve um ângulo psicológico diferente e uma etapa do funil. Não são para testar ao mesmo tempo — há uma sequência recomendada.</p>
+        </div>
+
+        <div class="versions-grid">
+
+            <!-- VERSION A -->
+            <div class="ver-card">
+                <div class="ver-badge ver-a">Versão A — Editorial Limpo</div>
+                <div class="ver-img">
+                    <div class="riviera-bg" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:24px">
+                        <p class="ver-ph">
+                            Imagem limpa.<br>Sem texto sobreposto.<br>
+                            A estética fala sozinha.
+                        </p>
+                    </div>
+                    <!-- No overlay — clean -->
+                </div>
+                <div class="ver-info">
+                    <div class="ver-angle">Ângulo: Desejo puro / Editorial</div>
+                    <div class="ver-headline">Sem texto na imagem — foco total na atmosfera e no look.</div>
+                    <div class="ver-cap">"Há um grupo que reconhece. Não o logotipo — o caimento..."</div>
+                    <div class="ver-cta-line">
+                        <span class="ver-cta-pill">Saiba mais</span>
+                        <span class="ver-cta-label">Para quem entende o caimento</span>
+                    </div>
+                    <div style="margin-top:14px;padding-top:14px;border-top:1px solid #EEEAE5;font-size:0.73rem;color:var(--cinza);line-height:1.55">
+                        <strong style="color:var(--navy);display:block;margin-bottom:4px">Quando usar:</strong>
+                        Público frio de primeiro contato. Mais arriscado em CTR — mas protege 100% o posicionamento premium. Indicado para feeds com alta concorrência visual onde a contenção se destaca.
+                    </div>
+                </div>
+            </div>
+
+            <!-- VERSION B -->
+            <div class="ver-card">
+                <div class="ver-badge ver-b">Versão B — Frase de Desejo</div>
+                <div class="ver-img">
+                    <div class="riviera-bg" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:24px">
+                        <p class="ver-ph">
+                            Imagem com frase sobreposta<br>no terço inferior.
+                        </p>
+                    </div>
+                    <div class="ver-b-overlay">
+                        <p class="ver-b-text">Para quem reconhece.</p>
+                    </div>
+                </div>
+                <div class="ver-info">
+                    <div class="ver-angle">Ângulo: Pertencimento / Identidade</div>
+                    <div class="ver-headline">Uma linha. Georgia Italic. Off-white. Terço inferior esquerdo.</div>
+                    <div class="ver-cap">"Há um grupo que reconhece. Não o logotipo — o caimento. Não o preço — a escolha."</div>
+                    <div class="ver-cta-line">
+                        <span class="ver-cta-pill">Saiba mais</span>
+                        <span class="ver-cta-label">Para quem entende o caimento</span>
+                    </div>
+                    <div style="margin-top:14px;padding-top:14px;border-top:1px solid #EEEAE5;font-size:0.73rem;color:var(--cinza);line-height:1.55">
+                        <strong style="color:var(--navy);display:block;margin-bottom:4px">Quando usar:</strong>
+                        Primeira escolha para prospecção fria. A frase ancora o scroll sem explicar demais. Quem se reconhece, para. Quem não é o público, passa — e isso é correto.
+                    </div>
+                </div>
+            </div>
+
+            <!-- VERSION C -->
+            <div class="ver-card">
+                <div class="ver-badge ver-c">Versão C — Produto em Foco</div>
+                <div class="ver-img">
+                    <div class="riviera-bg" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:24px">
+                        <p class="ver-ph">
+                            Imagem com nome do produto<br>e especificação discreta.
+                        </p>
+                    </div>
+                    <div class="ver-c-overlay">
+                        <span class="ver-c-name">Riviera Blanc.</span>
+                        <span class="ver-c-spec">Linho belga · 160 unidades</span>
+                    </div>
+                </div>
+                <div class="ver-info">
+                    <div class="ver-angle">Ângulo: Qualidade tátil / Escassez real</div>
+                    <div class="ver-headline">Nome do produto + especificação de material e escala.</div>
+                    <div class="ver-cap">"O linho belga tem uma memória própria. Ele amassa — e é isso que confirma que é real."</div>
+                    <div class="ver-cta-line">
+                        <span class="ver-cta-pill">Saiba mais</span>
+                        <span class="ver-cta-label">O tecido que melhora com o tempo</span>
+                    </div>
+                    <div style="margin-top:14px;padding-top:14px;border-top:1px solid #EEEAE5;font-size:0.73rem;color:var(--cinza);line-height:1.55">
+                        <strong style="color:var(--navy);display:block;margin-bottom:4px">Quando usar:</strong>
+                        Audiência morna — visitantes que já viram o produto mas não compraram. O nome e a especificação relembram o que estava considerando, com mais informação de valor.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 4 — TIPOGRAFIA
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--branco)">
+    <div class="container">
+        <div style="margin-bottom:40px">
+            <p class="eyebrow">Direção de Tipografia</p>
+            <h2>Tipo, Cor e Hierarquia</h2>
+            <div class="gold-rule"></div>
+            <p class="sec-sub">Cada elemento de texto tem uma função específica. A escolha errada de fonte, tamanho ou cor destrói o posicionamento premium antes de qualquer mensagem ser lida.</p>
+        </div>
+
+        <!-- Color swatches -->
+        <div style="margin-bottom:32px">
+            <div style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--cinza);margin-bottom:12px">Paleta de texto aprovada</div>
+            <div class="swatches">
+                <div class="swatch">
+                    <div class="sw-block" style="background:#F5F0E8"></div>
+                    <div class="sw-info">
+                        <span class="sw-name">Cru #F5F0E8</span>
+                        <span class="sw-use">Texto sobreposto</span>
+                        <span class="sw-when">Sobre imagem escura</span>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="sw-block" style="background:#1C2B3A"></div>
+                    <div class="sw-info">
+                        <span class="sw-name">Navy #1C2B3A</span>
+                        <span class="sw-use">Headline + copy</span>
+                        <span class="sw-when">Sobre fundos claros</span>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="sw-block" style="background:#C8A96A"></div>
+                    <div class="sw-info">
+                        <span class="sw-name">Ouro #C8A96A</span>
+                        <span class="sw-use">Eyebrows + destaques</span>
+                        <span class="sw-when">Nunca como texto principal</span>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="sw-block" style="background:#D4B896"></div>
+                    <div class="sw-info">
+                        <span class="sw-name">Areia #D4B896</span>
+                        <span class="sw-use">Spec text na imagem</span>
+                        <span class="sw-when">Sobre fundo navy escuro</span>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="sw-block" style="background:#3A3530"></div>
+                    <div class="sw-info">
+                        <span class="sw-name">Carvão #3A3530</span>
+                        <span class="sw-use">Body copy (caption)</span>
+                        <span class="sw-when">Texto corrido fora da imagem</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="typo-grid">
+            <div class="typo-card">
+                <div class="typo-header">
+                    <div class="typo-role">Headline do anúncio — campo "Headline" no Meta</div>
+                </div>
+                <div class="typo-body">
+                    <div class="typo-specimen">
+                        <p class="sp-headline">Para quem entende o caimento.</p>
+                    </div>
+                    <div class="typo-meta">
+                        <span><strong>Fonte:</strong> Georgia Italic (equivale Playfair Display Italic)</span>
+                        <span><strong>Tamanho:</strong> Campo limitado pelo Meta — máx. 40 caracteres</span>
+                        <span><strong>Tom:</strong> Filosófico, sem verbo imperativo, sem ponto de exclamação</span>
+                        <span><strong>Cor:</strong> Renderizado pelo Meta — fundo branco, texto escuro</span>
+                        <span><strong>Regra:</strong> Uma frase. Termina com ponto. Sem emoji.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="typo-card">
+                <div class="typo-header">
+                    <div class="typo-role">Texto sobreposto na imagem — terço inferior</div>
+                </div>
+                <div class="typo-body">
+                    <div class="typo-specimen">
+                        <div class="sp-overlay-dark">
+                            <span>Para quem reconhece.</span>
+                        </div>
+                    </div>
+                    <div class="typo-meta">
+                        <span><strong>Fonte:</strong> Playfair Display Italic / Georgia Italic</span>
+                        <span><strong>Tamanho:</strong> 60–72px na arte final (1080×1350px)</span>
+                        <span><strong>Cor:</strong> #F5F0E8 (off-white cru) com text-shadow suave</span>
+                        <span><strong>Posição:</strong> Terço inferior, alinhado à esquerda, margem 5%</span>
+                        <span><strong>Máximo:</strong> 6 palavras — mais que isso polui a imagem</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="typo-card">
+                <div class="typo-header">
+                    <div class="typo-role">Primary text — corpo do anúncio</div>
+                </div>
+                <div class="typo-body">
+                    <div class="typo-specimen">
+                        <p class="sp-body-copy">Há um grupo que reconhece. Não o logotipo — o caimento. Não o preço — a escolha. O branco de linho numa varanda com vista para o mar não é acidente. É curadoria.</p>
+                    </div>
+                    <div class="typo-meta">
+                        <span><strong>Fonte:</strong> System sans-serif (renderizado pelo Meta)</span>
+                        <span><strong>Estrutura:</strong> 3–5 linhas · parágrafo duplo máximo</span>
+                        <span><strong>Tom:</strong> Filosófico primeiro, produto no final — nunca invertido</span>
+                        <span><strong>Proibido:</strong> Emojis, urgência, preço, desconto, caps lock</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="typo-card">
+                <div class="typo-header">
+                    <div class="typo-role">CTA button e texto de apoio</div>
+                </div>
+                <div class="typo-body">
+                    <div class="typo-specimen" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+                        <div style="background:var(--navy);padding:10px 22px">
+                            <p class="sp-cta-text" style="color:var(--cru)">Saiba mais</p>
+                        </div>
+                        <div style="background:var(--cru);padding:10px 22px;border:1px solid var(--cinza-c)">
+                            <p class="sp-cta-text">Ver mais</p>
+                        </div>
+                    </div>
+                    <div class="typo-meta" style="margin-top:16px">
+                        <span><strong>CTA prospecção fria:</strong> "Saiba mais" — nunca "Comprar agora"</span>
+                        <span><strong>CTA remarketing:</strong> "Ver produto" ou "Ver mais"</span>
+                        <span><strong>Nunca:</strong> "Compre já!", "Aproveite", "Clique aqui"</span>
+                        <span><strong>Regra:</strong> O CTA é convite, não ordem</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 5 — POSICIONAMENTO DE TEXTO
+══════════════════════════════════════════ -->
+<section class="section">
+    <div class="container">
+        <div style="margin-bottom:40px">
+            <p class="eyebrow">Posição do Texto</p>
+            <h2>Onde entra — e onde não entra</h2>
+            <div class="gold-rule"></div>
+            <p class="sec-sub">Diagrama de zonamento do criativo. Cada zona tem uma função específica. Colocar texto na zona errada destrói a composição e a percepção premium antes da mensagem ser lida.</p>
+        </div>
+
+        <div class="pos-layout">
+
+            <!-- Diagram -->
+            <div class="pos-diagram">
+                <div class="pos-zone pz-top">
+                    <p class="pos-zone-label">ZONA TOPO<br><span style="font-size:0.85em;font-weight:400">Logotipo / Respiro</span></p>
+                </div>
+                <div class="pos-zone pz-mid">
+                    <p class="pos-zone-label">ZONA CENTRAL<br><span style="font-size:0.85em;font-weight:400">Imagem livre — não tocar</span></p>
+                </div>
+                <div class="pos-zone pz-bot">
+                    <p class="pos-zone-label">ZONA DE TEXTO<br><span style="font-size:0.85em;font-weight:400">Máx. 1 linha · Georgia Italic</span></p>
+                </div>
+                <div class="pos-zone pz-chrome">
+                    <p class="pos-zone-label">CHROME INSTAGRAM<br><span style="font-size:0.85em;font-weight:400">Headline + CTA</span></p>
+                </div>
+            </div>
+
+            <!-- Rules -->
+            <div class="pos-rules">
+
+                <div class="pos-rule">
+                    <div class="rule-icon icon-ok">✓</div>
+                    <div class="rule-content">
+                        <strong>Texto no terço inferior — aprovado</strong>
+                        A única zona onde texto sobreposto funciona sem destruir a composição. O gradiente escuro garante legibilidade sem colar um retângulo feio sobre a imagem. Alinhamento: esquerda, margem de 5% da largura da imagem.
+                    </div>
+                </div>
+
+                <div class="pos-rule">
+                    <div class="rule-icon icon-no">✕</div>
+                    <div class="rule-content">
+                        <strong>Texto no terço superior — nunca</strong>
+                        O topo pertence ao céu, ao ambiente, à atmosfera. Texto aqui compete com o cenário e destrói a sensação de espaço e sofisticação que justifica o clique.
+                    </div>
+                </div>
+
+                <div class="pos-rule">
+                    <div class="rule-icon icon-no">✕</div>
+                    <div class="rule-content">
+                        <strong>Texto na zona central — nunca</strong>
+                        O centro é onde estão as figuras, o look, o caimento. Qualquer texto aqui briga com o produto que está sendo vendido. A imagem perde o foco. O público, o clique.
+                    </div>
+                </div>
+
+                <div class="pos-rule">
+                    <div class="rule-icon icon-no">✕</div>
+                    <div class="rule-content">
+                        <strong>Preço ou desconto na imagem — nunca</strong>
+                        Independente da zona. O preço nunca entra no criativo — pertence à página de produto, não ao anúncio de descoberta. Preço em destaque no anúncio é sinal de varejo.
+                    </div>
+                </div>
+
+                <div class="pos-rule">
+                    <div class="rule-icon icon-tip">!</div>
+                    <div class="rule-content">
+                        <strong>Versão A (sem texto) — sempre disponível</strong>
+                        Quando em dúvida sobre qual texto usar, a versão sem texto sobreposto é sempre a mais segura para o posicionamento. O criativo editorial limpo comunica premium antes de qualquer palavra.
+                    </div>
+                </div>
+
+                <div class="pos-rule">
+                    <div class="rule-icon icon-tip">!</div>
+                    <div class="rule-content">
+                        <strong>Máximo 6 palavras — regra absoluta</strong>
+                        Mais de 6 palavras na imagem transforma o criativo em banner de e-commerce. A contenção é a sofisticação. Uma frase curta que provoca é mais poderosa do que um parágrafo que explica.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 6 — LEGENDAS POR VERSÃO
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--branco)">
+    <div class="container">
+        <div style="margin-bottom:40px">
+            <p class="eyebrow">Captions por Versão</p>
+            <h2>Legenda, Headline e CTA</h2>
+            <div class="gold-rule"></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+
+            <div style="background:var(--cru);padding:28px 24px;border-top:3px solid var(--navy)">
+                <div style="font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--cinza);margin-bottom:12px">Versão A — Editorial Limpo</div>
+                <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ouro);margin-bottom:8px">Primary text</div>
+                <p style="font-size:0.82rem;color:var(--navy);font-style:italic;line-height:1.65;margin-bottom:16px">"Há um grupo que reconhece. Não o logotipo — o caimento. Não o preço — a escolha. O branco de linho numa varanda com vista para o mar não é acidente. É curadoria. A Saint Riviera é feita para quem entende essa diferença."</p>
+                <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ouro);margin-bottom:6px">Headline</div>
+                <p style="font-size:0.83rem;color:var(--navy);margin-bottom:12px">Para quem entende o caimento.</p>
+                <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ouro);margin-bottom:6px">CTA</div>
+                <p style="font-size:0.83rem;color:var(--navy)">Saiba mais</p>
+            </div>
+
+            <div style="background:var(--cru);padding:28px 24px;border-top:3px solid var(--ouro)">
+                <div style="font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--cinza);margin-bottom:12px">Versão B — Frase de Desejo</div>
+                <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ouro);margin-bottom:8px">Texto na imagem</div>
+                <p style="font-size:1rem;font-family:var(--serif);font-style:italic;color:var(--navy);margin-bottom:16px">Para quem reconhece.</p>
+                <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ouro);margin-bottom:8px">Primary text</div>
+                <p style="font-size:0.82rem;color:var(--navy);font-style:italic;line-height:1.65;margin-bottom:16px">"Há lugares que pedem uma roupa à altura. Uma varanda com vista para o mar. Uma tarde sem agenda. O branco que o vento não estraga porque foi tecido para o calor, para a luz, para o movimento lento das melhores tardes."</p>
+                <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ouro);margin-bottom:6px">Headline</div>
+                <p style="font-size:0.83rem;color:var(--navy);margin-bottom:12px">O lugar pede uma roupa assim.</p>
+                <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ouro);margin-bottom:6px">CTA</div>
+                <p style="font-size:0.83rem;color:var(--navy)">Saiba mais</p>
+            </div>
+
+            <div style="background:var(--cru);padding:28px 24px;border-top:3px solid #2D4A3E">
+                <div style="font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--cinza);margin-bottom:12px">Versão C — Produto em Foco</div>
+                <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ouro);margin-bottom:8px">Texto na imagem</div>
+                <p style="font-size:0.95rem;font-family:var(--serif);color:var(--navy);margin-bottom:4px">Riviera Blanc.</p>
+                <p style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--cinza);margin-bottom:16px">Linho belga · 160 unidades</p>
+                <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ouro);margin-bottom:8px">Primary text</div>
+                <p style="font-size:0.82rem;color:var(--navy);font-style:italic;line-height:1.65;margin-bottom:16px">"O linho belga tem uma memória própria. Ele amassa — e é isso que confirma que é real. Lavagem enzimática. Botões de coco. Produzido em 160 unidades."</p>
+                <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ouro);margin-bottom:6px">Headline</div>
+                <p style="font-size:0.83rem;color:var(--navy);margin-bottom:12px">O tecido que melhora com o tempo.</p>
+                <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ouro);margin-bottom:6px">CTA</div>
+                <p style="font-size:0.83rem;color:var(--navy)">Ver produto</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SEÇÃO 7 — RECOMENDAÇÃO FINAL
+══════════════════════════════════════════ -->
+<section class="section rec-section">
+    <div class="container">
+        <div class="rec-inner">
+            <p class="eyebrow rec-eyebrow">Recomendação Final do Criativo</p>
+            <h2>Qual versão lançar primeiro</h2>
+            <div class="gold-rule" style="background:var(--ouro);margin-bottom:32px"></div>
+
+            <div class="rec-grid">
+                <div class="rec-card featured">
+                    <div class="rec-order">1º — Lançar agora</div>
+                    <div class="rec-version">Versão B — "Para quem reconhece."</div>
+                    <div class="rec-why">A frase no terço inferior ancora o scroll sem explicar demais. Funciona para público frio porque filtra por identidade — quem se reconhece, para; quem não é o perfil, passa. CTR menor, mas qualificado. Risco baixo de posicionamento. Maior chance de clique entre os três.</div>
+                </div>
+
+                <div class="rec-card">
+                    <div class="rec-order">2º — Testar em paralelo</div>
+                    <div class="rec-version">Versão A — Editorial limpo</div>
+                    <div class="rec-why">Rodar simultaneamente com a versão B no mesmo ad set. Se a versão A tiver CTR link semelhante (acima de 0,8%), prefira-a para próximas campanhas — significa que o público não precisa da frase para parar. Isso indica uma audiência mais sofisticada.</div>
+                </div>
+
+                <div class="rec-card">
+                    <div class="rec-order">3º — Para remarketing</div>
+                    <div class="rec-version">Versão C — Produto em foco</div>
+                    <div class="rec-why">Reserve para quem já visitou a loja ou adicionou ao carrinho. A especificação técnica (linho belga, 160 unidades) funciona como confirmação de valor para quem já está considerando — não como primeiro contato.</div>
+                </div>
+
+                <div class="rec-card">
+                    <div class="rec-order">4º — Se precisar escalar rápido</div>
+                    <div class="rec-version">Versão B com Story 9:16</div>
+                    <div class="rec-why">Se a versão B validar com ROAS ≥ 2,2x, adaptar para Story/Reels com a mesma frase sobreposta. O Reels tem CPM geralmente menor e alcance orgânico complementar. A transição é direta — mesma imagem, mesmo copy, formato adaptado.</div>
+                </div>
+            </div>
+
+            <div class="rec-verdict">
+                <div class="rec-verdict-title">Veredito do criativo</div>
+                <div class="rec-verdict-text">
+                    Esta imagem tem o que uma campanha Saint Riviera precisa: atmosfera antes de produto, elegância antes de explicação, desejo antes de convencimento. O risco real não é o criativo — é o funil depois do clique. Se a página de produto não sustenta a atmosfera da varanda europeia, o anúncio traz a cliente certa para o lugar errado. Antes de qualquer real investido, auditar a imagem principal da página de produto. Se ela não tiver o mesmo nível visual desta campanha, o dinheiro em tráfego financiará o aprendizado de uma audiência que vai embora na página de produto.
+                    <br><br>
+                    Com o funil correto, a versão B desta campanha tem potencial real de validar em 5 dias com R$100 — e escalar para R$40/dia na semana seguinte.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="ft-brand">Saint Riviera</div>
+        <div class="ft-tag">Para quem entende que elegância não precisa de apresentação.</div>
+        <div class="ft-meta">Creative Preview · Documento Interno · Confidencial · Maio 2026</div>
+    </div>
+</footer>
+
+</body>
+</html>
