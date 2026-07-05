@@ -1,0 +1,3 @@
+import { requireMember } from "@/lib/profile";
+import { MemberHeading } from "@/components/member-heading";
+export default async function CreditsPage(){const p=await requireMember();return <><MemberHeading eyebrow="Crédito mensal" title="Seu saldo privado."/><div className="private-balance"><span>Disponível agora</span><strong>{new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL"}).format(p.creditBalance)}</strong><p>O crédito é renovado após a confirmação mensal da sua Private Society.</p></div><section className="history-list"><h2>Histórico</h2><div><span>02 jul 2026</span><b>Crédito mensal Private Society</b><strong>+ R$ 30,00</strong></div></section></>}

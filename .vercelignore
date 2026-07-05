@@ -1,0 +1,6 @@
+.corepack-cache
+.next
+node_modules
+*.cmd
+*.vsix
+public/brand-reference

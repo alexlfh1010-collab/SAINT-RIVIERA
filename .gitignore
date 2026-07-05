@@ -1,0 +1,12 @@
+node_modules
+.next
+.vercel
+.env
+.env.local
+npm-debug.log
+pnpm-debug.log
+*.log
+.DS_Store
+*.vsix
+.corepack-cache
+*.tsbuildinfo

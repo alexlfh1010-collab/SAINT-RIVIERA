@@ -1,0 +1,5 @@
+import Image from "next/image";
+export const metadata = { title: "Inside Saint Riviera" };
+export default function InsidePage() {
+  return <main className="inside-page"><header><p className="eyebrow">Inside Saint Riviera · Journal</p><h1>O mundo<br /><em>por dentro.</em></h1></header><section className="inside-lead"><div><Image src="/assets/private-salon.webp" alt="Riviera ao anoitecer" fill priority sizes="65vw" /></div><article><p className="eyebrow">Lugares · Ensaio 06</p><h2>As horas entre luzes.</h2><p>Na Riviera, o tempo não desacelera — ele encontra sua medida. Um ensaio sobre pedra antiga, alfaiataria e a luz que permanece sobre o mar.</p><span>Leitura · 06 min</span></article></section><section className="inside-issues"><article><span>01</span><h3>A arquitetura do silêncio</h3><p>Maison · Saint-Jean-Cap-Ferrat</p></article><article><span>02</span><h3>O peso certo do linho</h3><p>Matéria · Atelier</p></article><article><span>03</span><h3>Jantar para oito</h3><p>Society · Cap d&apos;Antibes</p></article></section></main>;
+}
