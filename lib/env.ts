@@ -1,52 +1,74 @@
-export const isSupabaseConfigured = () => Boolean(
-  process.env.NEXT_PUBLIC_SUPABASE_URL &&
-  (process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY),
-);
+const getValidHttpOrigin = (value?: string) => {
+  const candidate = value?.trim();
+  if (!candidate || !/^https?:\/\//i.test(candidate)) return "";
 
-export const getSiteUrl = () => {
-  const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-  const vercelUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL;
-  const resolvedUrl = configuredUrl || (vercelUrl ? `https://${vercelUrl}` : undefined);
-
-  if (!resolvedUrl) {
-    throw new Error("NEXT_PUBLIC_SITE_URL precisa estar configurada.");
+  try {
+    const url = new URL(candidate);
+    return ["http:", "https:"].includes(url.protocol) ? url.origin : "";
+  } catch {
+    return "";
   }
+};
 
-  const siteUrl = new URL(resolvedUrl);
-  if (!["http:", "https:"].includes(siteUrl.protocol)) {
-    throw new Error("NEXT_PUBLIC_SITE_URL precisa usar http:// ou https://.");
-  }
+export const getSupabaseConfig = () => {
+  const url = getValidHttpOrigin(process.env.NEXT_PUBLIC_SUPABASE_URL);
+  const publicKey = (
+    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+    ""
+  ).trim();
 
-  return siteUrl.origin;
+  return url && publicKey ? { url, publicKey } : null;
+};
+
+export const isSupabaseConfigured = () => Boolean(getSupabaseConfig());
+
+export const getSiteUrl = () => getValidHttpOrigin(process.env.NEXT_PUBLIC_SITE_URL);
+
+export const getBrowserSiteUrl = () => {
+  const configuredUrl = getSiteUrl();
+  if (configuredUrl) return configuredUrl;
+  return typeof window !== "undefined" ? window.location.origin : "";
 };
 
 export const getMembershipLink = () => {
-  const link = process.env.NEXT_PUBLIC_INFINITEPAY_MEMBERSHIP_LINK?.trim();
-  if (!link) throw new Error("NEXT_PUBLIC_INFINITEPAY_MEMBERSHIP_LINK nao configurada.");
+  const rawLink = process.env.NEXT_PUBLIC_INFINITEPAY_MEMBERSHIP_LINK?.trim();
+  if (!rawLink) return null;
 
-  if (!link.startsWith("https://")) {
-    throw new Error("Use um link HTTPS direto da InfinitePay.");
+  let link = rawLink.replace(/,+\s*$/, "").trim();
+  if (/^https%3A%2F%2F/i.test(link)) {
+    try {
+      link = decodeURIComponent(link).replace(/,+\s*$/, "").trim();
+    } catch {
+      return null;
+    }
   }
 
-  const checkoutUrl = new URL(link);
-  const pathSegments = checkoutUrl.pathname.split("/").filter(Boolean);
-  const isCompletePlanLink =
-    checkoutUrl.hostname === "invoice.infinitepay.io" &&
-    pathSegments.length === 3 &&
-    pathSegments[0] === "plans" &&
-    !checkoutUrl.search &&
-    !checkoutUrl.hash;
+  if (!link.startsWith("https://invoice.infinitepay.io/plans/")) return null;
 
-  if (!isCompletePlanLink) {
-    throw new Error("Use o link completo do plano em invoice.infinitepay.io/plans/USUARIO/PLANO.");
-  }
-
-  return checkoutUrl.toString();
-};
-export const getOptionalMembershipLink = () => {
   try {
-    return getMembershipLink();
+    const checkoutUrl = new URL(link);
+    const pathSegments = checkoutUrl.pathname.split("/").filter(Boolean);
+    const isCompletePlanLink =
+      checkoutUrl.hostname === "invoice.infinitepay.io" &&
+      pathSegments.length === 3 &&
+      pathSegments[0] === "plans" &&
+      /^[A-Za-z0-9_-]+$/.test(pathSegments[1]) &&
+      /^[A-Za-z0-9_-]+$/.test(pathSegments[2]) &&
+      !checkoutUrl.search &&
+      !checkoutUrl.hash;
+
+    return isCompletePlanLink ? checkoutUrl.toString() : null;
   } catch {
     return null;
   }
+};
+
+export const getOptionalMembershipLink = getMembershipLink;
+
+export const getWhatsAppLink = (message?: string) => {
+  const phone = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "");
+  if (!phone) return null;
+  const baseUrl = `https://wa.me/${phone}`;
+  return message ? `${baseUrl}?text=${encodeURIComponent(message)}` : baseUrl;
 };

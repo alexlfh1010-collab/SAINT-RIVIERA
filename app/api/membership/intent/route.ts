@@ -5,14 +5,12 @@ import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createInfinitePayCheckout } from "@/lib/infinitepay";
 
-export async function POST() {
-  let fixedMembershipLink: string;
-  try {
-    fixedMembershipLink = getMembershipLink();
-  } catch (error) {
-    return NextResponse.json({ error: error instanceof Error ? error.message : "InfinitePay ainda não configurada." }, { status: 503 });
+export async function POST(request: Request) {
+  const fixedMembershipLink = getMembershipLink();
+  if (!fixedMembershipLink) {
+    return NextResponse.json({ error: "InfinitePay ainda não configurada." }, { status: 503 });
   }
-  if (!isSupabaseConfigured()) return NextResponse.json({ error: "Supabase ainda não configurado." }, { status: 503 });
+  if (!isSupabaseConfigured() || !process.env.SUPABASE_SERVICE_ROLE_KEY) return NextResponse.json({ error: "Supabase ainda não configurado." }, { status: 503 });
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) return NextResponse.json({ error: "Faça login para continuar." }, { status: 401 });
@@ -35,6 +33,7 @@ export async function POST() {
       const checkout = await createInfinitePayCheckout({
         orderNsu,
         items: [{ quantity: 1, price: 2999, description: "Acesso The Private Society" }],
+        siteUrl: new URL(request.url).origin,
         customer: {
           name: String(user.user_metadata.full_name || "Membro SAINT RIVIERA"),
           email: user.email || "",

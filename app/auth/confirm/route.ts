@@ -1,13 +1,18 @@
 import { type EmailOtpType } from "@supabase/supabase-js";
 import { NextResponse } from "next/server";
-import { getSiteUrl } from "@/lib/env";
+import { getSiteUrl, isSupabaseConfigured } from "@/lib/env";
 import { createClient } from "@/lib/supabase/server";
 
 export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const siteUrl = getSiteUrl();
-  const tokenHash = searchParams.get("token_hash");
-  const type = searchParams.get("type") as EmailOtpType | null;
+  const requestUrl = new URL(request.url);
+  const siteUrl = getSiteUrl() || requestUrl.origin;
+  const tokenHash = requestUrl.searchParams.get("token_hash");
+  const type = requestUrl.searchParams.get("type") as EmailOtpType | null;
+
+  if (!isSupabaseConfigured()) {
+    return NextResponse.redirect(`${siteUrl}/login?erro=configuracao`);
+  }
+
   if (tokenHash && type) {
     const supabase = await createClient();
     const { error } = await supabase.auth.verifyOtp({ type, token_hash: tokenHash });

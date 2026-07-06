@@ -72,7 +72,17 @@ NEXT_PUBLIC_WHATSAPP_NUMBER=55MEUNUMERO
 
 `MINHA_CHAVE`, `55MEUNUMERO` e `URL-GERADA-PELA-VERCEL` são placeholders. Não os use literalmente.
 
-O primeiro build também consegue reconhecer a URL automática fornecida pela própria Vercel. Assim que o projeto gerar sua URL real, substitua o placeholder de `NEXT_PUBLIC_SITE_URL` pela URL exata.
+Para o primeiro deploy, `NEXT_PUBLIC_SITE_URL` pode ficar vazia ou nem ser cadastrada. A home e todas as páginas públicas continuam compilando sem essa variável.
+
+Ordem recomendada:
+
+1. Faça o primeiro deploy com **Root Directory vazio ou `.`**.
+2. Abra **Deployments → último deploy → Visit** e confirme a URL real `.vercel.app`.
+3. Configure `NEXT_PUBLIC_SITE_URL` com essa URL real, sem barra no final.
+4. Faça **Redeploy**.
+5. Somente depois configure **Supabase → Authentication → URL Configuration** com a mesma URL.
+
+Supabase, InfinitePay e WhatsApp também podem ficar temporariamente vazios no primeiro deploy. Os recursos dependentes mostram fallbacks sem derrubar as páginas públicas.
 
 ## 5. Fazer o primeiro deploy
 

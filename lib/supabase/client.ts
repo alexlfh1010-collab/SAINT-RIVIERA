@@ -1,9 +1,8 @@
 import { createBrowserClient } from "@supabase/ssr";
+import { getSupabaseConfig } from "@/lib/env";
 
 export function createClient() {
-  const publicKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  return createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    publicKey!,
-  );
+  const config = getSupabaseConfig();
+  if (!config) throw new Error("Cadastro temporariamente indisponível. Fale com o Concierge para liberar seu acesso.");
+  return createBrowserClient(config.url, config.publicKey);
 }

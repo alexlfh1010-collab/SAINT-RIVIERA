@@ -4,33 +4,31 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { getSiteUrl } from "@/lib/env";
 
+const siteUrl = getSiteUrl();
+const socialImage = siteUrl ? `${siteUrl}/assets/hero-riviera.webp` : undefined;
+
 export const metadata: Metadata = {
-  metadataBase: new URL(getSiteUrl()),
+  ...(siteUrl ? { metadataBase: new URL(siteUrl) } : {}),
   title: {
     default: "SAINT RIVIERA — The Private Society",
     template: "%s — SAINT RIVIERA",
   },
   description: "Moda quiet luxury brasileira, acesso privado, drops exclusivos e peças essenciais de presença.",
-  alternates: { canonical: "/" },
+  ...(siteUrl ? { alternates: { canonical: siteUrl } } : {}),
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "/",
+    ...(siteUrl ? { url: siteUrl } : {}),
     siteName: "SAINT RIVIERA",
     title: "SAINT RIVIERA — The Private Society",
     description: "Moda quiet luxury brasileira, acesso privado, drops exclusivos e peças essenciais de presença.",
-    images: [{
-      url: "/assets/hero-riviera.webp",
-      width: 1536,
-      height: 1024,
-      alt: "SAINT RIVIERA — The Private Society",
-    }],
+    ...(socialImage ? { images: [{ url: socialImage, width: 1536, height: 1024, alt: "SAINT RIVIERA — The Private Society" }] } : {}),
   },
   twitter: {
     card: "summary_large_image",
     title: "SAINT RIVIERA — The Private Society",
     description: "Moda quiet luxury brasileira, acesso privado, drops exclusivos e peças essenciais de presença.",
-    images: ["/assets/hero-riviera.webp"],
+    ...(socialImage ? { images: [socialImage] } : {}),
   },
 };
 

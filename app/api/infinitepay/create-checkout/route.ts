@@ -50,6 +50,7 @@ export async function POST(request: Request) {
       items: [{ quantity, price: product.price, description: `${product.name} · ${body.size} · ${body.color}` }],
       customer,
       address,
+      siteUrl: new URL(request.url).origin,
     });
     return NextResponse.json({ checkoutUrl: checkout.checkoutUrl, orderNsu });
   } catch (error) {

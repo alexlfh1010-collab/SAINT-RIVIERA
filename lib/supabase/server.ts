@@ -1,13 +1,15 @@
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
+import { getSupabaseConfig } from "@/lib/env";
 
 export async function createClient() {
+  const config = getSupabaseConfig();
+  if (!config) throw new Error("Cadastro temporariamente indisponível. Fale com o Concierge para liberar seu acesso.");
   const cookieStore = await cookies();
-  const publicKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
   return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    publicKey!,
+    config.url,
+    config.publicKey,
     {
       cookies: {
         getAll() {

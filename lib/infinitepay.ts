@@ -9,10 +9,15 @@ export async function createInfinitePayCheckout(input: {
   items: CheckoutItem[];
   customer?: Customer;
   address?: Address;
+  siteUrl?: string;
 }) {
-  const handle = process.env.INFINITEPAY_HANDLE;
+  const handle = process.env.INFINITEPAY_HANDLE?.trim();
   if (!handle) throw new Error("INFINITEPAY_HANDLE não configurado.");
-  const webhookUrl = new URL(`${getSiteUrl()}/api/webhooks/infinitepay`);
+
+  const siteUrl = input.siteUrl || getSiteUrl();
+  if (!siteUrl) throw new Error("URL pública ainda não configurada para o checkout.");
+
+  const webhookUrl = new URL("/api/webhooks/infinitepay", siteUrl);
   const webhookSecret = process.env.INFINITEPAY_WEBHOOK_SECRET?.trim();
   if (webhookSecret) webhookUrl.searchParams.set("token", webhookSecret);
 
@@ -23,7 +28,7 @@ export async function createInfinitePayCheckout(input: {
       handle,
       items: input.items,
       order_nsu: input.orderNsu,
-      redirect_url: `${getSiteUrl()}/pagamento-pendente`,
+      redirect_url: new URL("/pagamento-pendente", siteUrl).toString(),
       webhook_url: webhookUrl.toString(),
       ...(input.customer ? { customer: input.customer } : {}),
       ...(input.address ? { address: input.address } : {}),
