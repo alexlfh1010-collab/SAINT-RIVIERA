@@ -29,9 +29,16 @@ export const getMembershipLink = () => {
   }
 
   const checkoutUrl = new URL(link);
-  const isInfinitePay = checkoutUrl.hostname === "infinitepay.io" || checkoutUrl.hostname.endsWith(".infinitepay.io");
-  if (!isInfinitePay) {
-    throw new Error("Use um link direto do dominio infinitepay.io.");
+  const pathSegments = checkoutUrl.pathname.split("/").filter(Boolean);
+  const isCompletePlanLink =
+    checkoutUrl.hostname === "invoice.infinitepay.io" &&
+    pathSegments.length === 3 &&
+    pathSegments[0] === "plans" &&
+    !checkoutUrl.search &&
+    !checkoutUrl.hash;
+
+  if (!isCompletePlanLink) {
+    throw new Error("Use o link completo do plano em invoice.infinitepay.io/plans/USUARIO/PLANO.");
   }
 
   return checkoutUrl.toString();
