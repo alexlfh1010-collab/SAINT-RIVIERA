@@ -4,6 +4,14 @@ Este guia usa o domínio temporário da Vercel até a compra de `https://thesain
 
 O e-mail `alexlfh1010@gmail.com` é apenas uma referência operacional para entrar no GitHub e na Vercel. Ele não deve ser copiado para o código, para arquivos de ambiente ou para conteúdo público do site.
 
+## Root Directory correto
+
+No repositório GitHub `alexlfh1010-collab/SAINT-RIVIERA`, o projeto Next.js já está na raiz: `package.json`, `app/`, `components/`, `public/`, `next.config.ts` e `tsconfig.json` aparecem diretamente no primeiro nível.
+
+Na Vercel, use **Root Directory: `.`** ou deixe o campo vazio. Não use `outputs/saint-riviera`: esse trecho pertence somente ao caminho local do computador e não existe dentro do repositório GitHub.
+
+Se a Vercel estiver configurada com `outputs/saint-riviera`, abra **Project → Settings → Build and Deployment → Root Directory**, remova esse valor, salve e faça um novo deploy da branch `main`.
+
 ## 1. Validar o projeto localmente
 
 Na raiz do projeto, execute:
@@ -46,7 +54,7 @@ Substitua `SEU-USUARIO` pelo nome de usuário mostrado no GitHub. Antes do commi
 3. Autorize o acesso ao GitHub, se solicitado.
 4. Importe o repositório `saint-riviera`.
 5. Confirme **Framework Preset: Next.js**.
-6. Use **Root Directory: `.`**.
+6. Use **Root Directory: `.`** ou deixe o campo vazio. Nunca use `outputs/saint-riviera` neste repositório.
 7. Mantenha os comandos automáticos de instalação e build detectados pela Vercel.
 
 ## 4. Configurar as variáveis de ambiente
