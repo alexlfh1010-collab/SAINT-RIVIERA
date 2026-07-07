@@ -42,7 +42,7 @@ export type Product = {
   category: "tricot" | "alfaiataria" | "blusas" | "camisas" | "looks" | "vestidos";
   gender: "masculino" | "feminino" | "unissex";
   colors: string[];
-  sizes: Array<"P" | "M" | "G">;
+  sizes: Array<"P" | "M" | "G" | "GG">;
   images: string[];
   imageAlts?: string[];
   description: string;
