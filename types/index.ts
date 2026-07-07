@@ -44,6 +44,12 @@ export type Product = {
   colors: string[];
   sizes: Array<"P" | "M" | "G">;
   images: string[];
+  imageAlts?: string[];
   description: string;
+  details?: string[];
+  subcategory?: string;
+  collection?: string;
+  status?: "active" | "inactive";
+  featured?: boolean;
   privateDrop: boolean;
 };

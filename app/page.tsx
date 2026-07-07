@@ -4,6 +4,11 @@ import { products } from "@/data/products";
 import { ProductCard } from "@/components/product-card";
 
 export default function HomePage() {
+  const featuredProducts = [
+    ...products.filter((product) => product.featured),
+    ...products.filter((product) => !product.featured),
+  ].filter((product) => product.status !== "inactive").slice(0, 3);
+
   return (
     <main>
       <section className="home-hero">
@@ -32,7 +37,7 @@ export default function HomePage() {
           <div><p className="eyebrow">A coleção permanente</p><h2>Objetos de <em>desejo.</em></h2></div>
           <p className="body-copy">Um guarda-roupa construído sem pressa.<br />Produzido em quantidades consideradas.</p>
         </div>
-        <div className="home-product-grid">{products.slice(0, 3).map((product) => <ProductCard key={product.id} product={product} />)}</div>
+        <div className="home-product-grid">{featuredProducts.map((product) => <ProductCard key={product.id} product={product} />)}</div>
         <Link className="button button--line" href="/colecoes">Ver toda a coleção <span>↗</span></Link>
       </section>
 

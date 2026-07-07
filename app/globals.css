@@ -19,3 +19,13 @@
 @keyframes payment-progress{0%{translate:-110% 0}100%{translate:330% 0}}
 @media(max-width:600px){.payment-actions{width:min(100%,390px);flex-direction:column}.payment-actions .button{width:100%}}
 @media(prefers-reduced-motion:reduce){.payment-loader>span{width:100%;animation:none}}
+
+/* Product gallery: keeps the maison layout while supporting complete image stories. */
+.product-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;gap:1px;min-height:0;background:var(--line)}
+.product-gallery--single{display:block;min-height:calc(100vh - 72px);background:#d7cbbb}
+.product-gallery__item{position:relative;aspect-ratio:4/5;margin:0;overflow:hidden;background:#d7cbbb}
+.product-gallery--single .product-gallery__item{min-height:calc(100vh - 72px);aspect-ratio:auto}
+.product-gallery__item img{object-fit:cover}
+.product-details details ul{margin:15px 0 0;padding-left:18px}
+.product-details details li+li{margin-top:7px}
+@media(max-width:800px){.product-gallery{min-height:0}.product-gallery--single,.product-gallery--single .product-gallery__item{min-height:68vh}}

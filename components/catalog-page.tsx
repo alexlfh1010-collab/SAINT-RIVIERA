@@ -10,7 +10,8 @@ export function CatalogPage({
   description: string;
   filter?: (product: Product) => boolean;
 }) {
-  const visible = filter ? products.filter(filter) : products;
+  const available = products.filter((product) => product.status !== "inactive");
+  const visible = filter ? available.filter(filter) : available;
   return (
     <main className="page-shell">
       <header className="catalog-hero">
