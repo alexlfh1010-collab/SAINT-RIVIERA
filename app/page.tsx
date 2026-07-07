@@ -43,7 +43,7 @@ export default function HomePage() {
           <p className="eyebrow">Além do guarda-roupa</p>
           <h2>The Private<br /><em>Society.</em></h2>
           <p>Você não paga para entrar. Você ganha acesso — crédito mensal, drops privados e um mundo revelado com discrição.</p>
-          <Link className="button button--light" href="/the-private-society">Entrar na Private Society <span>↗</span></Link>
+          <Link className="button button--light" href="/pagamento-redirecionando">Entrar para The Private Society <span>↗</span></Link>
         </div>
       </section>
 

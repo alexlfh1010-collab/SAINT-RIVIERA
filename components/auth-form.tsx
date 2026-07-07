@@ -15,7 +15,7 @@ export function AuthForm({ mode, action, next = "" }: { mode: "login" | "signup"
       {next && <input type="hidden" name="next" value={next} />}
       {state.error && <p className="form-error" role="alert">{state.error}</p>}
       <button className="button button--dark" type="submit" disabled={pending}>{pending ? signup ? "Criando seu acesso..." : "Entrando..." : signup ? "Criar acesso" : "Entrar"}<span>↗</span></button>
-      <p>{signup ? "Já possui acesso?" : "Ainda não faz parte?"} <Link href={signup ? "/login" : "/cadastro"}>{signup ? "Entrar" : "Criar conta"}</Link></p>
+      <p>{signup ? "Já possui acesso?" : "Ainda não faz parte?"} <Link href={signup ? "/login" : "/pagamento-redirecionando"}>{signup ? "Entrar" : "Entrar para The Private Society"}</Link></p>
     </form>
   );
 }

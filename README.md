@@ -63,7 +63,7 @@ Para validar a experiência privada sem Supabase, use `DEMO_MEMBER_MODE=true` ap
 3. Copie a Project URL, anon key e service role key para `.env.local`.
 4. Em Authentication → URL Configuration, defina o domínio público como Site URL e adicione `http://localhost:3000/**` durante o desenvolvimento.
 5. Para o MVP, abra Authentication → Providers → Email e deixe **Confirm email OFF**.
-6. Com a confirmação desativada, o cadastro cria uma sessão imediatamente e envia o usuário para a InfinitePay ou para `/pagamento-pendente`.
+6. No fluxo payment-first, nenhum cadastro ou senha é solicitado antes do checkout. A criação/liberação da conta acontece somente após a confirmação do pagamento.
 
 No MVP, a barreira de acesso ao clube é `membership_active = true`, liberada somente após pagamento/ativação. A confirmação de e-mail não participa desse fluxo.
 
@@ -108,7 +108,13 @@ NEXT_PUBLIC_INFINITEPAY_MEMBERSHIP_LINK=https://invoice.infinitepay.io/plans/ale
 O link correto precisa ser o link completo do plano InfinitePay. Para a The Private Society, use `https://invoice.infinitepay.io/plans/alex_lucio_filho/opRt5S97R0`. Não use apenas o domínio da InfinitePay, links do Instagram, valores codificados ou URLs com caracteres extras no final.
 ### Assinatura
 
-O fluxo de membership cria primeiro um `order` pendente. Com `INFINITEPAY_HANDLE` configurado, ele gera um checkout integrado com `order_nsu`, retorno e webhook, permitindo a ativação automática depois da confirmação de pagamento. O link direto de `NEXT_PUBLIC_INFINITEPAY_MEMBERSHIP_LINK` permanece como contingência para conciliação manual.
+### Fluxo payment-first
+
+Os CTAs da The Private Society enviam primeiro para `/pagamento-redirecionando` e depois para o plano direto configurado em `NEXT_PUBLIC_INFINITEPAY_MEMBERSHIP_LINK`. Nome, telefone, e-mail e senha não são solicitados pelo site antes do pagamento.
+
+O webhook integrado existente depende de `order_nsu` criado pelo site e de um usuário já identificado. O checkout direto do plano acontece antes desses dados existirem; portanto, até a conciliação do plano fornecer uma identidade verificável do pagador, a liberação é manual pelo Concierge. Não crie usuários automaticamente a partir de campos não verificados do webhook.
+
+Depois de confirmar o pagamento, o operador cria ou localiza a conta no Supabase, evita duplicidade por e-mail/telefone e define `membership_active=true` e `status='member'` (ou `founder`, quando aplicável).
 
 ### Produtos
 
