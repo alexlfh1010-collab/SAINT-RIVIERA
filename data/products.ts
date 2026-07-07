@@ -14,6 +14,7 @@ export const products: Product[] = [
     collection: "Primavera / Verão 2026",
     status: "active",
     featured: true,
+    paymentLink: "https://link.infinitepay.io/alex_lucio_filho/VC1DLTYtSQ-SzZL8E67Oz-239,99",
     images: [
       "/assets/products/camisa-elise-off-white/camisa-elise-off-white-01.jpg",
       "/assets/products/camisa-elise-off-white/camisa-elise-off-white-02.jpg",

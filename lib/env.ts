@@ -31,8 +31,8 @@ export const getBrowserSiteUrl = () => {
   return typeof window !== "undefined" ? window.location.origin : "";
 };
 
-export const getMembershipLink = () => {
-  const rawLink = process.env.NEXT_PUBLIC_INFINITEPAY_MEMBERSHIP_LINK?.trim();
+export const getInfinitePayPaymentLink = (rawValue?: string) => {
+  const rawLink = rawValue?.trim();
   if (!rawLink) return null;
 
   let link = rawLink.replace(/,+\s*$/, "").trim();
@@ -44,7 +44,26 @@ export const getMembershipLink = () => {
     }
   }
 
-  if (!link.startsWith("https://invoice.infinitepay.io/plans/")) return null;
+  try {
+    const checkoutUrl = new URL(link);
+    const validHosts = ["invoice.infinitepay.io", "link.infinitepay.io"];
+    const isValid =
+      checkoutUrl.protocol === "https:" &&
+      validHosts.includes(checkoutUrl.hostname) &&
+      checkoutUrl.pathname !== "/" &&
+      !checkoutUrl.username &&
+      !checkoutUrl.password &&
+      !checkoutUrl.port;
+
+    return isValid ? checkoutUrl.toString() : null;
+  } catch {
+    return null;
+  }
+};
+
+export const getMembershipLink = () => {
+  const link = getInfinitePayPaymentLink(process.env.NEXT_PUBLIC_INFINITEPAY_MEMBERSHIP_LINK);
+  if (!link || !link.startsWith("https://invoice.infinitepay.io/plans/")) return null;
 
   try {
     const checkoutUrl = new URL(link);

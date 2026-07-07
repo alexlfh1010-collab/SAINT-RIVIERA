@@ -51,5 +51,6 @@ export type Product = {
   collection?: string;
   status?: "active" | "inactive";
   featured?: boolean;
+  paymentLink?: string;
   privateDrop: boolean;
 };
