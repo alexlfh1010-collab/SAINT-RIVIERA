@@ -52,5 +52,6 @@ export type Product = {
   status?: "active" | "inactive";
   featured?: boolean;
   paymentLink?: string;
+  pixCopyPaste?: string;
   privateDrop: boolean;
 };

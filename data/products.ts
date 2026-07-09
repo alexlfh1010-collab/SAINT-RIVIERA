@@ -15,6 +15,7 @@ export const products: Product[] = [
     status: "active",
     featured: true,
     paymentLink: "https://link.infinitepay.io/alex_lucio_filho/VC1DLTYtSQ-SzZL8E67Oz-239,99",
+    pixCopyPaste: "00020101021226840014BR.GOV.BCB.PIX0136a66f8624-f6b8-4d95-9154-130a5189a8de0222Pagamento alex_lucio_f5204000053039865406239.995802BR5916ALEX LUCIO FILHO6005COTIA62290525QRCCwYeDkuZ4LpzfFphtkeCpe63046765",
     images: [
       "/assets/products/camisa-elise-off-white/camisa-elise-off-white-01.jpg",
       "/assets/products/camisa-elise-off-white/camisa-elise-off-white-02.jpg",
