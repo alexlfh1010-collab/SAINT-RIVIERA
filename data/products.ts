@@ -57,6 +57,7 @@ export const products: Product[] = [
     collection: "Primavera / Verão 2026",
     status: "active",
     featured: true,
+    paymentLink: "https://link.infinitepay.io/alex_lucio_filho/VC1DLTYtSQ-DkgwQ4MnzK-239,99",
     images: [
       "/assets/products/blusa-riviera-off-shoulder-black-piano/blusa-riviera-off-shoulder-black-piano-01.jpg",
       "/assets/products/blusa-riviera-off-shoulder-black-piano/blusa-riviera-off-shoulder-black-piano-02.jpg",
