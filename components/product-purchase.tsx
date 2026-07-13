@@ -15,11 +15,16 @@ export function ProductPurchase({ product }: { product: Product }) {
 
   const pixCopyPaste = product.pixCopyPaste?.trim();
   const paymentHref = getInfinitePayPaymentLink(product.paymentLink);
+  const hasExplicitEmptyPaymentLink = product.paymentLink !== undefined && !product.paymentLink.trim();
   const conciergeHref =
     getWhatsAppLink(
       `Olá, quero ajuda para escolher meu tamanho e montar meu look SAINT RIVIERA. Tenho interesse em: ${product.name}.`,
     ) || "/concierge";
   const externalConcierge = conciergeHref.startsWith("https://");
+  const purchaseFallbackHref =
+    getWhatsAppLink(`Olá, quero comprar o ${product.name} da SAINT RIVIERA. Tamanho: ${size}. Cor: ${color}.`) ||
+    conciergeHref;
+  const externalPurchaseFallback = purchaseFallbackHref.startsWith("https://");
   const proofProductName = product.slug === "camisa-elise-off-white" ? "Camisa Élise Off-White" : product.name;
   const proofHref = getWhatsAppLink(
     `Olá, acabei de pagar via Pix a ${proofProductName} da SAINT RIVIERA. Quero enviar meu comprovante.`,
@@ -106,6 +111,15 @@ export function ProductPurchase({ product }: { product: Product }) {
       </div>
       {paymentHref ? (
         <a className="button button--dark purchase-button" href={paymentHref}>
+          Comprar agora <span>↗</span>
+        </a>
+      ) : hasExplicitEmptyPaymentLink ? (
+        <a
+          className="button button--dark purchase-button"
+          href={purchaseFallbackHref}
+          target={externalPurchaseFallback ? "_blank" : undefined}
+          rel={externalPurchaseFallback ? "noreferrer" : undefined}
+        >
           Comprar agora <span>↗</span>
         </a>
       ) : (
