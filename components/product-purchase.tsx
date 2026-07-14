@@ -5,6 +5,15 @@ import { formatBRL } from "@/data/products";
 import type { Product } from "@/types";
 import { getInfinitePayPaymentLink, getWhatsAppLink } from "@/lib/env";
 
+function getPurchaseArticle(productName: string) {
+  const normalizedName = productName
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+
+  return ["blusa", "camisa", "polo"].some((term) => normalizedName.startsWith(term)) ? "a" : "o";
+}
+
 export function ProductPurchase({ product }: { product: Product }) {
   const [size, setSize] = useState(product.sizes[0]);
   const [color, setColor] = useState(product.colors[0]);
@@ -21,8 +30,9 @@ export function ProductPurchase({ product }: { product: Product }) {
       `Olá, quero ajuda para escolher meu tamanho e montar meu look SAINT RIVIERA. Tenho interesse em: ${product.name}.`,
     ) || "/concierge";
   const externalConcierge = conciergeHref.startsWith("https://");
+  const purchaseArticle = getPurchaseArticle(product.name);
   const purchaseFallbackHref =
-    getWhatsAppLink(`Olá, quero comprar o ${product.name} da SAINT RIVIERA. Tamanho: ${size}. Cor: ${color}.`) ||
+    getWhatsAppLink(`Olá, quero comprar ${purchaseArticle} ${product.name} da SAINT RIVIERA. Tamanho: ${size}. Cor: ${color}.`) ||
     conciergeHref;
   const externalPurchaseFallback = purchaseFallbackHref.startsWith("https://");
   const proofProductName = product.slug === "camisa-elise-off-white" ? "Camisa Élise Off-White" : product.name;
