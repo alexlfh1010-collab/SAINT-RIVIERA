@@ -11,7 +11,7 @@ function getPurchaseArticle(productName: string) {
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase();
 
-  return ["blusa", "camisa", "polo"].some((term) => normalizedName.startsWith(term)) ? "a" : "o";
+  return ["blusa", "calca", "camisa", "polo"].some((term) => normalizedName.startsWith(term)) ? "a" : "o";
 }
 
 export function ProductPurchase({ product }: { product: Product }) {
